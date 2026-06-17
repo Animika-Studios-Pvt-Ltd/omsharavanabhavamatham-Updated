@@ -49,6 +49,13 @@
 
         <!--<link rel="stylesheet" href="/static/omsharavanabhavamatham-org/slick.css">-->
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Marcellus&display=swap"
+            rel="stylesheet">
+
         <link rel="stylesheet" href="static/omsharavanabhavamatham-org/custom.css">
 
         <link rel="stylesheet" href="root-home.css" />
@@ -869,91 +876,52 @@
 
                 </header>
 
-                <div class="row seva-section__cards justify-content-center g-4">
+                <div class="seva-showcase" role="list">
 
-                    <div class="col-lg-4 col-md-6">
+                    <a href="pooja-sevas.html" class="seva-showcase__card seva-card" role="listitem"
+                        aria-label="Book a Pooja">
 
-                        <article class="seva-card">
+                        <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="seva-showcase__media"
+                            alt="Priest performing aarti at the temple shrine">
 
-                            <div class="seva-card__icon-wrap">
+                        <span class="seva-showcase__shade" aria-hidden="true"></span>
 
-                                <img src="static/omsharavanabhavamatham-org/book-a-pooja.webp" class="seva-card__icon"
-                                    alt="Book a Pooja">
+                        <span class="seva-showcase__label">
+                            Book a Pooja
+                            <span class="seva-showcase__arrow" aria-hidden="true">&rsaquo;</span>
+                        </span>
 
-                            </div>
+                    </a>
 
-                            <h3 class="seva-card__title">Book a Pooja</h3>
+                    <a href="social-impact.html" class="seva-showcase__card seva-showcase__card--featured seva-card"
+                        role="listitem" aria-label="Donate for a Cause">
 
-                            <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="seva-card__motif"
-                                alt="">
+                        <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="seva-showcase__media"
+                            alt="Serving food to devotees as part of annadanam">
 
-                            <p class="seva-card__text">
-                                Book poojas and spiritual services for blessings and prosperity.
-                            </p>
+                        <span class="seva-showcase__shade seva-showcase__shade--warm" aria-hidden="true"></span>
 
-                            <a href="pooja-sevas.html" class="seva-card__btn">
-                                Book Now <span class="seva-card__btn-arrow" aria-hidden="true">&rsaquo;</span>
-                            </a>
+                        <span class="seva-showcase__label">
+                            Donate for a Cause
+                            <span class="seva-showcase__arrow" aria-hidden="true">&rsaquo;</span>
+                        </span>
 
-                        </article>
+                    </a>
 
-                    </div>
+                    <a href="devotees-experience.html" class="seva-showcase__card seva-card" role="listitem"
+                        aria-label="Devotee Experience">
 
-                    <div class="col-lg-4 col-md-6">
+                        <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="seva-showcase__media"
+                            alt="Devotee in prayer before the illuminated temple gopuram at night">
 
-                        <article class="seva-card">
+                        <span class="seva-showcase__shade" aria-hidden="true"></span>
 
-                            <div class="seva-card__icon-wrap">
+                        <span class="seva-showcase__label">
+                            Devotee Experience
+                            <span class="seva-showcase__arrow" aria-hidden="true">&rsaquo;</span>
+                        </span>
 
-                                <img src="static/omsharavanabhavamatham-org/donate.webp" class="seva-card__icon"
-                                    alt="Donate for a cause">
-
-                            </div>
-
-                            <h3 class="seva-card__title">Donate for a Cause</h3>
-
-                            <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="seva-card__motif"
-                                alt="">
-
-                            <p class="seva-card__text">
-                                Support temple initiatives and charitable activities that serve the community.
-                            </p>
-
-                            <a href="social-impact.html" class="seva-card__btn">
-                                Donate Now <span class="seva-card__btn-arrow" aria-hidden="true">&rsaquo;</span>
-                            </a>
-
-                        </article>
-
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-
-                        <article class="seva-card">
-
-                            <div class="seva-card__icon-wrap">
-
-                                <img src="static/omsharavanabhavamatham-org/devotee.webp" class="seva-card__icon"
-                                    alt="Devotee experiences">
-
-                            </div>
-
-                            <h3 class="seva-card__title">Devotee Experiences</h3>
-
-                            <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="seva-card__motif"
-                                alt="">
-
-                            <p class="seva-card__text">
-                                Explore spiritual programs, guided tours and immersive devotional experiences.
-                            </p>
-
-                            <a href="devotees-experience.html" class="seva-card__btn">
-                                Explore Now <span class="seva-card__btn-arrow" aria-hidden="true">&rsaquo;</span>
-                            </a>
-
-                        </article>
-
-                    </div>
+                    </a>
 
                 </div>
 
@@ -1325,12 +1293,7 @@
 
                         <blockquote class="media-panel__quote">
 
-                            <span class="media-panel__quote-mark" aria-hidden="true">&ldquo;</span>
-
-                            <p>Stay connected with Babaji's divine wisdom and transform your life.</p>
-
-                            <span class="media-panel__quote-mark media-panel__quote-mark--end"
-                                aria-hidden="true">&rdquo;</span>
+                            <p class="media-panel__quote-text"><span class="media-panel__quote-mark" aria-hidden="true">&ldquo;</span>Stay connected with Babaji's divine wisdom and transform your life.<span class="media-panel__quote-mark media-panel__quote-mark--end" aria-hidden="true">&rdquo;</span></p>
 
                         </blockquote>
 
@@ -1537,101 +1500,65 @@
 
     </section>
 
-    <div class="container-fluid projectbck">
+    <section class="container-fluid projectbck social-impact-section" aria-label="Social impact">
 
-        <div class="container">
+        <div class="social-impact-hero">
 
-            <div class="row">
+            <div class="social-impact-hero__media" aria-hidden="true">
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <img src="static/omsharavanabhavamatham-org/vidhya-dhaanam-4.webp"
+                    class="social-impact-hero__photo" alt="">
 
-                    <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="social-impact-hero__overlay"></div>
 
-                        <div class="carousel-indicators">
+            </div>
 
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
+            <div class="social-impact-hero__content">
 
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
+                <img src="static/omsharavanabhavamatham-org/heading-motif.webp"
+                    class="social-impact-hero__emblem" alt="">
 
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
+                <div class="social-impact-hero__label" aria-hidden="true">
 
-                        </div>
+                    <span class="social-impact-hero__label-line"></span>
 
-                        <div class="carousel-inner">
+                    <span class="social-impact-hero__label-text">Social Impact</span>
 
-                            <div class="carousel-item active">
-
-                                <img src="static/omsharavanabhavamatham-org/social-impact-1.webp" class="img-fluid"
-                                    alt="social-impact">
-
-                            </div>
-
-                            <div class="carousel-item">
-
-                                <img src="static/omsharavanabhavamatham-org/social-impact-1.webp" class="img-fluid"
-                                    alt="social-impact">
-
-                            </div>
-
-                            <div class="carousel-item">
-
-                                <img src="static/omsharavanabhavamatham-org/social-impact-1.webp" class="img-fluid"
-                                    alt="social-impact">
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                    <span class="social-impact-hero__label-line"></span>
 
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h2 class="social-impact-hero__title">Vidhya Dhaanam</h2>
 
-                    <div class="babajihead projecthead" data-aos="zoom-out">
+                <p class="social-impact-hero__tagline">Every book is a step towards a brighter tomorrow.</p>
 
-                        <h1>Social Impact</h1>
+                <div class="social-impact-hero__divider" aria-hidden="true">
 
-                        <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="img-fluid" alt="amma">
+                    <span class="social-impact-hero__divider-line"></span>
 
-                        <h2>Vidhya Dhaanam</h2>
+                    <img src="static/omsharavanabhavamatham-org/heading-motif.webp"
+                        class="social-impact-hero__divider-motif" alt="">
 
-                        <p>
-
-                            Sadhguru Sri Sharavana Babaji's sankalpa for Vidyothsavam 2019 was
-
-                            to serve 100,000 students in 11 districts of Kerala, providing them
-
-                            with notebooks, pens, pencils, Geometry boxes, pencil boxes,
-
-                            Umbrellas, School Bags to students from
-
-                        </p>
-
-                    </div>
-
-                    <div class="babaji-button" data-aos="fade-up" data-aos-duration="3000">
-
-                        <a href="vidhya-dhaanam.html">
-
-                            more
-
-                            <span class="chevron right"></span>
-
-                        </a>
-
-                    </div>
+                    <span class="social-impact-hero__divider-line"></span>
 
                 </div>
+
+                <a href="vidhya-dhaanam.html" class="social-impact-hero__btn">
+                    Explore the Initiative <span aria-hidden="true">&rarr;</span>
+                </a>
+
+            </div>
+
+            <div class="social-impact-hero__torn-edge-wrap" aria-hidden="true">
+
+                <img src="static/omsharavanabhavamatham-org/social-impact-torn-paper-edge.png"
+                    class="social-impact-hero__torn-edge" alt="">
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
     <div class="container-fluid chantingbck">
 

@@ -263,7 +263,7 @@ a:hover,a:focus{
 .parallax {
   background-image: url(/static/omsharavanabhavamatham-org/world-map.webp);
   min-height: 650px;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -271,7 +271,7 @@ a:hover,a:focus{
 .parallax-1 {
   background-image:url(/static/omsharavanabhavamatham-org/sb-foundation.webp);
   min-height: 500px;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
 }
 .parallax-div-1 {
@@ -1000,17 +1000,13 @@ a.carousel-control.right {
   margin-top: -55px;
 }
 #carouselExample{
-  position: sticky;
-  position: -webkit-sticky;
-  top: -50px;
+  position: relative;
   color: #fff;
   text-align: center;
 }
 .babajibck, .sevabck, .eventbck, .projectbck,.nopadding, .howtoreachbck, 
 .background4, .foot-bk2, .mapbck, .videobck,.chantingbck{
-  position: sticky;
-  position: -webkit-sticky;
-  top: -50px;
+  position: relative;
   color: #fff;
   text-align: center;
 }
@@ -2205,9 +2201,7 @@ img.logotext {
 
 .babajibck, .sevabck, .eventbck, .projectbck,.nopadding, .howtoreachbck, 
 .background4, .foot-bk2, .mapbck, .videobck,.chantingbck{
-  position: sticky;
-  position: -webkit-sticky;
-  top: -160px;
+  position: relative;
   color: #fff;
   text-align: center;
 }

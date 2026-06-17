@@ -12,7 +12,7 @@ function closePopup() {
   }
 
   var section = document.querySelector(".seva-section__inner");
-  var cards = document.querySelectorAll(".seva-section .seva-card");
+  var cards = document.querySelectorAll(".seva-section .seva-showcase__card");
   if (!section || !cards.length) {
     return;
   }
@@ -23,14 +23,33 @@ function closePopup() {
     if (header) {
       header.classList.add("is-in-view");
     }
-    cards.forEach(function (card) {
-      card.classList.add("is-in-view");
-    });
+
+    var centerCard = document.querySelector(".seva-showcase__card--featured");
+    var leftCard = document.querySelector(".seva-showcase__card:nth-child(1)");
+    var rightCard = document.querySelector(".seva-showcase__card:nth-child(3)");
+
+    if (centerCard) {
+      centerCard.classList.add("is-in-view");
+    }
+
+    window.setTimeout(function () {
+      if (leftCard) {
+        leftCard.classList.add("is-in-view");
+      }
+      if (rightCard) {
+        rightCard.classList.add("is-in-view");
+      }
+    }, 450);
   }
 
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
-    revealCards();
+    if (header) {
+      header.classList.add("is-in-view");
+    }
+    cards.forEach(function (card) {
+      card.classList.add("is-in-view");
+    });
     return;
   }
 
@@ -274,6 +293,36 @@ function closePopup() {
   });
 
   audio.addEventListener("ended", resetButtons);
+})();
+
+(function initSocialImpactReveal() {
+  if (!document.body.classList.contains("home-page")) {
+    return;
+  }
+
+  var content = document.querySelector(".social-impact-hero__content");
+  if (!content) {
+    return;
+  }
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    content.classList.add("is-in-view");
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  observer.observe(content);
 })();
 
 (function initHomeDesktopDropdowns() {
