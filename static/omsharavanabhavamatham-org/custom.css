@@ -1172,7 +1172,7 @@ a.carousel-control.right {
 .innermotif{
   height: auto;
   z-index: 2;
-  margin-top: -113px;
+  margin-top: -52px;
   position: absolute;
 }
 .innerhead h1 {
@@ -1303,6 +1303,12 @@ a.carousel-control.right {
 }
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #fff;
+}
+/* Bootstrap 3 accordion toggles `.in`; Bootstrap 5 CSS expects `.show` */
+.panel-group .panel-collapse.collapse.in,
+.panel-group .panel-collapse.collapse.show {
+  display: block;
+  height: auto;
 }
 .panel-body h4{
   font-size: 17px;
@@ -2118,7 +2124,7 @@ code {
   margin-top: -62px !important;
 }
 .innermotif {
-  margin-top: -94px!important;
+  margin-top: -52px!important;
 }
 .golden-message .fa-quote-right {
   margin-right: 0px !important;
@@ -2239,7 +2245,7 @@ img.logotext {
 }
 
 .innermotif{
-  margin-top: -94px;
+  margin-top: -52px;
 }
 .innerhead h1 {
     font-size: 28px;
@@ -2481,7 +2487,7 @@ img.logotext{
   margin-top: -18px !important;
 }
 .innermotif {
-    margin-top: -93px!important;
+    margin-top: -52px!important;
 }
 .sidebarright {
     margin-top: 70px;

@@ -1,631 +1,826 @@
-    <!DOCTYPE html>
-    <html lang="en">
-
-                <head>
-                    <meta charset="utf-8" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <title>Disaster Relief</title>
-                    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-                    <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css" />
-                </head>
-
-
-        <body>
-                <header>
-                    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1.0">
-<title>Omsarvanabhavamatham</title>
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet">
-<!--<link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">-->
-<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">-->
-<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.1/fullcalendar.print.css" media="print" /> -->
-<!--<link rel="stylesheet" href="/static/omsharavanabhavamatham-org/slick.css">-->
-<link rel="stylesheet" href="static/omsharavanabhavamatham-org/custom.css">
-<div class="container-fluid top">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="static/omsharavanabhavamatham-org/logo.webp" class="img-fluid" alt="logo">
-                        <h3>Shree Sharvana Baba Foundation</h3>
-                    </a>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-5 col-xs-12 hidden-xs">
-                    <nav>
-                        <ul class="pushNav js-topPushNav">
-                            <li class="closeLevel js-closeLevelTop hdg">× close</li>
-                            <li>
-                                <a href="disaster-relief.html">
-                                    <i class="fa fa-home"></i>&nbsp; HOME
-                                </a>
-                            </li>
-                            <!--<li><a href="disaster-relief.html">ABOUT US</a></li>-->
-                            <li>
-                                <div class="openLevel js-openLevel">
-                                    SRI SHARVANA BABA
-                                    <i class="fa fa-chevron-right"></i>
-                                </div>
-                                <ul class="pushNav pushNav_level js-pushNavLevel">
-                                    <li class="closeLevel js-closeLevel hdg">
-                                        <i class="fa fa-chevron-left"></i>
-                                        Go Back
-                                    </li>
-                                    <li>
-                                        <a href="birth.html">Babaji's Birth</a>
-                                    </li>
-                                    <li>
-                                        <a href="education.html">Education</a>
-                                    </li>
-                                    <li>
-                                        <a href="growing-years.html">Growing Years</a>
-                                    </li>
-                                    <li>
-                                        <a href="babaji-mission.html">Babaji's Mission</a>
-                                    </li>
-                                    <li>
-                                        <a href="life-of-babaji.html">Life Of Babaji</a>
-                                    </li>
-                                    <li>
-                                        <a href="devotees-experience.html">Devotee experiences</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="openLevel js-openLevel">
-                                    MATHAM
-                                    <i class="fa fa-chevron-right"></i>
-                                </div>
-                                <ul class="pushNav pushNav_level js-pushNavLevel">
-                                    <li class="closeLevel js-closeLevel hdg">
-                                        <i class="fa fa-chevron-left"></i>
-                                        Go Back
-                                    </li>
-                                    <li>
-                                        <a href="om-sharvanababa-matham.html">Om Sharvanababa Matham</a>
-                                    </li>
-                                    <li>
-                                        <a href="history.html">History</a>
-                                    </li>
-                                    <li>
-                                        <a href="founder.html">Founder</a>
-                                    </li>
-                                    <li>
-                                        <a href="vision.html">Vision</a>
-                                    </li>
-                                    <li>
-                                        <a href="sri-saraswathi-matapam.html">Sri Saraswathi Mantapam
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-lakshami-mantapam.html">Sri Lakshmi Mantapam</a>
-                                    </li>
-                                    <li>
-                                        <a href="satchitanandam-hall.html">Satchitanandam Hall</a>
-                                    </li>
-                                    <li>
-                                        <a href="guest-houses.html">Guest Houses</a>
-                                    </li>
-                                    <li>
-                                        <a href="kitchen-dining-hall.html">Kitchen & Dining Hall</a>
-                                    </li>
-                                    <li>
-                                        <a href="admin-block.html">Admin Block</a>
-                                    </li>
-                                    <li>
-                                        <a href="cloak-room.html">Cloak Room</a>
-                                    </li>
-                                    <li>
-                                        <a href="parking.html">Parking</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="openLevel js-openLevel">
-                                    TEMPLES
-                                    <i class="fa fa-chevron-right"></i>
-                                </div>
-                                <ul class="pushNav pushNav_level js-pushNavLevel">
-                                    <li class="closeLevel js-closeLevel hdg">
-                                        <i class="fa fa-chevron-left"></i>
-                                        Go Back
-                                    </li>
-                                    <li>
-                                        <a href="sri-maha-ganapathi-temple.html">Sri Maha Ganapathi Temple
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-kalyana-subramanya-temple.html">Sri Kalyana Subramanya Temple
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-shirdi-sai-baba.html">Sri Shirdi Sai Baba Temple
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-siddars.html">Sri Siddars</a>
-                                    </li>
-                                    <li>
-                                        <a href="copper-sri-shiva-linga.html">Copper Sri Shiva Linga</a>
-                                    </li>
-                                    <li>
-                                        <a href="sri-dakshinamoorthy-temple.html">Sri Dakshinamoorthy Temple
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-kala-bhairava-temple.html">Sri Kala Bhairava Temple
-                                        </a
-                    >
-                                    </li>
-                                    <li>
-                                        <a href="sri-naga-kshethra.html">Sri Naga Kshethra</a>
-                                    </li>
-                                    <li>
-                                        <a href="sri-shanishwara-temple.html">Sri Shanishwara Kshethra
-                                        </a
-                    >
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="pooja-sevas.html">POOJA</a>
-                            </li>
-                            <li>
-                                <a href="social-impact.html">SOCIAL IMPACT</a>
-                            </li>
-                            <li>
-                                <a href="ashramas-and-centres.html">ASHRAMS & CENTRES</a>
-                            </li>
-                            <li>
-                                <a href="contact-us.html">CONTACT US</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="wrapper">
-                        <div class="burger js-menuToggle">
-                            <button
-                                type="button"
-                                id="nav-icon1"
-                                class="navbar-toggle x collapsed navbar-toggler"
-                                data-toggle="collapse"
-                                data-target="#navbarsExampleDefault"
-                            >
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                    <span class="screen"></span>
-                </div>
-            </div>
-        </div>
-    </nav>
-</div>
-<!--<div class="zeynep">
-	<ul>
-		<li><a href="disaster-relief.html">ABOUT US</a></li>
-		<li class="has-submenu">
-			<a href="disaster-relief.html" data-submenu="babaji">SRI SHARVANA BABA</a>
-			<div id="babaji" class="submenu">
-				<div class="submenu-header" data-submenu-close="babaji">
-				<a href="disaster-relief.html">Main Menu</a>
-				</div>
-				<ul>
-				<li><a href="birth.html">Birth</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="growing-years.html">Growing Years</a></li>
-                <li><a href="babaji-mission.html">Babaji's Mission</a></li>
-                <li><a href="life-of-babaji.html">Life Of Babaji</a></li>
-               <li><a href="devotees-experience.html">Devotee experiences</a></li>
-				</ul>
-			</div>
-		</li>
-
-		<li class="has-submenu">
-			<a href="disaster-relief.html" data-submenu="Matham">MATHAM</a>
-			<div id="Matham" class="submenu scrollbar">
-				<div class="submenu-header" data-submenu-close="Matham">
-				<a href="disaster-relief.html">Main Menu</a>
-				</div>
-				 <label>Peedam</label> 
-				<ul>
-					<li><a href="om-sharvanababa-matham.html">Om Sharavanabhava Matham</a></li>
-                    <li><a href="history.html">History</a></li>
-                    <li><a href="founder.html">Founder</a></li>
-                    <li><a href="vision.html">Vision</a></li>
-                    <li><a href="sri-saraswathi-matapam.html">Sri Saraswathi Mantapam</a></li>
-                    <li><a href="sri-lakshami-mantapam.html">Sri Lakshmi Mantapam</a></li>
-                    <li><a href="satchitanandam-hall.html">Satchitanandam Hall</a></li>
-                    <li><a href="guest-houses.html">Guest Houses</a></li>
-                    <li><a href="kitchen-dining-hall.html">Kitchen & Dining Hall</a></li>
-                    <li><a href="admin-block.html">Admin Block</a></li>
-                    <li><a href="cloak-room.html">Cloak Room</a></li>
-                    <li><a href="parking.html">Parking</a></li>
-				</ul>
-			</div>
-		</li>
-
-		<li class="has-submenu">
-			<a href="disaster-relief.html" data-submenu="Temples">TEMPLES</a>
-			<div id="Temples" class="submenu scrollbar">
-				<div class="submenu-header" data-submenu-close="Temples">
-				<a href="disaster-relief.html">Main Menu</a>
-				</div>
-				<label>SRIPURAM</label>
-				<ul>
-				  <li><a href="sri-maha-ganapathi-temple.html">Sri Maha Ganapathi Temple</a></li>
-		          <li><a href="sri-kalyana-subramanya-temple.html">Sri Kalyana Subramanya Temple</a>
-		          </li>
-		          <li><a href="sri-shirdi-sai-baba.html">Sri Shirdi Sai Baba Temple</a></li>
-		          <li><a href="sri-siddars.html">Sri Siddars </a></li>
-		          <li><a href="copper-sri-shiva-linga.html">Copper Sri Shiva Linga </a></li>
-		          <li><a href="sri-dakshinamoorthy-temple.html">Sri Dakshinamoorthy Temple </a></li>
-		          <li><a href="sri-kala-bhairava-temple.html">Sri Kala Bhairava Temple </a></li>
-		          <li><a href="sri-naga-kshethra.html">Sri Naga Kshethra </a></li>
-		          <li><a href="sri-shanishwara-temple.html">Sri Shanishwara Kshethra </a></li> 
-				</ul>
-			</div>
-		</li>
-
-		<li><a href="pooja.html">POOJA</a></li>
-		<li><a href="social-impact.html">SOCIAL IMPACT</a></li>
-		<li><a href="ashramas-and-centres.html">ASHRAMS & CENTRES</a></li>
-	</ul>
-</div>-->
-                </header>
-            <div class="container-fluid p-0">
-    <div class="inner-banner">
-        <img src="static/omsharavanabhavamatham-org/inner-page-banner.webp" alt="babaji-birth" class="img-fluid">
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="bredcrumb">
-                    <p>
-                        <a href="index.html">Home</a>
-                        <span> ></span>
-                        <a href="index.html">Social Impact</a>
-                        <span> ></span>
-                        <span class="bred-active">
-                            <a href="index.html">Disaster Relief</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="innermotif">
-        <img src="static/omsharavanabhavamatham-org/banner-motif.webp" class="img-fluid" alt="motif">
-    </div>
-</div>
-<div class="outer-container">
-    <div class="container">
-        <div class="sidebarleft innerhead sevainner">
-            <h1>Disaster Relief</h1>
-            <div class="Inner_Page_Motif">
-                <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="img-fluid" alt="Heading_Motif">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                <div class="page-content">
-                    <div id="carouselExample" class="carousel slide">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="static/omsharavanabhavamatham-org/disaster-relief.webp" class="img-fluid" alt="anna-dhaamam">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="static/omsharavanabhavamatham-org/disaster-relief-1.webp" class="img-fluid" alt="anna-dhaamam">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="static/omsharavanabhavamatham-org/disaster-relief-2.webp" class="img-fluid" alt="anna-dhaamam">
-                            </div>
-                        </div>
-                        <button
-                            class="carousel-control-prev"
-                            type="button"
-                            data-bs-target="#carouselExample"
-                            data-bs-slide="prev"
-                        >
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button
-                            class="carousel-control-next"
-                            type="button"
-                            data-bs-target="#carouselExample"
-                            data-bs-slide="next"
-                        >
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                <div class=" sevainner">
-                    <p>During natural calamities and man-made disasters in any part of the world, Sri Babaji’s devotees and teams of volunteers act swiftly to conjure support, if possible also visit the location to serve the needy.</p>
-                    <p>During natural disasters in Kerala, Tamilnadu, Srilanka teams of volunteers under instructions from Sri Babaji served people in distress by providing various types of aids, including, freshly prepared food, grocery kits, livelihood essentials, medicines, relief materials, life-saving kits, etc.,</p>
-                    <p>On the event of COVID -19 crisis, teams of volunteers are working every day to serve the needy with fresh food packed and served to people in distress, groceries to the community kitchens in two panchayats near Sreekrishnapuram in Kerala, financial assistance to hundreds of families to meet their needs, etc.,</p>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class=" sevainner">
-                    &nbsp;
-                    <p>An appeal to devotees globally to contribute to disaster relief, especially now during the COVID-19 crisis, as thousands of families of labourers are in distress.</p>
-                    <p>
-                        An appeal to devotees globally to contribute to disaster relief, especially now during the COVID-19 crisis, as thousands of families of labourers are in distress. kindly click on this link to
-                        <a href="payment/razorpay/checkout/catalogue/disaster-relief.html">donate online now</a>
-                        .
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-3 clo-sm-3 col-xs-12">
-                <div class="sidebarright">
-                    <div class="Bookapooja-seva" data-aos="fade-up">
-                        <img src="static/omsharavanabhavamatham-org/book-a-pooja.webp" class="img-fluid" alt="bookapooja">
-                        <h4>Book a Pooja / Sevas</h4>
-                        <div class="babaji-button sidepanel" data-aos="fade-up" data-aos-duration="3000">
-                            <a href="pooja.html">
-                                more
-                                <span class="chevron right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 clo-sm-3 col-xs-12">
-                <div class="sidebarright">
-                    <div class="Donateforacause" data-aos="fade-up">
-                        <img src="static/omsharavanabhavamatham-org/donate.webp" class="img-fluid" alt="bookapooja">
-                        <h4>Donate For a Cause</h4>
-                        <div class="babaji-button sidepanel" data-aos="fade-up" data-aos-duration="3000">
-                            <a href="donate-for-a-cause.html">
-                                more
-                                <span class="chevron right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 clo-sm-3 col-xs-12">
-                <div class="sidebarright">
-                    <div class="Devotee-Experiences" data-aos="fade-up">
-                        <img src="static/omsharavanabhavamatham-org/volunteer.webp" class="img-fluid" alt="volunteer">
-                        <h4>Become a Volunteer</h4>
-                        <div class="babaji-button sidepanel" data-aos="fade-up" data-aos-duration="3000">
-                            <a href="become-a-volunteer.html">
-                                more
-                                <span class="chevron right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 clo-sm-3 col-xs-12">
-                <div class="sidebarright">
-                    <div class="Social-impact" data-aos="fade-up">
-                        <img src="static/omsharavanabhavamatham-org/social-impact.webp" class="img-fluid" alt="bookapooja">
-                        <h4>Social Impact</h4>
-                        <div class="babaji-button sidepanel" data-aos="fade-up" data-aos-duration="3000">
-                            <a href="social-impact.html">
-                                more
-                                <span class="chevron right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-                <footer>
-                    <div class="outer-container nopadding fotimg">
-    <img src="static/omsharavanabhavamatham-org/footer.webp" class="img-fluid" alt="footer">
-</div>
-<div class="outer-container background4">
-    <div class="container">
-        <div class="footer">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm">
-                    <!--<div class="appicon">
-              <ul>
-                <li>
-                  <p>Download Mobile Apps</p>
-                    <div class="android">
-                      <a href="disaster-relief.html" target="_blank"><img src="/static/omsharavanabhavamatham-org/android.png" class="img-fluid" alt="footer"></a>
-                    </div>
-                    <div class="ios">
-                      <a href="disaster-relief.html" target="_blank"><img src="/static/omsharavanabhavamatham-org/iOS.png" class="img-fluid" alt="footer"></a>
-                    </div>
-                  </li>
-              </ul>
-            </div>--></div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="list1">
-                        <ul>
-                            <li>
-                                <a href="disaster-relief.html">Site Map</a>
-                            </li>
-                            <li>
-                                <a href="disaster-relief.html">Divine Voice</a>
-                            </li>
-                            <li>
-                                <a href="birth.html">Shri Sharvana Baba</a>
-                            </li>
-                            <li>
-                                <a href="om-sharvanababa-matham.html">Matham</a>
-                            </li>
-                            <li>
-                                <a href="ashramas-and-centres.html">Ashrams &amp; Centers</a>
-                            </li>
-                            <li>
-                                <a href="sri-maha-ganapathi-temple.html">Temples</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="list1">
-                        <ul>
-                            <li>
-                                <a href="social-impact.html">Social Impact</a>
-                            </li>
-                            <li>
-                                <a href="special-instructions.html">Special Instructions</a>
-                            </li>
-                            <li>
-                                <a href="youth-wing.html">Youth Wing</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="list3">
-                        <!-- <ul>
-			            <li><a href="contact-us.html">Contact Us</a></li>
-			            <li> | </li>
-			            <li><a href="pooja-sevas.html">Book a Pooja</a></li>
-			            <li> | </li>
-			            <li><a href="social-impact.html">Donate For a Cause</a></li>
-			            
-			         </ul> -->
-                        <p>
-                            <a href="contact-us.html">Contact Us</a>
-                            <span> |</span>
-                            <a href="pooja-sevas.html">Book Pooja</a>
-                            <span> |</span>
-                            <a href="social-impact.html">Donate Now</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="list2">
-                        <ul>
-                            <li>
-                                <a href="privacy-policy.html">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="terms-and-conditions.html">Terms & Conditions</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/sharavanababafoundation" target="_blank">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@sharavanababa" target="_blank">
-                            <i class="fa fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="outer-container foot-bk2">
-    <div class="container">
-        <div class="footer2">
-            <div class="row">
-                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-                    <p>© 2026 Shree Sharvana Baba Foundation. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-rt">
-                        <p>
-                            Design :
-                            <a href="http://lumos.in/" target="_blank">Lumos.in</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<a href="index.html" id="return-to-top" class="demo">
-    <i class="fa fa-angle-double-up"></i>
-</a>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/omsharavanabhavamatham-org/bootstrapmin.js"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
-<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/slick.js"></script>-->
-<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/validate.js"></script>-->
-<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/unobrustive.js"></script>-->
-<!--<script type="text/javascript" src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>-->
-<!--<script src="/static/omsharavanabhavamatham-org/jqueryzeynepmin.js"></script>-->
-<script type="text/javascript" src="static/omsharavanabhavamatham-org/custom.js"></script>
-<!-- <script>
-    $(function() {
-			
-			var zeynep = $('.zeynep').zeynep({
-        onClosed: function () {
-					
-					$("body main").attr("style", "");
-
-					console.log('the side menu is closed.');
-        },
-        onOpened: function () {
-					
-					$("body main").attr("style", "pointer-events: none;");
-
-					console.log('the side menu is opened.');
-        }
-    	});
-
-			
-			$(".zeynep-overlay").click(function () {
-				zeynep.close();
-			});
-
-			
-			$("nav .navbar-toggler").click(function () {
-				if ($("html").hasClass("zeynep-opened")) {
-					zeynep.close();
-				} else {
-					zeynep.open();
-				}
-			});
-		});
-  </script>-->
-                </footer>
-            
-
-                <script src="lib/jquery/dist/jquery.min.js"></script>
-                <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-                <script>
-                    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-                    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))    
-                </script>
-        </body>
-
-    </html>
-<!--    *******************************************************************  -->
-<!--    * Website deployed using [ The Guild ] platform by [ PASKAN ]·····*  -->
-<!--    * All rights reserved - paskan.com································*  -->
-<!--    * Like to work with us? mail to info@·····························*  -->
-<!--    * Want to host your website on The Guild platform? mail to info@··*  -->
-<!--    *******************************************************************  -->
- 
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+
+
+                <head>
+
+                    <meta charset="utf-8" />
+
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+                    <title>Disaster Relief</title>
+
+                    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+
+                    <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css" />
+
+                </head>
+
+
+
+
+
+        <body>
+
+                <header>
+
+                    <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+
+<title>Omsarvanabhavamatham</title>
+
+<link
+
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+
+    rel="stylesheet"
+
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+
+    crossorigin="anonymous"
+
+>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet">
+
+<!--<link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">-->
+
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />-->
+
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.css">-->
+
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.9.1/fullcalendar.print.css" media="print" /> -->
+
+<!--<link rel="stylesheet" href="/static/omsharavanabhavamatham-org/slick.css">-->
+
+<link rel="stylesheet" href="static/omsharavanabhavamatham-org/custom.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lato:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-header.css">
+<link rel="stylesheet" href="inner-seva.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="footer-palace.css">
+
+<div class="container-fluid top site-header">
+
+            <div class="site-navbar">
+
+                <div class="container site-navbar__container">
+
+                    <a class="site-navbar__brand" href="index.html">
+                        <img src="static/omsharavanabhavamatham-org/logo.webp" alt="Sri Sharvana Baba Foundation logo">
+                        <span class="site-navbar__brand-text">
+                            <span class="site-navbar__brand-name">Sri Sharvana Baba</span>
+                            <span class="site-navbar__brand-sub">
+                                <span class="site-navbar__brand-flourish"></span>
+                                Foundation
+                                <span class="site-navbar__brand-flourish"></span>
+                            </span>
+                        </span>
+                    </a>
+
+                    <nav class="site-navbar__menu">
+
+                        <ul class="pushNav js-topPushNav site-navbar__links">
+
+                                    <li class="closeLevel js-closeLevelTop hdg">× close</li>
+
+                                    <li>
+
+                                        <a href="index.html">
+
+                                            <i class="fa fa-home"></i>&nbsp; HOME
+
+                                        </a>
+
+                                    </li>
+
+                                    <!--<li><a href="index.html">ABOUT US</a></li>-->
+
+                                    <li>
+
+                                        <div class="openLevel js-openLevel">
+
+                                            SRI SHARVANA BABA
+
+                                            <i class="fa fa-chevron-right"></i>
+
+                                        </div>
+
+                                        <ul class="pushNav pushNav_level js-pushNavLevel">
+
+                                            <li class="closeLevel js-closeLevel hdg">
+
+                                                <i class="fa fa-chevron-left"></i>
+
+                                                Go Back
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="birth.html">Babaji's Birth</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="education.html">Education</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="growing-years.html">Growing Years</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="babaji-mission.html">Babaji's Mission</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="life-of-babaji.html">Life Of Babaji</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="devotees-experience.html">Devotee experiences</a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="openLevel js-openLevel">
+
+                                            MATHAM
+
+                                            <i class="fa fa-chevron-right"></i>
+
+                                        </div>
+
+                                        <ul class="pushNav pushNav_level js-pushNavLevel">
+
+                                            <li class="closeLevel js-closeLevel hdg">
+
+                                                <i class="fa fa-chevron-left"></i>
+
+                                                Go Back
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="om-sharvanababa-matham.html">Om Sharvanababa Matham</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="history.html">History</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="founder.html">Founder</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="vision.html">Vision</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-saraswathi-matapam.html">Sri Saraswathi Mantapam
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-lakshami-mantapam.html">Sri Lakshmi Mantapam</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="satchitanandam-hall.html">Satchitanandam Hall</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="guest-houses.html">Guest Houses</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="kitchen-dining-hall.html">Kitchen & Dining Hall</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="admin-block.html">Admin Block</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="cloak-room.html">Cloak Room</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="parking.html">Parking</a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="openLevel js-openLevel">
+
+                                            TEMPLES
+
+                                            <i class="fa fa-chevron-right"></i>
+
+                                        </div>
+
+                                        <ul class="pushNav pushNav_level js-pushNavLevel">
+
+                                            <li class="closeLevel js-closeLevel hdg">
+
+                                                <i class="fa fa-chevron-left"></i>
+
+                                                Go Back
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-maha-ganapathi-temple.html">Sri Maha Ganapathi Temple
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-kalyana-subramanya-temple.html">Sri Kalyana Subramanya
+                                                    Temple
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-shirdi-sai-baba.html">Sri Shirdi Sai Baba Temple
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-siddars.html">Sri Siddars</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="copper-sri-shiva-linga.html">Copper Sri Shiva Linga</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-dakshinamoorthy-temple.html">Sri Dakshinamoorthy Temple
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-kala-bhairava-temple.html">Sri Kala Bhairava Temple
+
+                                                </a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-naga-kshethra.html">Sri Naga Kshethra</a>
+
+                                            </li>
+
+                                            <li>
+
+                                                <a href="sri-shanishwara-temple.html">Sri Shanishwara Kshethra
+
+                                                </a>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href="social-impact.html">SOCIAL IMPACT</a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href="ashramas-and-centres.html">ASHRAMS & CENTRES</a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href="contact-us.html">CONTACT US</a>
+
+                                    </li>
+
+                                </ul>
+
+                    </nav>
+
+                    <div class="site-navbar__aside">
+                        <div class="wrapper site-navbar__burger-wrap">
+                            <div class="burger js-menuToggle">
+                                <button type="button" id="nav-icon1"
+                                    class="navbar-toggle x collapsed navbar-toggler" data-toggle="collapse"
+                                    data-target="#navbarsExampleDefault">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <span class="screen"></span>
+                    </div>
+
+                </div>
+
+            </div>
+                </header>
+
+            <div class="container-fluid p-0">
+
+    <div class="inner-banner">
+
+        <img src="static/omsharavanabhavamatham-org/inner-page-banner.webp" alt="babaji-birth" class="img-fluid">
+
+    </div>
+
+</div>
+
+<div class="container-fluid"><div class="innermotif">
+
+        <img src="static/omsharavanabhavamatham-org/banner-motif.webp" class="img-fluid" alt="motif">
+
+    </div>
+
+</div>
+
+<div class="outer-container inner-page-body">
+
+    <div class="container">
+
+        <div class="sidebarleft innerhead sevainner">
+
+            <h1>Disaster Relief</h1>
+
+            <div class="Inner_Page_Motif">
+
+                <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="img-fluid" alt="Heading_Motif">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+                <div class="page-content">
+
+                    <div id="carouselExample" class="carousel slide">
+
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+
+                                <img src="static/omsharavanabhavamatham-org/disaster-relief.webp" class="img-fluid" alt="anna-dhaamam">
+
+                            </div>
+
+                            <div class="carousel-item">
+
+                                <img src="static/omsharavanabhavamatham-org/disaster-relief-1.webp" class="img-fluid" alt="anna-dhaamam">
+
+                            </div>
+
+                            <div class="carousel-item">
+
+                                <img src="static/omsharavanabhavamatham-org/disaster-relief-2.webp" class="img-fluid" alt="anna-dhaamam">
+
+                            </div>
+
+                        </div>
+
+                        <button
+
+                            class="carousel-control-prev"
+
+                            type="button"
+
+                            data-bs-target="#carouselExample"
+
+                            data-bs-slide="prev"
+
+                        >
+
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+                            <span class="visually-hidden">Previous</span>
+
+                        </button>
+
+                        <button
+
+                            class="carousel-control-next"
+
+                            type="button"
+
+                            data-bs-target="#carouselExample"
+
+                            data-bs-slide="next"
+
+                        >
+
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+                            <span class="visually-hidden">Next</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+
+                <div class=" sevainner">
+
+                    <p>During natural calamities and man-made disasters in any part of the world, Sri Babaji’s devotees and teams of volunteers act swiftly to conjure support, if possible also visit the location to serve the needy.</p>
+
+                    <p>During natural disasters in Kerala, Tamilnadu, Srilanka teams of volunteers under instructions from Sri Babaji served people in distress by providing various types of aids, including, freshly prepared food, grocery kits, livelihood essentials, medicines, relief materials, life-saving kits, etc.,</p>
+
+                    <p>On the event of COVID -19 crisis, teams of volunteers are working every day to serve the needy with fresh food packed and served to people in distress, groceries to the community kitchens in two panchayats near Sreekrishnapuram in Kerala, financial assistance to hundreds of families to meet their needs, etc.,</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class=" sevainner">
+
+                    &nbsp;
+
+                    <p>An appeal to devotees globally to contribute to disaster relief, especially now during the COVID-19 crisis, as thousands of families of labourers are in distress.</p>
+
+                    <p>
+
+                        An appeal to devotees globally to contribute to disaster relief, especially now during the COVID-19 crisis, as thousands of families of labourers are in distress. kindly click on this link to
+
+                        <a href="payment/razorpay/checkout/catalogue/disaster-relief.html">donate online now</a>
+
+                        .
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="outer-container inner-seva" aria-label="Serve, support, and experience">
+    <div class="container">
+        <div class="inner-seva__showcase" role="list">
+            <a href="pooja-sevas.html" class="inner-seva__card" role="listitem" aria-label="Book a Pooja">
+                <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="inner-seva__media"
+                    alt="Priest performing aarti at the temple shrine">
+                <span class="inner-seva__shade" aria-hidden="true"></span>
+                <span class="inner-seva__label">
+                    Book a Pooja
+                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
+                </span>
+            </a>
+
+            <a href="social-impact.html" class="inner-seva__card inner-seva__card--featured" role="listitem"
+                aria-label="Donate for a Cause">
+                <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="inner-seva__media"
+                    alt="Serving food to devotees as part of annadanam">
+                <span class="inner-seva__shade inner-seva__shade--warm" aria-hidden="true"></span>
+                <span class="inner-seva__label">
+                    Donate for a Cause
+                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
+                </span>
+            </a>
+
+            <a href="devotees-experience.html" class="inner-seva__card" role="listitem"
+                aria-label="Devotee Experience">
+                <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="inner-seva__media"
+                    alt="Devotee in prayer before the illuminated temple gopuram at night">
+                <span class="inner-seva__shade" aria-hidden="true"></span>
+                <span class="inner-seva__label">
+                    Devotee Experience
+                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-palace" id="siteFooter">
+
+        <div class="footer-palace__inner">
+            <div class="footer-palace__grid">
+
+                <nav class="footer-palace__col footer-palace__col--nav" aria-label="Explore">
+                    <div class="footer-palace__col-head">
+                        <img src="static/omsharavanabhavamatham-org/lotus.png" class="footer-palace__lotus" alt="" aria-hidden="true">
+                        <h3 class="footer-palace__title">Explore</h3>
+                        <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__flourish" alt="" aria-hidden="true">
+                    </div>
+                    <ul class="footer-palace__links">
+                        <li><a href="index.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="map"></i></span><span>Site Map</span></a></li>
+                        <li><a href="index.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="mic"></i></span><span>Divine Voice</span></a></li>
+                        <li><a href="birth.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="user-round"></i></span><span>Shri Sharvana Baba</span></a></li>
+                        <li><a href="om-sharvanababa-matham.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="landmark"></i></span><span>Matham</span></a></li>
+                        <li><a href="ashramas-and-centres.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span><span>Ashrams &amp; Centres</span></a></li>
+                        <li><a href="sri-maha-ganapathi-temple.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="church"></i></span><span>Temples</span></a></li>
+                    </ul>
+                </nav>
+
+                <nav class="footer-palace__col footer-palace__col--nav" aria-label="Engage">
+                    <div class="footer-palace__col-head">
+                        <img src="static/omsharavanabhavamatham-org/lotus.png" class="footer-palace__lotus" alt="" aria-hidden="true">
+                        <h3 class="footer-palace__title">Engage</h3>
+                        <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__flourish" alt="" aria-hidden="true">
+                    </div>
+                    <ul class="footer-palace__links">
+                        <li><a href="social-impact.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span><span>Social Impact</span></a></li>
+                        <li><a href="special-instructions.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="file-text"></i></span><span>Special Instructions</span></a></li>
+                        <li><a href="youth-wing.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="users"></i></span><span>Youth Wing</span></a></li>
+                    </ul>
+                </nav>
+
+                <div class="footer-palace__col footer-palace__col--hero">
+                    <img src="static/omsharavanabhavamatham-org/logo.png?v=3" class="footer-palace__logo" alt="Om Sharavanabhava Matham emblem">
+                    <img src="static/omsharavanabhavamatham-org/footer-hero-ornament.svg" class="footer-palace__hero-ornament" alt="" aria-hidden="true">
+                </div>
+
+                <div class="footer-palace__col footer-palace__col--policies-cta">
+                    <div class="footer-palace__policies-cta-wrap">
+                        <nav class="footer-palace__policies" aria-label="Policies">
+                            <div class="footer-palace__col-head">
+                                <img src="static/omsharavanabhavamatham-org/lotus.png" class="footer-palace__lotus" alt="" aria-hidden="true">
+                                <h3 class="footer-palace__title">Policies</h3>
+                                <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__flourish" alt="" aria-hidden="true">
+                            </div>
+                            <ul class="footer-palace__links">
+                                <li><a href="privacy-policy.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="shield"></i></span><span>Privacy Policy</span></a></li>
+                                <li><a href="terms-and-conditions.html"><span class="footer-palace__link-icon" aria-hidden="true"><i data-lucide="scroll-text"></i></span><span>Terms &amp; Conditions</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="footer-palace__col footer-palace__col--follow">
+                    <div class="footer-palace__col-head">
+                        <img src="static/omsharavanabhavamatham-org/lotus.png" class="footer-palace__lotus" alt="" aria-hidden="true">
+                        <h3 class="footer-palace__title">Follow Us</h3>
+                        <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__flourish" alt="" aria-hidden="true">
+                    </div>
+                    <div class="footer-palace__social">
+                        <a href="https://www.facebook.com/sharavanababafoundation" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@sharavanababa" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                    <div class="footer-palace__cta-stack footer-palace__cta-stack--follow">
+                        <a href="contact-us.html" class="footer-palace__cta">
+                            <span class="footer-palace__cta-icon" aria-hidden="true"><i data-lucide="phone"></i></span>
+                            <span class="footer-palace__cta-label">Contact Us</span>
+                            <span class="footer-palace__cta-chevron" aria-hidden="true"><i data-lucide="chevron-right"></i></span>
+                        </a>
+                        <a href="pooja-sevas.html" class="footer-palace__cta">
+                            <span class="footer-palace__cta-icon" aria-hidden="true"><i data-lucide="calendar-days"></i></span>
+                            <span class="footer-palace__cta-label">Book Pooja</span>
+                            <span class="footer-palace__cta-chevron" aria-hidden="true"><i data-lucide="chevron-right"></i></span>
+                        </a>
+                        <a href="social-impact.html" class="footer-palace__cta">
+                            <span class="footer-palace__cta-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span>
+                            <span class="footer-palace__cta-label">Donate Now</span>
+                            <span class="footer-palace__cta-chevron" aria-hidden="true"><i data-lucide="chevron-right"></i></span>
+                        </a>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-palace__bar">
+           
+            <div class="footer-palace__bar-inner">
+                <div class="footer-palace__copyright-wrap">
+                    <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__bar-motif" alt="" aria-hidden="true">
+                    <p class="footer-palace__copyright">&copy; 2026 Shree Sharvana Baba Foundation. All Rights Reserved.</p>
+                    <img src="static/omsharavanabhavamatham-org/footer-flourish.svg" class="footer-palace__bar-motif footer-palace__bar-motif--flip" alt="" aria-hidden="true">
+                </div>
+                <p class="footer-palace__credit">Design : <a href="http://lumos.in/" target="_blank" rel="noopener noreferrer">Lumos.in</a></p>
+                
+            </div>
+        </div>
+
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="static/omsharavanabhavamatham-org/bootstrapmin.js"></script>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+
+<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/slick.js"></script>-->
+
+<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/validate.js"></script>-->
+
+<!--<script type="text/javascript" src="/static/omsharavanabhavamatham-org/unobrustive.js"></script>-->
+
+<!--<script type="text/javascript" src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>-->
+
+<!--<script src="/static/omsharavanabhavamatham-org/jqueryzeynepmin.js"></script>-->
+
+<script type="text/javascript" src="static/omsharavanabhavamatham-org/custom.js"></script>
+
+<!-- <script>
+
+    $(function() {
+
+			
+
+			var zeynep = $('.zeynep').zeynep({
+
+        onClosed: function () {
+
+					
+
+					$("body main").attr("style", "");
+
+
+
+					console.log('the side menu is closed.');
+
+        },
+
+        onOpened: function () {
+
+					
+
+					$("body main").attr("style", "pointer-events: none;");
+
+
+
+					console.log('the side menu is opened.');
+
+        }
+
+    	});
+
+
+
+			
+
+			$(".zeynep-overlay").click(function () {
+
+				zeynep.close();
+
+			});
+
+
+
+			
+
+			$("nav .navbar-toggler").click(function () {
+
+				if ($("html").hasClass("zeynep-opened")) {
+
+					zeynep.close();
+
+				} else {
+
+					zeynep.open();
+
+				}
+
+			});
+
+		});
+
+  </script>-->
+
+                
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  if (window.lucide && typeof lucide.createIcons === "function") {
+    lucide.createIcons();
+  }
+</script>
+
+
+            
+
+
+
+                <script src="lib/jquery/dist/jquery.min.js"></script>
+
+                <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+                <script>
+
+                    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+
+                    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))    
+
+                </script>
+
+        </body>
+
+
+
+    </html>
+
+<!--    *******************************************************************  -->
+
+<!--    * Website deployed using [ The Guild ] platform by [ PASKAN ]·····*  -->
+
+<!--    * All rights reserved - paskan.com································*  -->
+
+<!--    * Like to work with us? mail to info@·····························*  -->
+
+<!--    * Want to host your website on The Guild platform? mail to info@··*  -->
+
+<!--    *******************************************************************  -->
+
+ 
+

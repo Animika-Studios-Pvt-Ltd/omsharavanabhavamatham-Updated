@@ -1,0 +1,241 @@
+/* Inner pages — cream content band + seva cards */
+
+:root {
+  --is-bg: #f0e6d8;
+  --is-maroon: #7d0e03;
+  --is-text: #2a1a14;
+  --is-gold: #c9a24d;
+}
+
+/* Main content block (title, image, body copy) */
+.outer-container.inner-page-body {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  overflow: hidden;
+  background: var(--is-bg) !important;
+  border: none;
+  box-shadow: none;
+  color: var(--is-text);
+}
+
+.outer-container.inner-page-body .innerhead h1,
+.outer-container.inner-page-body .innerhead h2,
+.outer-container.inner-page-body .sidebarleft h1,
+.outer-container.inner-page-body .sidebarleft h2,
+.outer-container.inner-page-body h1,
+.outer-container.inner-page-body h2,
+.outer-container.inner-page-body h3,
+.outer-container.inner-page-body h4,
+.outer-container.inner-page-body h5,
+.outer-container.inner-page-body h6 {
+  color: var(--is-maroon) !important;
+}
+
+.outer-container.inner-page-body .sevainner p,
+.outer-container.inner-page-body .sevainner ul li,
+.outer-container.inner-page-body .sevainner-intro p,
+.outer-container.inner-page-body p,
+.outer-container.inner-page-body li,
+.outer-container.inner-page-body span,
+.outer-container.inner-page-body td,
+.outer-container.inner-page-body th,
+.outer-container.inner-page-body label {
+  color: var(--is-text) !important;
+}
+
+.outer-container.inner-page-body a {
+  color: var(--is-maroon) !important;
+}
+
+.outer-container.inner-page-body a:hover,
+.outer-container.inner-page-body a:focus-visible {
+  color: var(--is-gold) !important;
+}
+
+.outer-container.inner-page-body .Inner_Page_Motif img,
+.outer-container.inner-page-body .innerhead img {
+  filter: none;
+  opacity: 1;
+}
+
+/* Seva booking cards — compact cards on cream band */
+.outer-container.inner-seva,
+.inner-seva {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 1.75rem) 0 clamp(1.75rem, 3.5vw, 2.5rem);
+  overflow: hidden;
+  background: var(--is-bg) !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* Hide heading if any page still has it */
+.inner-seva__header {
+  display: none !important;
+}
+
+.inner-seva > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.inner-seva__showcase {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  width: min(820px, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.inner-seva__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(125, 14, 3, 0.08);
+  text-decoration: none;
+  color: var(--is-maroon);
+  box-shadow: 0 8px 20px rgba(67, 6, 6, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.inner-seva__card:hover,
+.inner-seva__card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(201, 162, 77, 0.45);
+  box-shadow: 0 12px 28px rgba(67, 6, 6, 0.12);
+  color: var(--is-maroon);
+}
+
+.inner-seva__card--featured {
+  transform: none;
+}
+
+.inner-seva__card--featured:hover,
+.inner-seva__card--featured:focus-visible {
+  transform: translateY(-3px);
+}
+
+.inner-seva__media {
+  display: block;
+  width: 100%;
+  height: 132px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.inner-seva__card:hover .inner-seva__media,
+.inner-seva__card:focus-visible .inner-seva__media {
+  transform: scale(1.04);
+}
+
+.inner-seva__shade,
+.inner-seva__shade--warm {
+  display: none;
+}
+
+.inner-seva__label {
+  position: static;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 0.75rem 1rem;
+  font-family: Cinzel, Marcellus, Georgia, serif;
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--is-maroon);
+  text-shadow: none;
+  background: #fff;
+}
+
+.inner-seva__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.75rem;
+  padding: 0.38rem 0.85rem;
+  border-radius: 999px;
+  background: var(--is-maroon);
+  color: #fff;
+  font-size: 0;
+  line-height: 1;
+  transform: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.inner-seva__arrow::before {
+  content: "Book now";
+  font-family: Cinzel, Marcellus, Georgia, serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.inner-seva__card:nth-child(2) .inner-seva__arrow::before {
+  content: "Donate";
+}
+
+.inner-seva__card:nth-child(3) .inner-seva__arrow::before {
+  content: "Explore";
+}
+
+/* Pooja page — hide Book a Pooja card (only Donate + Devotee) */
+.inner-seva__showcase--no-pooja {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(540px, 100%);
+}
+
+.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(1) .inner-seva__arrow::before {
+  content: "Donate";
+}
+
+.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(2) .inner-seva__arrow::before {
+  content: "Explore";
+}
+
+.inner-seva__card:hover .inner-seva__arrow,
+.inner-seva__card:focus-visible .inner-seva__arrow {
+  transform: none;
+  background: #5a090c;
+}
+
+@media (max-width: 767px) {
+  .inner-seva__showcase {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .inner-seva__media {
+    height: 120px;
+  }
+
+  .inner-seva__card,
+  .inner-seva__card--featured,
+  .inner-seva__card--featured:hover,
+  .inner-seva__card--featured:focus-visible {
+    transform: none;
+  }
+}
