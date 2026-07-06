@@ -775,61 +775,6 @@ function refreshHubLucideIcons() {
   observer.observe(content);
 })();
 
-(function initHomeDesktopDropdowns() {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  var desktopMq = window.matchMedia("(min-width: 992px)");
-  var hideDelayMs = 280;
-  var navItems = document.querySelectorAll(
-    ".site-navbar__links > li:has(.pushNav_level)"
-  );
-
-  navItems.forEach(function (item) {
-    var menu = item.querySelector(".pushNav_level");
-    if (!menu) {
-      return;
-    }
-
-    var hideTimer;
-
-    function showMenu() {
-      if (!desktopMq.matches) {
-        return;
-      }
-      clearTimeout(hideTimer);
-      document.querySelectorAll(".pushNav_level.is-dropdown-open").forEach(function (openMenu) {
-        if (openMenu !== menu) {
-          openMenu.classList.remove("is-dropdown-open");
-        }
-      });
-      menu.classList.add("is-dropdown-open");
-    }
-
-    function scheduleHide() {
-      if (!desktopMq.matches) {
-        return;
-      }
-      hideTimer = setTimeout(function () {
-        menu.classList.remove("is-dropdown-open");
-      }, hideDelayMs);
-    }
-
-    item.addEventListener("mouseenter", showMenu);
-    item.addEventListener("mouseleave", scheduleHide);
-    menu.addEventListener("mouseenter", showMenu);
-    menu.addEventListener("mouseleave", scheduleHide);
-
-    item.addEventListener("focusin", showMenu);
-    item.addEventListener("focusout", function (event) {
-      if (!item.contains(event.relatedTarget)) {
-        scheduleHide();
-      }
-    });
-  });
-})();
-
 (function initReachLuxeSection() {
   if (!document.body.classList.contains("home-page")) {
     return;
