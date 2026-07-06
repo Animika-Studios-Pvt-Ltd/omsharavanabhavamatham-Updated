@@ -173,6 +173,53 @@
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
+.birth-article__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.sevainner-intro .birth-article__actions {
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+.birth-article__cta,
+.outer-container.inner-page-body a.birth-article__cta,
+.story-page .outer-container.inner-page-body a.birth-article__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 12rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  background: var(--birth-maroon, #7d0e03);
+  color: #fff !important;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(0.68rem, 1vw, 0.75rem) !important;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  line-height: 1;
+  box-shadow: 0 4px 14px rgba(67, 6, 6, 0.15);
+  transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.birth-article__cta:hover,
+.birth-article__cta:focus-visible,
+.outer-container.inner-page-body a.birth-article__cta:hover,
+.outer-container.inner-page-body a.birth-article__cta:focus-visible,
+.story-page .outer-container.inner-page-body a.birth-article__cta:hover,
+.story-page .outer-container.inner-page-body a.birth-article__cta:focus-visible {
+  background: var(--birth-maroon-deep, #5a090c);
+  color: #fff !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(67, 6, 6, 0.22);
+  transform: translateY(-1px);
+}
+
 .birth-article__point {
   display: flex;
   align-items: flex-start;
@@ -442,43 +489,171 @@
 .story-page.matham-page .outer-container.inner-page-body.birth-article,
 .story-page.matham-page .outer-container.inner-seva.birth-seva,
 .story-page.history-page .outer-container.inner-page-body.birth-article,
-.story-page.history-page .outer-container.inner-seva.birth-seva {
+.story-page.history-page .outer-container.inner-seva.birth-seva,
+.story-page.founder-page .outer-container.inner-page-body.birth-article,
+.story-page.founder-page .outer-container.inner-seva.birth-seva,
+.story-page.saraswathi-mantapam-page .outer-container.inner-page-body.birth-article,
+.story-page.saraswathi-mantapam-page .outer-container.inner-seva.birth-seva,
+.story-page.lakshmi-mantapam-page .outer-container.inner-page-body.birth-article,
+.story-page.lakshmi-mantapam-page .outer-container.inner-seva.birth-seva,
+.story-page.satchitanandam-hall-page .outer-container.inner-page-body.birth-article,
+.story-page.satchitanandam-hall-page .outer-container.inner-seva.birth-seva,
+.story-page.guest-houses-page .outer-container.inner-page-body.birth-article,
+.story-page.guest-houses-page .outer-container.inner-seva.birth-seva,
+.story-page.kitchen-dining-hall-page .outer-container.inner-page-body.birth-article,
+.story-page.kitchen-dining-hall-page .outer-container.inner-seva.birth-seva,
+.story-page.admin-block-page .outer-container.inner-page-body.birth-article,
+.story-page.admin-block-page .outer-container.inner-seva.birth-seva,
+.story-page.cloak-room-page .outer-container.inner-page-body.birth-article,
+.story-page.cloak-room-page .outer-container.inner-seva.birth-seva,
+.story-page.parking-page .outer-container.inner-page-body.birth-article,
+.story-page.parking-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-maha-ganapathi-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-maha-ganapathi-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-kalyana-subramanya-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-kalyana-subramanya-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-shirdi-sai-baba-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-shirdi-sai-baba-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.copper-sri-shiva-linga-page .outer-container.inner-page-body.birth-article,
+.story-page.copper-sri-shiva-linga-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-siddars-page .outer-container.inner-seva,
+.story-page.vision-page .outer-container.inner-page-body.birth-article,
+.story-page.vision-page .outer-container.inner-seva.birth-seva {
   background: #f0e6d8 !important;
 }
 
 .story-page.matham-page .outer-container.inner-page-body.birth-article,
-.story-page.history-page .outer-container.inner-page-body.birth-article {
+.story-page.history-page .outer-container.inner-page-body.birth-article,
+.story-page.founder-page .outer-container.inner-page-body.birth-article,
+.story-page.saraswathi-mantapam-page .outer-container.inner-page-body.birth-article,
+.story-page.lakshmi-mantapam-page .outer-container.inner-page-body.birth-article,
+.story-page.satchitanandam-hall-page .outer-container.inner-page-body.birth-article,
+.story-page.guest-houses-page .outer-container.inner-page-body.birth-article,
+.story-page.kitchen-dining-hall-page .outer-container.inner-page-body.birth-article,
+.story-page.admin-block-page .outer-container.inner-page-body.birth-article,
+.story-page.cloak-room-page .outer-container.inner-page-body.birth-article,
+.story-page.parking-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-maha-ganapathi-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-kalyana-subramanya-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-shirdi-sai-baba-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.copper-sri-shiva-linga-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
+.story-page.vision-page .outer-container.inner-page-body.birth-article {
   padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
 }
 
 .story-page.matham-page .birth-article__header,
-.story-page.history-page .birth-article__header {
+.story-page.history-page .birth-article__header,
+.story-page.founder-page .birth-article__header,
+.story-page.saraswathi-mantapam-page .birth-article__header,
+.story-page.lakshmi-mantapam-page .birth-article__header,
+.story-page.satchitanandam-hall-page .birth-article__header,
+.story-page.guest-houses-page .birth-article__header,
+.story-page.kitchen-dining-hall-page .birth-article__header,
+.story-page.admin-block-page .birth-article__header,
+.story-page.cloak-room-page .birth-article__header,
+.story-page.parking-page .birth-article__header,
+.story-page.sri-maha-ganapathi-temple-page .birth-article__header,
+.story-page.sri-kalyana-subramanya-temple-page .birth-article__header,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-article__header,
+.story-page.copper-sri-shiva-linga-page .birth-article__header,
+.story-page.sri-dakshinamoorthy-temple-page .birth-article__header,
+.story-page.sri-siddars-page .birth-article__header,
+.story-page.vision-page .birth-article__header {
   margin-top: clamp(1rem, 2.5vw, 1.75rem);
 }
 
-.story-page.matham-page .birth-article__wrap,
-.story-page.history-page .birth-article__wrap {
-  width: min(1100px, 88vw);
-  max-width: min(1100px, 88vw);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .story-page.matham-page .birth-article__media,
-.story-page.history-page .birth-article__media {
+.story-page.history-page .birth-article__media,
+.story-page.founder-page .birth-article__media,
+.story-page.saraswathi-mantapam-page .birth-article__media,
+.story-page.lakshmi-mantapam-page .birth-article__media,
+.story-page.satchitanandam-hall-page .birth-article__media,
+.story-page.guest-houses-page .birth-article__media,
+.story-page.kitchen-dining-hall-page .birth-article__media,
+.story-page.admin-block-page .birth-article__media,
+.story-page.cloak-room-page .birth-article__media,
+.story-page.parking-page .birth-article__media,
+.story-page.sri-maha-ganapathi-temple-page .birth-article__media,
+.story-page.sri-kalyana-subramanya-temple-page .birth-article__media,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
+.story-page.copper-sri-shiva-linga-page .birth-article__media,
+.story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+.story-page.sri-siddars-page .birth-article__media,
+.story-page.vision-page .birth-article__media {
   margin-left: 118px;
 }
 
 .story-page.matham-page .birth-article__media img,
-.story-page.history-page .birth-article__media img {
+.story-page.history-page .birth-article__media img,
+.story-page.founder-page .birth-article__media img,
+.story-page.saraswathi-mantapam-page .birth-article__media img,
+.story-page.lakshmi-mantapam-page .birth-article__media img,
+.story-page.satchitanandam-hall-page .birth-article__media img,
+.story-page.guest-houses-page .birth-article__media img,
+.story-page.kitchen-dining-hall-page .birth-article__media img,
+.story-page.admin-block-page .birth-article__media img,
+.story-page.cloak-room-page .birth-article__media img,
+.story-page.parking-page .birth-article__media img,
+.story-page.sri-maha-ganapathi-temple-page .birth-article__media img,
+.story-page.sri-kalyana-subramanya-temple-page .birth-article__media img,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-article__media img,
+.story-page.copper-sri-shiva-linga-page .birth-article__media img,
+.story-page.sri-dakshinamoorthy-temple-page .birth-article__media img,
+.story-page.sri-siddars-page .birth-article__media img,
+.story-page.vision-page .birth-article__media img {
   width: 100%;
   max-width: 100%;
+}
+
+.story-page.matham-page .birth-article__more > p,
+.story-page.history-page .birth-article__more > p,
+.story-page.founder-page .birth-article__more > p,
+.story-page.saraswathi-mantapam-page .birth-article__more > p,
+.story-page.lakshmi-mantapam-page .birth-article__more > p,
+.story-page.satchitanandam-hall-page .birth-article__more > p,
+.story-page.guest-houses-page .birth-article__more > p,
+.story-page.kitchen-dining-hall-page .birth-article__more > p,
+.story-page.admin-block-page .birth-article__more > p,
+.story-page.cloak-room-page .birth-article__more > p,
+.story-page.parking-page .birth-article__more > p,
+.story-page.sri-maha-ganapathi-temple-page .birth-article__more > p,
+.story-page.sri-kalyana-subramanya-temple-page .birth-article__more > p,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-article__more > p,
+.story-page.copper-sri-shiva-linga-page .birth-article__more > p,
+.story-page.sri-dakshinamoorthy-temple-page .birth-article__more > p,
+.story-page.sri-siddars-page .birth-article__more > p {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(1.25rem);
+  text-align: center;
+  letter-spacing: 0.04em;
 }
 
 .story-page.devotees-page .birth-seva,
 .story-page.life-of-babaji-page .birth-seva,
 .story-page.matham-page .birth-seva,
-.story-page.history-page .birth-seva {
+.story-page.history-page .birth-seva,
+.story-page.founder-page .birth-seva,
+.story-page.saraswathi-mantapam-page .birth-seva,
+.story-page.lakshmi-mantapam-page .birth-seva,
+.story-page.satchitanandam-hall-page .birth-seva,
+.story-page.guest-houses-page .birth-seva,
+.story-page.kitchen-dining-hall-page .birth-seva,
+.story-page.admin-block-page .birth-seva,
+.story-page.cloak-room-page .birth-seva,
+.story-page.parking-page .birth-seva,
+.story-page.sri-maha-ganapathi-temple-page .birth-seva,
+.story-page.sri-kalyana-subramanya-temple-page .birth-seva,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-seva,
+.story-page.copper-sri-shiva-linga-page .birth-seva,
+.story-page.sri-dakshinamoorthy-temple-page .birth-seva,
+.story-page.vision-page .birth-seva {
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
   padding-bottom: clamp(2rem, 4vw, 3rem) !important;
@@ -487,7 +662,22 @@
 .story-page.devotees-page .birth-seva__showcase,
 .story-page.life-of-babaji-page .birth-seva__showcase,
 .story-page.matham-page .birth-seva__showcase,
-.story-page.history-page .birth-seva__showcase {
+.story-page.history-page .birth-seva__showcase,
+.story-page.founder-page .birth-seva__showcase,
+.story-page.saraswathi-mantapam-page .birth-seva__showcase,
+.story-page.lakshmi-mantapam-page .birth-seva__showcase,
+.story-page.satchitanandam-hall-page .birth-seva__showcase,
+.story-page.guest-houses-page .birth-seva__showcase,
+.story-page.kitchen-dining-hall-page .birth-seva__showcase,
+.story-page.admin-block-page .birth-seva__showcase,
+.story-page.cloak-room-page .birth-seva__showcase,
+.story-page.parking-page .birth-seva__showcase,
+.story-page.sri-maha-ganapathi-temple-page .birth-seva__showcase,
+.story-page.sri-kalyana-subramanya-temple-page .birth-seva__showcase,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase,
+.story-page.copper-sri-shiva-linga-page .birth-seva__showcase,
+.story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase,
+.story-page.vision-page .birth-seva__showcase {
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
   padding-top: clamp(0.5rem, 1.5vw, 1rem);
   padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
@@ -498,14 +688,100 @@
   .story-page.education-page .birth-article__grid,
   .story-page.growing-years-page .birth-article__grid,
   .story-page.matham-page .birth-article__grid,
-  .story-page.history-page .birth-article__grid {
+  .story-page.history-page .birth-article__grid,
+  .story-page.founder-page .birth-article__grid,
+  .story-page.saraswathi-mantapam-page .birth-article__grid,
+  .story-page.lakshmi-mantapam-page .birth-article__grid,
+  .story-page.satchitanandam-hall-page .birth-article__grid,
+  .story-page.guest-houses-page .birth-article__grid,
+  .story-page.kitchen-dining-hall-page .birth-article__grid,
+  .story-page.admin-block-page .birth-article__grid,
+  .story-page.cloak-room-page .birth-article__grid,
+  .story-page.parking-page .birth-article__grid,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__grid,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__grid,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__grid,
+  .story-page.copper-sri-shiva-linga-page .birth-article__grid,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__grid,
+  .story-page.sri-siddars-page .birth-article__grid,
+  .story-page.vision-page .birth-article__grid {
     gap: 2rem;
   }
 
   .story-page.matham-page .birth-article__media,
-  .story-page.history-page .birth-article__media {
+  .story-page.history-page .birth-article__media,
+  .story-page.founder-page .birth-article__media,
+  .story-page.saraswathi-mantapam-page .birth-article__media,
+  .story-page.lakshmi-mantapam-page .birth-article__media,
+  .story-page.satchitanandam-hall-page .birth-article__media,
+  .story-page.guest-houses-page .birth-article__media,
+  .story-page.kitchen-dining-hall-page .birth-article__media,
+  .story-page.admin-block-page .birth-article__media,
+  .story-page.cloak-room-page .birth-article__media,
+  .story-page.parking-page .birth-article__media,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+.story-page.sri-siddars-page .birth-article__media,
+  .story-page.vision-page .birth-article__media {
     margin-left: 0;
   }
+
+  .story-page.matham-page .birth-article__more > p,
+  .story-page.history-page .birth-article__more > p,
+  .story-page.founder-page .birth-article__more > p,
+  .story-page.saraswathi-mantapam-page .birth-article__more > p,
+  .story-page.lakshmi-mantapam-page .birth-article__more > p,
+  .story-page.satchitanandam-hall-page .birth-article__more > p,
+  .story-page.guest-houses-page .birth-article__more > p,
+.story-page.kitchen-dining-hall-page .birth-article__more > p,
+.story-page.admin-block-page .birth-article__more > p,
+.story-page.cloak-room-page .birth-article__more > p,
+.story-page.parking-page .birth-article__more > p,
+.story-page.sri-maha-ganapathi-temple-page .birth-article__more > p,
+.story-page.sri-kalyana-subramanya-temple-page .birth-article__more > p,
+.story-page.sri-shirdi-sai-baba-temple-page .birth-article__more > p,
+.story-page.copper-sri-shiva-linga-page .birth-article__more > p,
+.story-page.sri-dakshinamoorthy-temple-page .birth-article__more > p,
+.story-page.sri-siddars-page .birth-article__more > p {
+    transform: none;
+  }
+}
+
+.story-page.vision-page .birth-article__grid {
+  align-items: center;
+}
+
+.story-page.vision-page .birth-article__media {
+  align-self: center;
+}
+
+.story-page.vision-page .birth-article__more--points {
+  margin-top: 0;
+  gap: 0.45rem;
+}
+
+.story-page.vision-page .birth-article__point {
+  padding: 0.5rem 0.7rem;
+  gap: 0.5rem;
+  border-radius: 8px;
+  border-left-width: 2px;
+  box-shadow: 0 1px 6px rgba(67, 6, 6, 0.04);
+}
+
+.story-page.vision-page .birth-article__point-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.05rem;
+  font-size: 0.5rem;
+}
+
+.story-page.vision-page .birth-article__point p {
+  font-size: clamp(0.8rem, 0.95vw, 0.88rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.02em;
 }
 
 /* Inner banner motif — nudge slightly below banner overlap */

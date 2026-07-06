@@ -1,3 +1,64 @@
-/* .expanding-container {
-    display: none;
-} */
+/* Sri Siddars — birth-article intro + expanding saint grid */
+.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-siddars-page .outer-container.inner-seva {
+  background: #f0e6d8 !important;
+  overflow: visible;
+}
+
+.sri-siddars-page .inner-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sri-siddars-page .container-fluid:has(.innermotif) {
+  position: relative;
+  min-height: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article {
+  padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
+  margin-top: 0;
+}
+
+.story-page.sri-siddars-page .birth-article__header {
+  margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.sri-siddars-page .birth-article__media .chanting-hero__deity-photo {
+  width: min(100%, 300px);
+  max-height: clamp(320px, 38vw, 450px);
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 16px 24px rgba(79, 10, 5, 0.14));
+}
+
+.sri-siddars-page .birth-article__more.sri-siddars__more {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.sri-siddars-page .birth-article__more .expanding-grid {
+  position: relative;
+  margin-top: 1.75rem;
+  text-align: left;
+}
+
+.sri-siddars-page .expanding-grid .expanding-container {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.sri-siddars-page .expanding-grid .expanding-container.expanded,
+.sri-siddars-page .expanding-grid .expanding-container:target {
+  display: block;
+}
+
+.sri-siddars-page .birth-article__actions {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
