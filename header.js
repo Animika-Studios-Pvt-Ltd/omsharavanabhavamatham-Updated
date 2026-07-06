@@ -51,7 +51,7 @@ $(document).ready(function () {
     var desktopMq = window.matchMedia("(min-width: 992px)");
     var hideDelayMs = 280;
     var navItems = document.querySelectorAll(
-      ".site-navbar-links > li:has(.push-nav-level), .site-navbar__links > li:has(.push-nav-level), .site-navbar-links > li:has(.pushNav_level), .site-navbar__links > li:has(.pushNav_level)",
+      ".site-navbar-links > li:has(.push-nav-level)",
     );
 
     navItems.forEach(function (item) {
@@ -69,7 +69,7 @@ $(document).ready(function () {
         clearTimeout(hideTimer);
         document
           .querySelectorAll(
-            ".push-nav-level.is-dropdown-open, .pushNav_level.is-dropdown-open",
+            ".push-nav-level.is-dropdown-open",
           )
           .forEach(function (openMenu) {
             if (openMenu !== menu) {
