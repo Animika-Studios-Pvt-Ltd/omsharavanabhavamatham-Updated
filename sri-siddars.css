@@ -2,7 +2,13 @@
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-siddars-page .outer-container.inner-seva {
   background: #f0e6d8 !important;
-  overflow: visible;
+  overflow: visible !important;
+}
+
+.story-page.sri-siddars-page .birth-article__wrap,
+.story-page.sri-siddars-page .birth-article__more.sri-siddars__more,
+.story-page.sri-siddars-page .expanding-grid {
+  overflow: visible !important;
 }
 
 .sri-siddars-page .inner-banner img {
@@ -38,6 +44,7 @@
 }
 
 .sri-siddars-page .birth-article__more.sri-siddars__more {
+  display: block;
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
@@ -45,20 +52,134 @@
   position: relative;
   margin-top: 1.75rem;
   text-align: left;
+  width: 100%;
+  min-height: 200px;
+}
+
+.sri-siddars-page .expanding-grid .links {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin: 0;
+  padding: 10px 0;
+  overflow: visible;
+  list-style: none;
+}
+
+.sri-siddars-page .expanding-grid .links > li {
+  float: none !important;
+  width: auto !important;
+  padding: 0;
+  margin: 0;
+}
+
+.sri-siddars-page .expanding-grid .links > li h3 {
+  font-size: clamp(0.62rem, 0.9vw, 0.82rem);
+  padding: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.sri-siddars-page .expanding-grid .links > li a {
+  cursor: pointer;
+  opacity: 1 !important;
+  display: block;
+  line-height: normal;
+}
+
+.sri-siddars-page .expanding-grid .links img {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .sri-siddars-page .expanding-grid .links {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sri-siddars-page .expanding-grid .links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .sri-siddars-page .expanding-grid .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .sri-siddars-page .expanding-grid .expanding-container {
-  display: none;
-  position: absolute;
-  left: 0;
-  width: 100%;
+  overflow: visible !important;
+  width: 100% !important;
+  left: 0 !important;
+  box-sizing: border-box;
 }
 
 .sri-siddars-page .expanding-grid .expanding-container.expanded,
 .sri-siddars-page .expanding-grid .expanding-container:target {
   display: block;
+  overflow: visible !important;
+  height: auto !important;
+  z-index: 4;
+}
+
+.sri-siddars-page .expanding-grid .hentry {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0;
+  background: #7d0e03 !important;
+  color: #c9a24d !important;
+  border: 1px solid #c9a24d;
+}
+
+.sri-siddars-page .expanding-grid .hentry .entry-image {
+  float: none;
+  width: 100%;
+}
+
+.sri-siddars-page .expanding-grid .hentry .entry-image h3,
+.sri-siddars-page .expanding-grid .hentry .entry-image p,
+.sri-siddars-page .expanding-grid .hentry h3,
+.sri-siddars-page .expanding-grid .hentry p,
+.sri-siddars-page .expanding-grid .hentry th,
+.sri-siddars-page .expanding-grid .hentry td,
+.sri-siddars-page .expanding-grid .hentry li,
+.sri-siddars-page .expanding-grid .hentry span {
+  color: #c9a24d !important;
+}
+
+.sri-siddars-page .expanding-grid .hentry .table tr th,
+.sri-siddars-page .expanding-grid .hentry .table tr td {
+  border-color: #c9a24d !important;
+  background: transparent !important;
+}
+
+.sri-siddars-page .expanding-grid .hentry .table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.sri-siddars-page .expanding-grid .spacer {
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.sri-siddars-page .expanding-grid .close-button {
+  z-index: 6;
 }
 
 .sri-siddars-page .birth-article__actions {
   margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+@media (max-width: 767px) {
+  .sri-siddars-page .expanding-grid .hentry .table-responsive {
+    margin-bottom: 0.75rem;
+  }
 }
