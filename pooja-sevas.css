@@ -1,0 +1,111 @@
+/* Pooja Sevas — card UI aligned with Social Impact */
+
+.story-page.pooja-sevas-page .social-impact-grid {
+  margin-top: 0.5rem;
+}
+
+.story-page.pooja-sevas-page .social-impact-card__actions {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.story-page.pooja-sevas-page .pooja-book-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.story-page.pooja-sevas-page .pooja-card__menu {
+  display: none !important;
+}
+
+.story-page.pooja-sevas-page .social-impact-card__actions:not(:has(.social-impact-card__learn)) {
+  justify-content: center;
+}
+
+/* Book pooja popup modal */
+.pooja-book-modal .modal-dialog {
+  max-width: min(480px, 92vw);
+}
+
+.pooja-book-modal .modal-content {
+  border: 2px solid #c9a24d;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0e6d8;
+  box-shadow: 0 18px 48px rgba(125, 14, 3, 0.28);
+}
+
+.pooja-book-modal .modal-header {
+  background: #7d0e03;
+  border-bottom: 1px solid rgba(201, 162, 77, 0.45);
+  padding: 1rem 1.15rem;
+}
+
+.pooja-book-modal .modal-title {
+  margin: 0;
+  padding-right: 1rem;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  color: #f0e6d8;
+}
+
+.pooja-book-modal .btn-close {
+  filter: invert(88%) sepia(22%) saturate(742%) hue-rotate(359deg) brightness(98%) contrast(88%);
+  opacity: 1;
+}
+
+.pooja-book-modal .modal-body {
+  padding: 0.65rem 0;
+  max-height: min(62vh, 420px);
+  overflow-y: auto;
+  background: #fffdf9;
+}
+
+.pooja-book-modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pooja-book-modal__list li {
+  border-bottom: 1px solid rgba(201, 162, 77, 0.22);
+}
+
+.pooja-book-modal__list li:last-child {
+  border-bottom: none;
+}
+
+.pooja-book-modal__link {
+  display: block;
+  padding: 0.75rem 1.15rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4b0000;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pooja-book-modal__link:hover,
+.pooja-book-modal__link:focus {
+  background: rgba(201, 162, 77, 0.14);
+  color: #7d0e03;
+}
+
+@media (max-width: 575px) {
+  .story-page.pooja-sevas-page .social-impact-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .story-page.pooja-sevas-page .pooja-book-btn,
+  .story-page.pooja-sevas-page .social-impact-card__learn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

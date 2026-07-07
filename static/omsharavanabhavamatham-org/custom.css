@@ -1076,3 +1076,9 @@ code {
     margin-top: -42px;
   }
 }
+
+/* Razorpay checkout catalogue pooja forms */
+.checkout-pane {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}

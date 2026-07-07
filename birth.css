@@ -1005,57 +1005,6 @@
   }
 }
 
-/* Pooja Sevas — temple card grid */
-.story-page.pooja-sevas-page .pooja-sevas-grid {
-  margin-top: 0.5rem;
-}
-
-.story-page.pooja-sevas-page .pooja-sevas-grid .row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: clamp(1.25rem, 2.5vw, 1.75rem);
-  margin: 0;
-}
-
-.story-page.pooja-sevas-page .pooja-sevas-grid .row > [class*="col-"] {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-}
-
-.story-page.pooja-sevas-page .pooja-info {
-  height: 100%;
-  padding: 1rem;
-  border: 1px solid rgba(201, 162, 77, 0.55);
-  border-radius: 12px;
-  background: rgba(255, 252, 247, 0.65);
-  box-shadow: 0 8px 22px rgba(67, 6, 6, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.story-page.pooja-sevas-page .pooja-info:hover {
-  transform: translateY(-4px);
-  border-color: var(--birth-gold);
-  box-shadow: 0 14px 32px rgba(67, 6, 6, 0.14);
-}
-
-.story-page.pooja-sevas-page .pooja-info p {
-  font-family: Cinzel, "arrusbt-roman", Georgia, serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: var(--birth-maroon);
-  text-align: center;
-  margin-bottom: 0.75rem;
-}
-
-.story-page.pooja-sevas-page .pooja-info img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 0.85rem;
-}
-
 /* Devotee Experience — accordion list spacing */
 .story-page.devotees-page .devotees-experience__list {
   margin-top: 0.5rem;

@@ -1858,6 +1858,49 @@
   }
 }
 
+/* Babaji hero — desktop-like layout between lg and xl (e.g. 1136px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .babajibck.babaji-hero .container.babaji-hero-container {
+    max-width: 1140px;
+  }
+
+  .babaji-hero-features {
+    flex-wrap: nowrap;
+    gap: clamp(0.45rem, 1vw, 0.9rem);
+  }
+
+  .babaji-hero-feature {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .babaji-hero-feature-icon,
+  .babaji-hero-light .babaji-hero-feature-icon,
+  .babaji-hero-brand .babaji-hero-feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .babaji-hero-feature-svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .babaji-hero-feature-label,
+  .babaji-hero-light .babaji-hero-feature-label,
+  .babaji-hero-brand .babaji-hero-feature-label {
+    font-size: clamp(0.56rem, 0.68vw, 0.66rem);
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (min-width: 992px) {
+  .babaji-hero-content {
+    padding-left: clamp(0.75rem, 2vw, 1.5rem);
+  }
+}
+
 @media (max-width: 991px) {
   .events-hub-festival {
     flex: 0 0 calc((100% - 0.35rem) / 2);
@@ -1872,6 +1915,7 @@
   .babaji-hero-content {
     max-width: none;
     text-align: center;
+    padding-left: 0;
   }
   .babaji-hero-content-col {
     justify-content: center;
@@ -3022,6 +3066,145 @@
   font-style: italic;
 }
 
+/* Calendar — compact fit between 1200px and 1440px (e.g. 1352px laptops) */
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .events-hub-inner {
+    width: min(1600px, 88vw);
+    max-width: 92%;
+  }
+
+  .events-hub-grid {
+    min-height: 600px;
+  }
+
+  .events-hub-card {
+    width: min(100%, 300px);
+    min-height: 168px;
+    padding: 1rem 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .events-hub-card-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .events-hub-card-title {
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  }
+
+  .events-hub-card-tl,
+  .events-hub-card-ml {
+    grid-column: 1 / 4;
+  }
+
+  .events-hub-calendar-cell {
+    grid-column: 4 / 10;
+  }
+
+  .events-hub-card-tr,
+  .events-hub-card-mr {
+    grid-column: 10 / 13;
+  }
+
+  .events-hub-card-bc {
+    grid-column: 3 / 11;
+  }
+
+  .events-hub-calendar-wrap {
+    width: min(100%, 400px);
+  }
+
+  .home-calendar-hub {
+    max-width: 400px;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    padding: 4.5% 6.5% 3%;
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .home-calendar-toolbar-hub {
+    margin-bottom: 0;
+  }
+
+  .home-calendar-toolbar-views {
+    margin-bottom: 0;
+  }
+
+  .home-calendar-view-btn {
+    width: 22px;
+    height: 22px;
+  }
+
+  .home-calendar-hub .home-calendar-month {
+    font-size: 1.1rem;
+  }
+
+  .home-calendar-weekdays-hub {
+    margin-bottom: 0.12rem;
+    gap: 0.1rem;
+  }
+
+  .home-calendar-weekdays-hub span {
+    font-size: 0.56rem;
+  }
+
+  .home-calendar-grid-hub {
+    flex: 0 0 auto;
+    gap: 0.08rem;
+    align-content: start;
+    margin-bottom: 0;
+  }
+
+  .home-calendar-hub .home-calendar-day {
+    font-size: 0.7rem;
+    aspect-ratio: unset;
+    height: 1.3rem;
+    min-height: 1.3rem;
+  }
+
+  .home-calendar-hub .home-calendar-dot {
+    width: 4px;
+    height: 4px;
+    bottom: 1px;
+  }
+
+  .home-calendar-event-panel {
+    margin-top: 0;
+    padding: 0.28rem 8% 0.15rem;
+  }
+
+  .home-calendar-event-panel-body {
+    max-width: 9.5rem;
+    gap: 0.08rem;
+  }
+
+  .home-calendar-event-panel-date {
+    font-size: 0.56rem;
+  }
+
+  .home-calendar-event-panel-title {
+    font-size: 0.66rem;
+    line-height: 1.28;
+    -webkit-line-clamp: 2;
+  }
+
+  .home-calendar-event-panel-desc {
+    font-size: 0.56rem;
+    line-height: 1.35;
+    -webkit-line-clamp: 1;
+  }
+}
+
 /* —— Upcoming Festivals — premium temple-pass —— */
 .events-hub-festivals-reveal {
   display: flex;
@@ -3498,34 +3681,137 @@
   .events-hub-connectors {
     display: none;
   }
-  .events-hub-grid {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    gap: 0.65rem;
-  }
-  .events-hub-card-tl,
-  .events-hub-card-tr,
-  .events-hub-card-ml,
-  .events-hub-card-mr,
-  .events-hub-card-bc {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    width: min(100%, 380px);
-    margin-inline: auto;
-    justify-self: center;
-    align-self: auto;
-  }
-  .events-hub-calendar-cell {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    order: -1;
-    margin-bottom: 0.35rem;
-  }
+
   .events-hub-inner,
   .events-hub-festivals-inner {
     width: min(92vw, 100%);
     max-width: 92%;
+    padding-inline: clamp(0.75rem, 3vw, 1.5rem);
   }
+
+  .events-hub-board {
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .events-hub .events-section-header {
+    margin-bottom: clamp(0.85rem, 2.5vw, 1.15rem);
+    padding-inline: clamp(0.25rem, 2vw, 0.75rem);
+  }
+
+  .events-hub .events-section-title {
+    font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+    letter-spacing: clamp(0.06em, 0.35vw, 0.09em);
+    line-height: 1.35;
+  }
+
+  .events-hub .events-section-motif {
+    width: min(180px, 48vw);
+    margin-top: clamp(0.55rem, 1.8vw, 0.8rem);
+  }
+
+  .events-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: auto;
+    gap: clamp(0.65rem, 2vw, 1rem);
+    align-items: stretch;
+  }
+
+  .events-hub-calendar-cell {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    order: -1;
+    margin-bottom: clamp(0.25rem, 1.5vw, 0.5rem);
+    justify-self: center;
+    width: min(100%, 400px);
+  }
+
+  .events-hub-calendar-wrap {
+    width: min(100%, 400px);
+  }
+
+  .events-hub-card {
+    width: 100%;
+    max-width: none;
+    min-height: clamp(150px, 22vw, 180px);
+    padding: clamp(0.85rem, 2vw, 1.15rem) clamp(0.9rem, 2.2vw, 1.2rem);
+    gap: clamp(0.65rem, 1.5vw, 0.85rem);
+    border-radius: clamp(18px, 3vw, 26px);
+  }
+
+  .events-hub-card-tl {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+    align-self: stretch;
+    margin-inline: 0;
+  }
+
+  .events-hub-card-tr {
+    grid-column: 2;
+    grid-row: auto;
+    justify-self: stretch;
+    align-self: stretch;
+    margin-inline: 0;
+  }
+
+  .events-hub-card-ml {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+    align-self: stretch;
+    margin-inline: 0;
+  }
+
+  .events-hub-card-mr {
+    grid-column: 2;
+    grid-row: auto;
+    justify-self: stretch;
+    align-self: stretch;
+    margin-inline: 0;
+  }
+
+  .events-hub-card-bc {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: center;
+    align-self: auto;
+    width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
+  .events-hub-card-icon {
+    width: clamp(42px, 5vw, 52px);
+    height: clamp(42px, 5vw, 52px);
+  }
+
+  .events-hub-card-icon svg {
+    width: clamp(18px, 2.2vw, 22px);
+    height: clamp(18px, 2.2vw, 22px);
+  }
+
+  .events-hub-card-title {
+    font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+    padding-right: clamp(2.75rem, 7vw, 4rem);
+    line-height: 1.28;
+  }
+
+  .events-hub-card-desc {
+    font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+    line-height: 1.45;
+  }
+
+  .events-hub-card-date {
+    font-size: clamp(0.62rem, 1.2vw, 0.72rem);
+    letter-spacing: 0.1em;
+  }
+
+  .events-hub-view-all {
+    max-width: min(100%, 380px);
+    font-size: clamp(0.78rem, 1.8vw, 0.85rem);
+    padding: clamp(0.7rem, 1.8vw, 0.8rem) clamp(1rem, 2.5vw, 1.4rem);
+  }
+
   .events-hub-festivals-mandala {
     opacity: 0.03;
   }
@@ -4100,6 +4386,123 @@
 @media (prefers-reduced-motion: reduce) {
   .babaji-section .wave span {
     animation: none;
+  }
+}
+
+/* Babaji videos — side-by-side tablet layout (desktop-like below 1200px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .babaji-section-stage,
+  .babaji-section .row.g-0 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    height: clamp(520px, 62vw, 700px);
+    min-height: 520px;
+  }
+
+  .babaji-section .left-section {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+    height: 100%;
+    min-height: 0;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .babaji-section .left-content {
+    width: min(100%, 300px);
+    padding: 0 clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .babaji-section .lotus-icon {
+    width: clamp(110px, 16vw, 170px);
+    margin-bottom: -12px;
+  }
+
+  .babaji-section .left-title {
+    font-size: clamp(1.85rem, 4.8vw, 3.25rem);
+    letter-spacing: 1px;
+  }
+
+  .babaji-section .divider {
+    width: clamp(100px, 14vw, 150px);
+    margin: clamp(1rem, 2.5vw, 1.75rem) auto;
+  }
+
+  .babaji-section .left-tagline {
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    line-height: 1.55;
+  }
+
+  .babaji-section .watch-btn {
+    margin-top: clamp(1.25rem, 2.8vw, 2rem);
+    padding: clamp(0.7rem, 1.4vw, 0.95rem) clamp(0.95rem, 2vw, 1.35rem)
+      clamp(0.7rem, 1.4vw, 0.95rem) clamp(0.7rem, 1.4vw, 0.95rem);
+    font-size: clamp(0.68rem, 1.1vw, 0.8rem);
+    gap: 0.65rem;
+  }
+
+  .babaji-section .watch-btn-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .babaji-section .right-section {
+    flex: 0 0 calc(50% + clamp(48px, 7vw, 80px));
+    width: calc(50% + clamp(48px, 7vw, 80px));
+    max-width: none;
+    height: 100%;
+    min-height: 0;
+    margin-left: calc(-1 * clamp(48px, 7vw, 80px));
+    padding: clamp(1.25rem, 2.5vw, 2rem) 0;
+  }
+
+  .babaji-section .right-section-inner {
+    height: 100%;
+    padding-left: clamp(48px, 7vw, 80px);
+    padding-right: clamp(0.75rem, 2vw, 1.25rem);
+    justify-content: center;
+  }
+
+  .babaji-section .voice-wrapper {
+    width: min(100%, 380px);
+    margin-left: clamp(0.75rem, 6vw, 100px);
+    margin-right: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .babaji-section .voice-heading {
+    font-size: clamp(0.95rem, 2vw, 1.35rem);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.85rem;
+  }
+
+  .babaji-section .voice-divider {
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .babaji-section .voice-card {
+    width: 100%;
+    padding: clamp(0.85rem, 1.6vw, 1rem);
+  }
+
+  .babaji-section .voice-card-avatar {
+    width: clamp(52px, 7vw, 64px);
+    height: clamp(52px, 7vw, 64px);
+  }
+
+  .babaji-section .listen-box {
+    width: 100%;
+    margin-top: clamp(0.85rem, 1.8vw, 1.15rem);
+    padding: clamp(0.85rem, 1.6vw, 1rem) clamp(0.9rem, 1.8vw, 1.1rem);
+  }
+
+  .babaji-section .listen-box h4 {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+  }
+
+  .babaji-section .listen-box p {
+    font-size: clamp(0.78rem, 1.3vw, 0.88rem);
   }
 }
 
@@ -5977,8 +6380,37 @@
 }
 
 @media (max-width: 768px) {
+  .hero-banner .carousel,
+  .hero-banner .carousel-inner,
+  .hero-banner .carousel-item {
+    min-height: clamp(380px, 58vh, 520px);
+  }
+  .hero-banner-image {
+    height: clamp(380px, 58vh, 520px);
+  }
+  .hero-banner-shade {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 240, 230, 0.92) 0%,
+      rgba(247, 240, 230, 0.72) 38%,
+      rgba(247, 240, 230, 0.2) 68%,
+      transparent 100%
+    );
+  }
+  .hero-banner-content-wrap {
+    align-items: flex-end;
+  }
   .hero-banner-content {
-    padding: 1rem 0 3rem;
+    padding: 1rem 0 2.5rem;
+    max-width: none;
+  }
+  .hero-banner-content h1 {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+  }
+  .hero-banner-content p {
+    max-width: none;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
   }
   .hero-banner-actions {
     flex-direction: column;
@@ -5988,5 +6420,283 @@
   }
   .hero-banner-arrow {
     display: none;
+  }
+}
+
+/* -------------------------------------------- HOME PAGE RESPONSIVE (tablet & mobile only — desktop unchanged) -------------------------------------------- */
+@media (max-width: 1199px) {
+  body.home-page {
+    overflow-x: hidden;
+  }
+
+  .home-page img,
+  .home-page video,
+  .home-page iframe {
+    max-width: 100%;
+  }
+
+  .home-page .container {
+    padding-left: clamp(0.75rem, 2.5vw, 1rem);
+    padding-right: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  /* Keep full-bleed section wrappers edge-to-edge */
+  .home-page .container-fluid.babajibck,
+  .home-page .container-fluid.sevabck,
+  .home-page .container-fluid.eventbck,
+  .home-page .container-fluid.videobck,
+  .home-page .container-fluid.projectbck,
+  .home-page .container-fluid.howtoreachbck,
+  .home-page .container-fluid.babaji-section,
+  .home-page .container-fluid.babaji-section-stage,
+  .home-page .hero-banner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .projectbck.social-impact-section,
+  .social-impact-hero {
+    min-height: clamp(520px, 78vh, 720px);
+  }
+
+  .events-hub-inner,
+  .events-hub-festivals-inner {
+    width: min(100%, 960px);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .babajibck.babaji-hero,
+  .babajibck.babaji-hero.babaji-hero-brand,
+  .babajibck.babaji-hero.babaji-hero-light {
+    min-height: auto;
+  }
+
+  .babaji-section .voice-card {
+    width: 100%;
+    max-width: none;
+  }
+
+  .babaji-section .listen-box {
+    width: 100%;
+    max-width: none;
+  }
+
+  .seva-section-inner {
+    padding-inline: 0.5rem;
+  }
+
+  .seva-showcase {
+    margin-inline: auto;
+  }
+
+  .events-hub .events-section-title {
+    font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+    letter-spacing: 0.08em;
+  }
+
+  .reach-luxe-title {
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 767px) {
+  .babaji-section {
+    overflow-x: hidden;
+  }
+
+  .babaji-section-stage,
+  .babaji-section .row.g-0 {
+    height: auto;
+    min-height: 0;
+    flex-wrap: wrap;
+  }
+
+  .babaji-section .left-section,
+  .babaji-section .right-section {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-left: 0;
+  }
+
+  .babaji-section .left-section {
+    min-height: clamp(280px, 72vw, 360px);
+    padding: clamp(2rem, 5vw, 3rem) 1rem;
+  }
+
+  .babaji-section .right-section {
+    padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  }
+
+  .babaji-section .right-section-inner {
+    height: auto;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
+    justify-content: center;
+  }
+
+  .babaji-section .voice-wrapper {
+    width: min(100%, 520px);
+    margin: 0 auto;
+  }
+
+  .babaji-section .left-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .babaji-section .left-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 1px;
+  }
+
+  .babaji-section .divider {
+    width: 120px;
+    margin: 1.25rem auto;
+  }
+
+  .babaji-section .watch-btn {
+    width: 100%;
+    max-width: 18rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.25rem;
+  }
+
+  .babaji-section .voice-heading {
+    font-size: clamp(1.1rem, 4.5vw, 1.45rem);
+    letter-spacing: 0.08em;
+  }
+
+  .babaji-section .voice-card {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .babaji-section .voice-card-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .babaji-section .voice-info {
+    flex: 1 1 calc(100% - 88px);
+    min-width: 0;
+  }
+
+  .babaji-section .play-btn {
+    margin-left: auto;
+  }
+
+  .babaji-section .listen-box {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .social-impact-hero-content {
+    padding-inline: 0.5rem;
+    width: 100%;
+  }
+
+  .social-impact-hero-title {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  .social-impact-hero-tagline {
+    font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+  }
+
+  .social-impact-hero-btn {
+    width: 100%;
+    max-width: 18rem;
+    justify-content: center;
+  }
+
+  .events-section.events-hub {
+    padding-inline: 0.5rem;
+  }
+
+  .events-hub-inner,
+  .events-hub-festivals-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .events-hub-card {
+    width: 100%;
+  }
+
+  .chanting-hero {
+    padding-inline: 0.75rem;
+  }
+
+  .chanting-hero-cta {
+    display: flex;
+    width: 100%;
+    max-width: 18rem;
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  .babaji-hero-portrait-wrap {
+    min-height: clamp(260px, 62vw, 380px);
+  }
+
+  .babaji-hero-stats {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-banner .carousel,
+  .hero-banner .carousel-inner,
+  .hero-banner .carousel-item,
+  .hero-banner-image {
+    min-height: clamp(340px, 52vh, 440px);
+    height: clamp(340px, 52vh, 440px);
+  }
+
+  .babaji-section .voice-wrapper {
+    width: 100%;
+  }
+
+  .babaji-section .listen-box h4 {
+    font-size: 1rem;
+  }
+
+  .babaji-section .listen-box p {
+    font-size: 0.9rem;
+  }
+
+  .projectbck.social-impact-section,
+  .social-impact-hero {
+    min-height: clamp(460px, 72vh, 620px);
+  }
+
+  .reach-luxe {
+    padding-inline: 0.65rem;
+  }
+
+  .reach-luxe-title {
+    font-size: clamp(1.35rem, 6.5vw, 1.75rem);
+    letter-spacing: 0.1em;
+  }
+
+  .babaji-hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.35rem);
+  }
+
+  .babaji-hero-btn {
+    width: 100%;
+    max-width: 16rem;
+  }
+
+  .seva-section-title {
+    font-size: clamp(1.1rem, 5vw, 1.35rem);
+    letter-spacing: 0.08em;
   }
 }
