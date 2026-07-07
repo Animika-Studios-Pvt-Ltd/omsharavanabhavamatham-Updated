@@ -2099,6 +2099,7 @@
   aspect-ratio: 3 / 4.15;
   display: block;
   overflow: hidden;
+  border-radius: 20px;
   text-decoration: none;
   color: #fff;
   transform-style: preserve-3d;
@@ -2119,6 +2120,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
+  border-radius: inherit;
   pointer-events: none;
   background: linear-gradient(
     135deg,
@@ -2323,26 +2325,102 @@
   .events-hub-festival {
     flex: 0 0 100%;
   }
+
+  .seva-section {
+    overflow-x: hidden;
+  }
+
+  .seva-section .container {
+    padding-left: clamp(0.65rem, 3vw, 1rem);
+    padding-right: clamp(0.65rem, 3vw, 1rem);
+  }
+
+  .seva-section .babaji-hero-ornaments,
+  .seva-section .babaji-hero-frame {
+    display: none;
+  }
+
+  .seva-section-inner {
+    padding: clamp(1.5rem, 5vw, 2.25rem) 0 clamp(2rem, 6vw, 2.75rem);
+  }
+
+  .seva-section-header {
+    max-width: none;
+    margin-bottom: clamp(1.15rem, 4vw, 1.65rem);
+    padding-inline: clamp(0.15rem, 2vw, 0.5rem);
+  }
+
+  .seva-section-title {
+    font-size: clamp(1rem, 4.8vw, 1.3rem);
+    letter-spacing: 0.07em;
+    line-height: 1.4;
+  }
+
+  .seva-section-title-rule {
+    max-width: min(18rem, 92%);
+    margin: 0.4rem auto 0.7rem;
+    gap: 0.5rem;
+  }
+
+  .seva-section-title-rule .seva-section-header-motif {
+    width: clamp(40px, 12vw, 72px);
+  }
+
+  .seva-section-subtitle {
+    font-size: clamp(0.88rem, 3.6vw, 0.98rem);
+    line-height: 1.55;
+    padding-inline: 0.15rem;
+  }
+
   .seva-showcase {
     flex-direction: column;
     align-items: stretch;
-    max-width: 360px;
+    width: 100%;
+    max-width: min(100%, 400px);
+    gap: clamp(0.85rem, 3vw, 1.15rem);
+    margin-inline: auto;
+    padding: 0;
     perspective: none;
     transform-style: flat;
   }
-  .seva-showcase-card {
+
+  .seva-showcase-card,
+  .seva-showcase-card-featured {
+    flex: none;
+    width: 100%;
     max-width: none;
-    aspect-ratio: 4 / 4.6;
+    aspect-ratio: 16 / 11;
+    border-radius: clamp(18px, 4.5vw, 24px);
     transform-origin: center center !important;
+    opacity: 1;
+    transform: none !important;
+    box-shadow: 0 12px 28px rgba(24, 12, 6, 0.18);
+    z-index: 1;
   }
+
   .seva-showcase-card:nth-child(1).is-in-view,
   .seva-showcase-card:nth-child(3).is-in-view,
   .seva-showcase-card-featured,
   .seva-showcase-card-featured.is-in-view,
   .seva-showcase-card:nth-child(1):hover,
+  .seva-showcase-card:nth-child(1):focus-visible,
   .seva-showcase-card:nth-child(3):hover,
-  .seva-showcase-card-featured:hover {
-    transform: none;
+  .seva-showcase-card:nth-child(3):focus-visible,
+  .seva-showcase-card-featured:hover,
+  .seva-showcase-card-featured:focus-visible {
+    transform: none !important;
+    box-shadow: 0 12px 28px rgba(24, 12, 6, 0.18);
+  }
+
+  .seva-showcase-label {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    padding: 0.95rem 0.85rem 1.1rem;
+    gap: 0.3rem;
+  }
+
+  .seva-section-footer {
+    margin-top: clamp(1.5rem, 5vw, 2.25rem);
+    padding-inline: 0.5rem;
   }
 }
 
@@ -3821,15 +3899,136 @@
   .events-hub-festival {
     flex: 0 0 calc((100% - 0.35rem) / 2);
   }
+
+  .events-hub-festivals-viewport {
+    padding-top: 2.5rem;
+  }
+
+  .events-hub-festival-icon-wrap {
+    transform: translate(-50%, calc(-50% - 4px));
+  }
+
+  .events-hub-festival-icon {
+    width: 54px;
+    height: 54px;
+    box-shadow:
+      0 0 0 3px #fff8f0,
+      0 0 0 5px #d4af37,
+      0 0 18px rgba(212, 175, 55, 0.3);
+  }
+
+  .events-hub-festival-icon svg {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media (max-width: 767px) {
   .events-hub-festival {
     flex: 0 0 100%;
   }
+
   .home-calendar-hub {
-    padding: 8%;
+    justify-content: flex-start;
+    gap: 0.1rem;
+    padding: clamp(4.5%, 5vw, 6%) clamp(6.5%, 7vw, 8%)
+      clamp(3.5%, 4vw, 4.5%);
   }
+
+  .home-calendar-toolbar-hub {
+    margin-bottom: 0;
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn {
+    width: clamp(32px, 8vw, 36px);
+    height: clamp(32px, 8vw, 36px);
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn svg {
+    width: clamp(16px, 4vw, 18px);
+    height: clamp(16px, 4vw, 18px);
+  }
+
+  .home-calendar-toolbar-views {
+    margin-bottom: 0.12rem;
+  }
+
+  .home-calendar-view-btn {
+    width: 22px;
+    height: 22px;
+  }
+
+  .home-calendar-hub .home-calendar-month {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
+  .home-calendar-weekdays-hub {
+    margin-bottom: 0.1rem;
+    gap: 0.06rem;
+  }
+
+  .home-calendar-weekdays-hub span {
+    font-size: clamp(0.52rem, 2.4vw, 0.58rem);
+  }
+
+  .home-calendar-grid-hub {
+    flex: 0 0 auto;
+    gap: clamp(0.05rem, 0.4vw, 0.08rem);
+    align-content: start;
+    row-gap: clamp(0.08rem, 0.5vw, 0.12rem);
+  }
+
+  .home-calendar-hub .home-calendar-day {
+    font-size: clamp(0.62rem, 2.8vw, 0.7rem);
+    aspect-ratio: unset;
+    width: 100%;
+    height: clamp(1.15rem, 4.2vw, 1.35rem);
+    min-height: clamp(1.15rem, 4.2vw, 1.35rem);
+    max-height: clamp(1.15rem, 4.2vw, 1.35rem);
+  }
+
+  .home-calendar-hub .home-calendar-day.is-selected {
+    width: clamp(1.15rem, 4.2vw, 1.35rem);
+    height: clamp(1.15rem, 4.2vw, 1.35rem);
+    min-height: clamp(1.15rem, 4.2vw, 1.35rem);
+    max-height: clamp(1.15rem, 4.2vw, 1.35rem);
+    margin-inline: auto;
+    border-radius: 50%;
+  }
+
+  .home-calendar-hub .home-calendar-dot {
+    width: 3px;
+    height: 3px;
+    bottom: 0;
+  }
+
+  .home-calendar-event-panel {
+    margin-top: 0.12rem;
+    padding: clamp(0.25rem, 1.5vw, 0.35rem) 6%
+      clamp(0.4rem, 2.2vw, 0.5rem);
+  }
+
+  .home-calendar-event-panel-body {
+    max-width: 100%;
+    gap: 0.1rem;
+  }
+
+  .home-calendar-event-panel-date {
+    font-size: clamp(0.52rem, 2.4vw, 0.58rem);
+  }
+
+  .home-calendar-event-panel-title {
+    font-size: clamp(0.62rem, 2.8vw, 0.68rem);
+    line-height: 1.28;
+    -webkit-line-clamp: 2;
+  }
+
+  .home-calendar-event-panel-desc {
+    font-size: clamp(0.52rem, 2.4vw, 0.58rem);
+    line-height: 1.32;
+    -webkit-line-clamp: 2;
+  }
+
   .events-hub-festivals {
     padding: clamp(1.25rem, 5vw, 1.75rem) clamp(0.65rem, 3vw, 1rem);
   }
@@ -3849,12 +4048,34 @@
     gap: 0.35rem;
   }
   .events-hub-festivals-viewport {
-    padding-top: 2.75rem;
+    padding-top: 2.35rem;
   }
   .events-hub-festival {
     min-height: 0;
-    padding: 1.75rem 0.75rem 0.7rem;
+    padding: 1.5rem 0.75rem 0.7rem;
     border-radius: 14px;
+  }
+
+  .events-hub-festival-icon-wrap {
+    transform: translate(-50%, calc(-50% - 6px));
+  }
+
+  .events-hub-festival-icon {
+    width: 48px;
+    height: 48px;
+    box-shadow:
+      0 0 0 3px #fff8f0,
+      0 0 0 4px #d4af37,
+      0 0 16px rgba(212, 175, 55, 0.28);
+  }
+
+  .events-hub-festival-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .events-hub-festival-name {
+    margin-top: 0.1rem;
   }
   .events-hub-festivals-mandala {
     display: none;
@@ -4892,10 +5113,50 @@
   filter: drop-shadow(0 16px 24px rgba(79, 10, 5, 0.14));
 }
 
+@media (max-width: 1199px) {
+  .chanting-hero {
+    padding: clamp(2.25rem, 4.5vw, 3.25rem) clamp(1.5rem, 3.5vw, 2.5rem)
+      clamp(1.85rem, 3.5vw, 2.75rem);
+  }
+
+  .chanting-hero-container {
+    max-width: 100%;
+    padding-inline: clamp(1rem, 2.5vw, 1.75rem);
+  }
+
+  .chanting-hero-copy {
+    margin-left: clamp(-24px, -2vw, 0);
+    padding-inline: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  .chanting-hero-grid {
+    gap: clamp(0.85rem, 2.5vw, 1.5rem);
+    min-height: clamp(380px, 48vw, 520px);
+  }
+
+  .chanting-hero-deity {
+    padding-right: clamp(0.25rem, 1.5vw, 1rem);
+  }
+
+  .chanting-hero-deity-photo {
+    transform: translateX(clamp(1.5rem, 2.5vw, 3.5rem));
+  }
+}
+
 @media (max-width: 991px) {
   .events-hub-festival {
     flex: 0 0 calc((100% - 0.35rem) / 2);
   }
+
+  .chanting-hero {
+    padding: clamp(2rem, 4vw, 2.75rem) clamp(1.25rem, 4vw, 2rem)
+      clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .chanting-hero-container {
+    padding-inline: clamp(0.85rem, 3vw, 1.5rem);
+  }
+
   .chanting-hero-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -4906,6 +5167,8 @@
   }
   .chanting-hero-copy {
     grid-area: copy;
+    margin-left: 0;
+    padding-inline: clamp(0.5rem, 2vw, 1.25rem);
   }
   .chanting-hero-babaji {
     grid-area: babaji;
@@ -4914,6 +5177,15 @@
   .chanting-hero-deity {
     grid-area: deity;
     min-height: clamp(280px, 42vw, 380px);
+    justify-content: center;
+    padding-right: 0;
+  }
+  .chanting-hero-babaji-photo {
+    transform: translateY(clamp(-2.5rem, -5vw, -1.5rem));
+  }
+  .chanting-hero-deity-photo {
+    transform: translateX(0);
+    margin-inline: auto;
   }
   .chanting-hero-vine-left {
     left: max(calc(10px + 2px), 78%);
@@ -4925,32 +5197,125 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
+  .chanting-hero {
+    padding: clamp(1.85rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.75rem)
+      clamp(1.5rem, 4vw, 2.25rem);
+  }
+
+  .chanting-hero-container {
+    padding-inline: clamp(0.75rem, 3.5vw, 1.25rem);
+  }
+
+  .chanting-hero-copy {
+    margin-left: 0;
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .chanting-hero-title {
+    font-size: clamp(1.45rem, 6.5vw, 2rem);
+  }
+
+  .chanting-hero-tagline {
+    font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+  }
+
+  .chanting-hero-babaji-photo {
+    transform: translateY(clamp(-1.25rem, -3vw, 0));
+    max-height: 320px;
+  }
+
+  .chanting-hero-deity-photo {
+    transform: none;
+    max-height: 340px;
+  }
+
+  .chanting-hero-cta {
+    display: flex;
+    width: 100%;
+    max-width: 18rem;
+    justify-content: center;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .chanting-hero-deity {
+    display: none !important;
+  }
+
   .chanting-hero-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
       "copy"
-      "babaji"
-      "deity";
+      "babaji";
+    gap: 1.25rem;
+  }
+
+  .chanting-hero-babaji {
+    grid-area: babaji;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+    margin-inline: auto;
+  }
+
+  .chanting-hero-babaji-photo {
+    transform: none;
+    margin-inline: auto;
+    display: block;
+    max-height: clamp(260px, 58vw, 340px);
+  }
+}
+
+@media (max-width: 575px) {
+  .chanting-hero {
+    padding: clamp(1.65rem, 5vw, 2.25rem) clamp(0.85rem, 4.5vw, 1.5rem)
+      clamp(1.35rem, 4vw, 2rem);
+  }
+
+  .chanting-hero-container {
+    padding-inline: clamp(0.65rem, 4vw, 1rem);
+  }
+
+  .chanting-hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copy"
+      "babaji";
   }
   .chanting-hero-copy {
     grid-area: copy;
+    padding-inline: 0.5rem;
   }
   .chanting-hero-babaji {
     grid-area: babaji;
+    justify-content: center;
+    align-items: center;
   }
-  .chanting-hero-deity {
-    grid-area: deity;
-  }
-  .chanting-hero-babaji,
-  .chanting-hero-deity {
+  .chanting-hero-babaji {
     min-height: 0;
   }
   .chanting-hero-babaji-photo {
-    max-height: 340px;
+    max-height: 300px;
+    transform: none;
+    margin-inline: auto;
+    display: block;
   }
-  .chanting-hero-deity-photo {
-    max-height: 360px;
+  .chanting-hero-eyebrow {
+    font-size: clamp(0.58rem, 2.8vw, 0.68rem);
+    letter-spacing: 0.28em;
+  }
+  .chanting-hero-title {
+    font-size: clamp(1.35rem, 7.5vw, 1.85rem);
+  }
+  .chanting-hero-tagline {
+    font-size: clamp(0.88rem, 4vw, 1rem);
+  }
+  .chanting-hero-cta {
+    max-width: 16rem;
+    margin-top: 1rem;
   }
   .chanting-hero-motif-cloud {
     width: min(200px, 56vw);
@@ -5384,6 +5749,11 @@
 
 /* 12-col row */
 .reach-luxe-row {
+  justify-content: center;
+}
+
+.reach-luxe-journey-col {
+  margin-inline: auto;
 }
 
 /* Journey — left 60% */
@@ -5544,14 +5914,18 @@
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .reach-luxe-location-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin: 0;
   padding: 0.18rem 0;
@@ -5560,13 +5934,18 @@
   font-weight: 300;
   line-height: 1.55;
   color: rgba(243, 232, 216, 0.88);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  max-width: 100%;
 }
 
 .reach-luxe-location-item-label {
   align-items: center;
+  justify-content: center;
   font-weight: 400;
   padding-bottom: 0.15rem;
+  width: 100%;
+  text-align: center;
 }
 
 .reach-luxe-location-item-plain {
@@ -5954,21 +6333,186 @@
   }
 }
 
+@media (max-width: 1199px) {
+  .howtoreachbck.reach-luxe {
+    padding: clamp(3.25rem, 6.5vw, 5.5rem) clamp(1.5rem, 4vw, 2.5rem)
+      clamp(3.75rem, 6.5vw, 6rem);
+  }
+
+  .reach-luxe-container {
+    max-width: 100%;
+    padding-inline: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .reach-luxe-header {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    padding-inline: clamp(0.75rem, 2.5vw, 1.25rem);
+  }
+
+  .reach-luxe-row {
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .reach-luxe-title {
+    font-size: clamp(1.5rem, 3.8vw, 2.35rem);
+    letter-spacing: clamp(0.12em, 0.2vw, 0.2em);
+  }
+
+  .reach-luxe-journey {
+    gap: clamp(0.65rem, 1.5vw, 0.85rem);
+  }
+
+  .reach-luxe-card {
+    flex: 1 1 calc(33.333% - 0.7rem);
+    min-width: min(100%, 10.5rem);
+  }
+
+  .reach-luxe-card-icon-wrap {
+    min-height: clamp(118px, 14vw, 155px);
+  }
+
+  .reach-luxe-card-icon {
+    height: clamp(108px, 12.5vw, 145px);
+  }
+
+  .reach-luxe-prabhavali {
+    width: min(100%, 340px);
+  }
+}
+
 @media (max-width: 991px) {
   .events-hub-festival {
     flex: 0 0 calc((100% - 0.35rem) / 2);
   }
+
+  .howtoreachbck.reach-luxe {
+    padding: clamp(2.75rem, 5.5vw, 4rem) clamp(1.25rem, 5vw, 2rem)
+      clamp(3.25rem, 5.5vw, 4.75rem);
+  }
+
+  .reach-luxe::before {
+    inset: 12px;
+  }
+
+  .reach-luxe-container {
+    padding-inline: clamp(1rem, 4vw, 1.75rem);
+  }
+
+  .reach-luxe-header {
+    padding-inline: clamp(0.75rem, 3vw, 1.25rem);
+  }
+
+  .reach-luxe .reach-luxe-row,
+  .reach-luxe-row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .reach-luxe-journey-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   .reach-luxe-hero-col {
     order: -1;
-    margin-bottom: clamp(2rem, 4vw, 2.75rem);
+    margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
   }
+
+  .reach-luxe-map-hero {
+    width: 100%;
+    max-width: min(100%, 380px);
+    margin-inline: auto;
+  }
+
   .reach-luxe-prabhavali {
-    width: min(100%, 360px);
+    width: min(100%, 320px);
     margin: 0 auto;
   }
+
   .reach-luxe-journey-path,
   .reach-luxe-journey-node {
     display: none;
+  }
+
+  .reach-luxe-journey {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    gap: 1.15rem;
+    overflow-x: visible;
+    padding: 0;
+  }
+
+  .reach-luxe-card {
+    flex: none;
+    width: 100%;
+    max-width: min(100%, 420px);
+    min-width: 0;
+    margin-inline: auto;
+    align-self: center;
+  }
+
+  .reach-luxe-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(1.15rem, 3vw, 1.5rem) clamp(1rem, 2.5vw, 1.35rem);
+  }
+
+  .reach-luxe-card-icon-wrap {
+    min-height: clamp(100px, 24vw, 140px);
+  }
+
+  .reach-luxe-card-icon {
+    height: clamp(92px, 22vw, 130px);
+  }
+
+  .reach-luxe-location-list {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .reach-luxe-location-item,
+  .reach-luxe-location-item-label {
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .reach-luxe-ashram-title {
+    font-size: clamp(1.2rem, 3.5vw, 1.65rem);
+    letter-spacing: clamp(0.12em, 0.25vw, 0.18em);
+  }
+
+  .reach-luxe .reach-luxe-cta {
+    margin-top: clamp(1.5rem, 3vw, 2rem);
   }
 }
 
@@ -5976,32 +6520,123 @@
   .events-hub-festival {
     flex: 0 0 100%;
   }
-  .reach-luxe-journey {
+
+  .howtoreachbck.reach-luxe {
+    padding: clamp(2.25rem, 5vw, 3.25rem) clamp(1rem, 5vw, 1.75rem)
+      clamp(2.75rem, 5vw, 3.75rem);
+  }
+
+  .reach-luxe::before {
+    inset: 10px;
+  }
+
+  .reach-luxe-container {
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .reach-luxe-header {
+    margin-bottom: clamp(1.75rem, 4vw, 2.25rem);
+    padding-inline: clamp(0.65rem, 3.5vw, 1rem);
+  }
+
+  .reach-luxe .reach-luxe-row,
+  .reach-luxe-row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .reach-luxe-journey-col {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .reach-luxe-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+    letter-spacing: 0.12em;
+  }
+
+  .reach-luxe-journey {
     gap: 1rem;
-    padding: 0.5rem clamp(0.25rem, 2vw, 0.75rem) 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
   }
-  .reach-luxe-journey::-webkit-scrollbar {
-    display: none;
-  }
+
   .reach-luxe-card {
-    flex: 0 0 min(92vw, 360px);
-    scroll-snap-align: center;
+    width: 100%;
+    max-width: min(100%, 400px);
+    margin-inline: auto;
+    align-self: center;
   }
-  .reach-luxe-cta {
+
+  .reach-luxe-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reach-luxe-card-title {
+    font-size: clamp(0.82rem, 3.2vw, 0.95rem);
+    letter-spacing: 0.16em;
+  }
+
+  .reach-luxe-location-item {
+    white-space: normal;
+    font-size: clamp(0.78rem, 3.2vw, 0.88rem);
+    justify-content: center;
+    text-align: center;
+  }
+
+  .reach-luxe-location-list {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .reach-luxe-prabhavali {
+    width: min(100%, 280px);
+    padding: clamp(1rem, 3vw, 1.35rem) clamp(0.85rem, 2.5vw, 1.15rem);
+  }
+
+  .reach-luxe-map-hero {
+    max-width: min(100%, 300px);
+  }
+
+  .reach-luxe-cta,
+  .reach-luxe .reach-luxe-cta {
     display: flex;
     width: 100%;
-    max-width: 22rem;
+    max-width: 20rem;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    padding: 0.8rem 1.25rem 0.8rem 1rem;
+  }
+
+  .reach-luxe-cta-text {
+    font-size: clamp(0.72rem, 3vw, 0.82rem);
+    letter-spacing: 0.12em;
+  }
+
+  .reach-luxe .babaji-hero-ornament {
+    width: 48px;
+    max-width: 48px;
+    opacity: 0.5;
   }
 }
 
@@ -6009,8 +6644,426 @@
   .reach-luxe-frame {
     inset: 10px;
   }
+
+  .howtoreachbck.reach-luxe,
   .reach-luxe {
-    padding-inline: 0.75rem;
+    padding: clamp(2rem, 5vw, 2.75rem) clamp(1rem, 5vw, 1.5rem)
+      clamp(2.25rem, 5vw, 3.25rem);
+  }
+
+  .reach-luxe::before {
+    inset: 8px;
+  }
+
+  .reach-luxe-container {
+    padding-inline: clamp(0.85rem, 4vw, 1.25rem);
+  }
+
+  .reach-luxe-header {
+    padding-inline: clamp(0.5rem, 4vw, 0.85rem);
+  }
+
+  .reach-luxe .reach-luxe-row,
+  .reach-luxe-row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-inline: 0;
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .reach-luxe-journey-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .reach-luxe-journey {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .reach-luxe-card {
+    width: 100%;
+    max-width: min(100%, 360px);
+    margin-inline: auto;
+    align-self: center;
+  }
+
+  .reach-luxe-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reach-luxe-title {
+    font-size: clamp(1.25rem, 6.5vw, 1.65rem);
+    letter-spacing: 0.1em;
+  }
+
+  .reach-luxe-card-glass {
+    border-radius: 16px;
+    padding: 1rem 0.9rem 1.15rem;
+  }
+
+  .reach-luxe-card-icon-wrap {
+    min-height: clamp(78px, 21vw, 102px);
+  }
+
+  .reach-luxe-card-icon {
+    height: clamp(70px, 18.5vw, 94px);
+  }
+
+  .reach-luxe-card-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+
+  .reach-luxe-location-item {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    padding: 0.22rem 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .reach-luxe-location-list,
+  .reach-luxe-location-item-label {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .reach-luxe-prabhavali {
+    width: min(100%, 250px);
+  }
+
+  .reach-luxe-ashram-title {
+    font-size: clamp(1.05rem, 5vw, 1.35rem);
+    margin-top: 1rem;
+  }
+
+  .reach-luxe-cta,
+  .reach-luxe .reach-luxe-cta {
+    max-width: 18rem;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .howtoreachbck.reach-luxe,
+  .reach-luxe {
+    padding: clamp(1.75rem, 5vw, 2.25rem) clamp(12px, 4vw, 18px)
+      clamp(2rem, 5vw, 2.5rem);
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe::before {
+    inset: 10px;
+  }
+
+  .reach-luxe-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: clamp(10px, 3vw, 14px) !important;
+    padding-right: clamp(10px, 3vw, 14px) !important;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-header {
+    padding-inline: clamp(4px, 1.5vw, 8px);
+  }
+
+  .reach-luxe .reach-luxe-row,
+  .reach-luxe-row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    padding-inline: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-journey-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: auto !important;
+  }
+
+  .reach-luxe-journey {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    align-items: center;
+    gap: clamp(0.75rem, 2.5vw, 0.9rem);
+    padding: 0 clamp(6px, 2vw, 10px);
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-card {
+    min-width: 0 !important;
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px) !important;
+    margin-inline: auto;
+    align-self: center;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(0.55rem, 2.5vw, 0.8rem);
+    margin: 0;
+  }
+
+  .reach-luxe-location-list {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-location-item,
+  .reach-luxe-location-item-label {
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(0.66rem, 2.8vw, 0.74rem);
+    line-height: 1.35;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .reach-luxe-map-hero {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-prabhavali {
+    width: 100%;
+    max-width: min(100%, 230px);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-cta,
+  .reach-luxe .reach-luxe-cta {
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-cta-text {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .howtoreachbck.reach-luxe,
+  .reach-luxe {
+    padding: 1.65rem 14px 1.85rem;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe::before {
+    inset: 10px;
+  }
+
+  .reach-luxe-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-header {
+    margin-bottom: 1.25rem;
+    padding-inline: 4px;
+  }
+
+  .reach-luxe .reach-luxe-row,
+  .reach-luxe-row {
+    --bs-gutter-x: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    padding-inline: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-journey-col,
+  .reach-luxe-hero-col {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-journey-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 100%;
+    margin-inline: auto !important;
+  }
+
+  .reach-luxe-journey {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-inline: auto;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-card {
+    min-width: 0 !important;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px) !important;
+    margin-inline: auto;
+    align-self: center;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.7rem 0.45rem 0.8rem;
+    border-radius: 13px;
+    margin: 0;
+  }
+
+  .reach-luxe-card-icon-wrap {
+    min-height: clamp(74px, 20vw, 98px);
+  }
+
+  .reach-luxe-card-icon {
+    height: clamp(66px, 17.5vw, 90px);
+    max-width: 100%;
+  }
+
+  .reach-luxe-card-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+  }
+
+  .reach-luxe-title {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  .reach-luxe-location-list {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding-inline: 2px;
+  }
+
+  .reach-luxe-location-item,
+  .reach-luxe-location-item-label {
+    justify-content: center;
+    text-align: center;
+    font-size: 0.62rem;
+    line-height: 1.32;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 100%;
+  }
+
+  .reach-luxe-map-hero {
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-prabhavali {
+    width: 100%;
+    max-width: min(100%, 190px);
+    padding: 0.7rem 0.5rem;
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-ashram-title {
+    font-size: 0.9rem;
+    margin-top: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .reach-luxe-cta,
+  .reach-luxe .reach-luxe-cta {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    margin-inline: auto;
+    padding: 0.55rem 0.65rem;
+    gap: 0.4rem;
+    box-sizing: border-box;
+  }
+
+  .reach-luxe-cta-text {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .reach-luxe .babaji-hero-ornament {
+    width: 34px;
+    max-width: 34px;
   }
 }
 
@@ -6139,6 +7192,7 @@
 .reach-luxe .reach-luxe-row {
   align-self: stretch;
   width: 100%;
+  justify-content: center;
 }
 
 .reach-luxe .reach-luxe-cta {
@@ -6146,6 +7200,54 @@
   margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
   padding: 0.9rem 1.75rem 0.9rem 1.35rem;
   align-self: center;
+}
+
+@media (max-width: 420px) {
+  .reach-luxe .reach-luxe-cta,
+  .reach-luxe-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    margin-top: 1.35rem;
+    margin-bottom: 1.15rem;
+    margin-inline: auto;
+    padding: 0.6rem 0.75rem;
+    gap: 0.45rem;
+    box-sizing: border-box;
+    align-self: center;
+  }
+
+  .reach-luxe-cta-text {
+    flex: 1 1 auto;
+    font-size: clamp(0.62rem, 2.8vw, 0.7rem);
+    letter-spacing: 0.1em;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .reach-luxe-cta-arrow {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .reach-luxe .reach-luxe-cta,
+  .reach-luxe-cta {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    margin-top: 1.15rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.6rem;
+    gap: 0.35rem;
+  }
+
+  .reach-luxe-cta-text {
+    font-size: 0.58rem;
+    letter-spacing: 0.07em;
+  }
 }
 
 /* -------------------------------------------- HOMEPAGE MORE BUTTONS (UTILITIES) -------------------------------------------- */
@@ -6630,18 +7732,6 @@
     width: 100%;
   }
 
-  .chanting-hero {
-    padding-inline: 0.75rem;
-  }
-
-  .chanting-hero-cta {
-    display: flex;
-    width: 100%;
-    max-width: 18rem;
-    justify-content: center;
-    margin-inline: auto;
-  }
-
   .babaji-hero-portrait-wrap {
     min-height: clamp(260px, 62vw, 380px);
   }
@@ -6677,15 +7767,6 @@
     min-height: clamp(460px, 72vh, 620px);
   }
 
-  .reach-luxe {
-    padding-inline: 0.65rem;
-  }
-
-  .reach-luxe-title {
-    font-size: clamp(1.35rem, 6.5vw, 1.75rem);
-    letter-spacing: 0.1em;
-  }
-
   .babaji-hero-title {
     font-size: clamp(1.75rem, 8vw, 2.35rem);
   }
@@ -6694,9 +7775,367 @@
     width: 100%;
     max-width: 16rem;
   }
+}
 
-  .seva-section-title {
-    font-size: clamp(1.1rem, 5vw, 1.35rem);
+@media (max-width: 499px) {
+  .events-section.events-hub {
+    padding: clamp(1rem, 4vw, 1.2rem) clamp(10px, 3.5vw, 14px);
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .events-hub-inner,
+  .events-hub-festivals-inner {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(10px, 3vw, 14px);
+    box-sizing: border-box;
+  }
+
+  .events-section.events-hub .babaji-hero-frame {
+    inset: 8px 10px;
+  }
+
+  .events-hub-board {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(4px, 1.5vw, 8px);
+    box-sizing: border-box;
+  }
+
+  .events-hub .events-section-header {
+    margin-bottom: 0.75rem;
+    padding-inline: 4px;
+  }
+
+  .events-hub .events-section-title {
+    font-size: clamp(1rem, 5.5vw, 1.22rem);
+    letter-spacing: 0.06em;
+    line-height: 1.3;
+  }
+
+  .events-hub .events-section-motif {
+    width: min(100%, 148px);
+    margin-top: 0.5rem;
+  }
+
+  .events-hub-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    padding-inline: clamp(4px, 1.5vw, 8px);
+    box-sizing: border-box;
+  }
+
+  .events-hub-card-tl,
+  .events-hub-card-tr,
+  .events-hub-card-ml,
+  .events-hub-card-mr,
+  .events-hub-card-bc {
+    grid-column: 1;
+    grid-row: auto;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    justify-self: center;
+    align-self: auto;
+    margin-inline: auto;
+  }
+
+  .events-hub-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    padding: 0.8rem 0.75rem;
+    gap: 0.55rem;
+    border-radius: 16px;
+    box-sizing: border-box;
+  }
+
+  .events-hub-card-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .events-hub-card-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .events-hub-card-title {
+    font-size: clamp(0.86rem, 4.2vw, 0.98rem);
+    padding-right: 2.35rem;
+    line-height: 1.25;
+  }
+
+  .events-hub-card-desc {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .events-hub-card-date {
+    font-size: 0.58rem;
     letter-spacing: 0.08em;
+  }
+
+  .events-hub-calendar-cell {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0.45rem;
+    justify-self: center;
+  }
+
+  .events-hub-calendar-wrap {
+    width: calc(100% - 16px);
+    max-width: min(100%, 290px);
+    margin-inline: auto;
+  }
+
+  .home-calendar-hub {
+    max-width: min(100%, 290px);
+    padding: 5% 7% 4.5%;
+    gap: 0.08rem;
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .home-calendar-toolbar-hub .home-calendar-nav-btn svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .home-calendar-hub .home-calendar-month {
+    font-size: clamp(0.9rem, 4.8vw, 1rem);
+  }
+
+  .home-calendar-weekdays-hub span {
+    font-size: 0.5rem;
+  }
+
+  .home-calendar-grid-hub {
+    gap: 0.04rem;
+    row-gap: 0.08rem;
+  }
+
+  .home-calendar-hub .home-calendar-day {
+    font-size: 0.58rem;
+    height: 1.1rem;
+    min-height: 1.1rem;
+    max-height: 1.1rem;
+  }
+
+  .home-calendar-hub .home-calendar-day.is-selected {
+    width: 1.1rem;
+    height: 1.1rem;
+    min-height: 1.1rem;
+    max-height: 1.1rem;
+  }
+
+  .home-calendar-event-panel {
+    padding: 0.28rem 5% 0.42rem;
+  }
+
+  .home-calendar-event-panel-date {
+    font-size: 0.5rem;
+  }
+
+  .home-calendar-event-panel-title {
+    font-size: 0.58rem;
+  }
+
+  .home-calendar-event-panel-desc {
+    font-size: 0.5rem;
+    -webkit-line-clamp: 1;
+  }
+
+  .events-hub-view-all {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    margin-inline: auto;
+    font-size: 0.72rem;
+    padding: 0.62rem 0.9rem;
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-reveal {
+    width: 100%;
+    padding-inline: clamp(10px, 3vw, 14px);
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    min-width: 2.15rem;
+    max-width: 2.15rem;
+    padding: 0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .events-hub-festivals {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0 0;
+    padding: 0.9rem clamp(10px, 3vw, 14px);
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-frame {
+    padding: 1.1rem 0.5rem 0.65rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-title {
+    font-size: clamp(0.92rem, 4.5vw, 1.05rem);
+    letter-spacing: 0.08em;
+  }
+
+  .events-hub-festivals-rule {
+    max-width: 28px;
+  }
+
+  .events-hub-festivals-carousel {
+    gap: 0.25rem;
+  }
+
+  .events-hub-festivals-arrow {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .events-hub-festival {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 1.25rem 0.55rem 0.6rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .events-hub-festivals-viewport {
+    padding-top: 2rem;
+  }
+
+  .events-hub-festival-icon-wrap {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+
+  .events-hub-festival-icon {
+    width: 44px;
+    height: 44px;
+    box-shadow:
+      0 0 0 2px #fff8f0,
+      0 0 0 4px #d4af37,
+      0 0 14px rgba(212, 175, 55, 0.25);
+  }
+
+  .events-hub-festival-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .events-hub-festival-name {
+    font-size: clamp(0.88rem, 4vw, 0.98rem);
+    margin-top: 0.15rem;
+  }
+
+  .events-hub-festival-desc {
+    font-size: 0.72rem;
+  }
+
+  .projectbck.social-impact-section {
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .projectbck.social-impact-section,
+  .social-impact-hero {
+    min-height: clamp(360px, 65vh, 480px);
+  }
+
+  .social-impact-hero {
+    padding: clamp(1.85rem, 5vw, 2.5rem) clamp(10px, 3.5vw, 14px)
+      clamp(2.75rem, 6vw, 3.5rem);
+    box-sizing: border-box;
+  }
+
+  .social-impact-hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: clamp(6px, 2vw, 10px);
+    box-sizing: border-box;
+  }
+
+  .social-impact-hero-emblem {
+    width: 36px;
+    margin-bottom: 0.85rem;
+  }
+
+  .social-impact-hero-label {
+    width: 100%;
+    max-width: min(100%, 210px);
+    gap: 0.55rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .social-impact-hero-label-text {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+
+  .social-impact-hero-title {
+    font-size: clamp(1.3rem, 7.5vw, 1.75rem);
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .social-impact-hero-tagline {
+    font-size: clamp(0.82rem, 3.8vw, 0.94rem);
+    line-height: 1.45;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding-inline: 2px;
+  }
+
+  .social-impact-hero-divider {
+    width: min(100%, 140px);
+    margin-bottom: 0.85rem;
+  }
+
+  .social-impact-hero-btn {
+    display: inline-flex;
+    justify-content: center;
+    width: calc(100% - 14px);
+    max-width: calc(100% - 14px);
+    margin-inline: auto;
+    padding: 0.62rem 0.9rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    box-sizing: border-box;
+  }
+
+  .social-impact-hero-torn-edge-wrap {
+    height: clamp(32px, 5vw, 44px);
   }
 }
