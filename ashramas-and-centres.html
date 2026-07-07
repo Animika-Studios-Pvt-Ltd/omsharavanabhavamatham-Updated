@@ -22,7 +22,7 @@
 
 
 
-        <body>
+        <body class="story-page ashramas-and-centres-page">
 
                 <header>
 
@@ -64,6 +64,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lato:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="inner-seva.css">
+<link rel="stylesheet" href="birth.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -405,7 +406,9 @@
 
 </div>
 
-<div class="container-fluid"><div class="innermotif">
+<div class="container-fluid">
+
+    <div class="innermotif">
 
         <img src="static/omsharavanabhavamatham-org/banner-motif.webp" class="img-fluid" alt="motif">
 
@@ -413,204 +416,21 @@
 
 </div>
 
-<div class="outer-container inner-page-body">
-
-    <div class="container">
-
-        <div class="sidebarleft innerhead sevainner">
-
-            <h1>Ashram & Centres</h1>
-
-            <div class="Inner_Page_Motif">
-
-                <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="img-fluid" alt="Heading_Motif">
-
+<div class="outer-container inner-page-body birth-article">
+    <div class="container birth-article__wrap">
+        <header class="birth-article__header">
+            <h1 class="birth-article__title">Ashram & Centres</h1>
+            <div class="birth-article__title-rule" aria-hidden="true">
+                <span class="birth-article__title-line"></span>
+                <span class="birth-article__title-gem"></span>
+                <span class="birth-article__title-line"></span>
             </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                <div class="page-content">
-
-                    <div id="map" style="width: 100%; height: 650px;" class="mapboxgl-map">
-
-                        <div class="mapboxgl-canary" style="visibility: hidden;"></div>
-
-                        <div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate">
-
-                            <canvas
-
-                                class="mapboxgl-canvas"
-
-                                tabindex="0"
-
-                                aria-label="Map"
-
-                                width="1903"
-
-                                height="650"
-
-                                style="width: 1903px; height: 650px;"
-
-                            ></canvas>
-
-                        </div>
-
-                        <div class="mapboxgl-control-container">
-
-                            <div class="mapboxgl-ctrl-top-left"></div>
-
-                            <div class="mapboxgl-ctrl-top-right">
-
-                                <div class="mapboxgl-ctrl mapboxgl-ctrl-group">
-
-                                    <button
-
-                                        class="mapboxgl-ctrl-fullscreen"
-
-                                        type="button"
-
-                                        aria-label="Enter fullscreen"
-
-                                        title="Enter fullscreen"
-
-                                    >
-
-                                        <span class="mapboxgl-ctrl-icon" aria-hidden="true"></span>
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                            <div class="mapboxgl-ctrl-bottom-left">
-
-                                <div class="mapboxgl-ctrl" style="display: block;">
-
-                                    <a
-
-                                        class="mapboxgl-ctrl-logo"
-
-                                        target="_blank"
-
-                                        rel="noopener nofollow"
-
-                                        href="https://www.mapbox.com/"
-
-                                        aria-label="Mapbox logo"
-
-                                    ></a>
-
-                                </div>
-
-                            </div>
-
-                            <div class="mapboxgl-ctrl-bottom-right">
-
-                                <div class="mapboxgl-ctrl mapboxgl-ctrl-attrib">
-
-                                    <div class="mapboxgl-ctrl-attrib-inner">
-
-                                        <a
-
-                                            href="https://www.mapbox.com/about/maps/"
-
-                                            target="_blank"
-
-                                            title="Mapbox"
-
-                                            aria-label="Mapbox"
-
-                                        >© Mapbox</a>
-
-                                        <a
-
-                                            href="https://www.openstreetmap.org/about/"
-
-                                            target="_blank"
-
-                                            title="OpenStreetMap"
-
-                                            aria-label="OpenStreetMap"
-
-                                        >© OpenStreetMap</a>
-
-                                        <a
-
-                                            class="mapbox-improve-map"
-
-                                            href="https://apps.mapbox.com/feedback/?owner=mapbox&amp;id=dark-v10&amp;access_token=YOUR_MAPBOX_ACCESS_TOKEN"
-
-                                            target="_blank"
-
-                                            title="Improve this map"
-
-                                            aria-label="Improve this map"
-
-                                            rel="noopener nofollow"
-
-                                        >Improve this map</a>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+        </header>
+
+        <div class="birth-article__grid birth-article__grid--map">
+            <div class="birth-article__media birth-article__media--full">
+                <div id="map" style="width: 100%; height: 650px;"></div>
             </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-                
-
-<div class="outer-container inner-seva" aria-label="Serve, support, and experience">
-    <div class="container">
-        <div class="inner-seva__showcase" role="list">
-            <a href="pooja-sevas.html" class="inner-seva__card" role="listitem" aria-label="Book a Pooja">
-                <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="inner-seva__media"
-                    alt="Priest performing aarti at the temple shrine">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Book a Pooja
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
-
-            <a href="social-impact.html" class="inner-seva__card inner-seva__card--featured" role="listitem"
-                aria-label="Donate for a Cause">
-                <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="inner-seva__media"
-                    alt="Serving food to devotees as part of annadanam">
-                <span class="inner-seva__shade inner-seva__shade--warm" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Donate for a Cause
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
-
-            <a href="devotees-experience.html" class="inner-seva__card" role="listitem"
-                aria-label="Devotee Experience">
-                <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="inner-seva__media"
-                    alt="Devotee in prayer before the illuminated temple gopuram at night">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Devotee Experience
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
         </div>
     </div>
 </div>
@@ -1005,6 +825,8 @@
                 <script src="lib/jquery/dist/jquery.min.js"></script>
 
                 <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+                <script src="birth-carousel.js"></script>
 
                 <script>
 

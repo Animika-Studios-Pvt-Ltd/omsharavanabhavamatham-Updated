@@ -36,6 +36,15 @@
   margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
+/* Inner read-more pages — space below banner motif */
+.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.mission-page) .outer-container.inner-page-body.birth-article {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.mission-page) .birth-article__header {
+  margin-top: clamp(1rem, 2.5vw, 1.75rem);
+}
+
 .birth-article__lotus {
   display: block;
   width: clamp(72px, 8vw, 200px);
@@ -396,21 +405,26 @@
 .story-page.education-page .outer-container.inner-page-body.birth-article,
 .story-page.education-page .birth-article,
 .story-page.growing-years-page .outer-container.inner-page-body.birth-article,
-.story-page.growing-years-page .birth-article {
-  padding-top: clamp(2rem, 4vw, 3.25rem) !important;
+.story-page.growing-years-page .birth-article,
+.story-page.mission-page .outer-container.inner-page-body.birth-article,
+.story-page.mission-page .birth-article {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
   padding-bottom: clamp(2.5rem, 5vw, 3.75rem) !important;
 }
 
 .story-page.birth-page .birth-article__wrap,
 .story-page.education-page .birth-article__wrap,
-.story-page.growing-years-page .birth-article__wrap {
+.story-page.growing-years-page .birth-article__wrap,
+.story-page.mission-page .birth-article__wrap {
   padding-left: clamp(1rem, 3vw, 2rem);
   padding-right: clamp(1rem, 3vw, 2rem);
 }
 
 .story-page.birth-page .birth-article__header,
 .story-page.education-page .birth-article__header,
-.story-page.growing-years-page .birth-article__header {
+.story-page.growing-years-page .birth-article__header,
+.story-page.mission-page .birth-article__header {
+  margin-top: clamp(1rem, 2.5vw, 1.75rem);
   margin-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
 }
 
@@ -521,9 +535,11 @@
 .story-page.sri-kala-bhairava-temple-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-naga-kshethra-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-shanishwara-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.social-impact-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-kala-bhairava-temple-page .outer-container.inner-seva.birth-seva,
 .story-page.sri-naga-kshethra-page .outer-container.inner-seva.birth-seva,
 .story-page.sri-shanishwara-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.social-impact-page .outer-container.inner-seva.birth-seva,
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-siddars-page .outer-container.inner-seva.birth-seva,
 .story-page.vision-page .outer-container.inner-page-body.birth-article,
@@ -550,8 +566,10 @@
 .story-page.sri-kala-bhairava-temple-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-naga-kshethra-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-shanishwara-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.social-impact-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
-.story-page.vision-page .outer-container.inner-page-body.birth-article {
+.story-page.vision-page .outer-container.inner-page-body.birth-article,
+.story-page.anna-dhaanam-page .outer-container.inner-page-body.birth-article {
   padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
 }
 
@@ -574,8 +592,10 @@
 .story-page.sri-kala-bhairava-temple-page .birth-article__header,
 .story-page.sri-naga-kshethra-page .birth-article__header,
 .story-page.sri-shanishwara-temple-page .birth-article__header,
+.story-page.social-impact-page .birth-article__header,
 .story-page.sri-siddars-page .birth-article__header,
-.story-page.vision-page .birth-article__header {
+.story-page.vision-page .birth-article__header,
+.story-page.anna-dhaanam-page .birth-article__header {
   margin-top: clamp(1rem, 2.5vw, 1.75rem);
 }
 
@@ -647,6 +667,7 @@
 .story-page.sri-kala-bhairava-temple-page .birth-article__more > p,
 .story-page.sri-naga-kshethra-page .birth-article__more > p,
 .story-page.sri-shanishwara-temple-page .birth-article__more > p,
+.story-page.social-impact-page .birth-article__more > p,
 .story-page.sri-siddars-page .birth-article__more > p {
   max-width: 70rem;
   margin-left: auto;
@@ -677,6 +698,7 @@
 .story-page.sri-kala-bhairava-temple-page .birth-seva,
 .story-page.sri-naga-kshethra-page .birth-seva,
 .story-page.sri-shanishwara-temple-page .birth-seva,
+.story-page.social-impact-page .birth-seva,
 .story-page.vision-page .birth-seva,
 .story-page.sri-siddars-page .birth-seva {
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
@@ -705,6 +727,7 @@
 .story-page.sri-kala-bhairava-temple-page .birth-seva__showcase,
 .story-page.sri-naga-kshethra-page .birth-seva__showcase,
 .story-page.sri-shanishwara-temple-page .birth-seva__showcase,
+.story-page.social-impact-page .birth-seva__showcase,
 .story-page.vision-page .birth-seva__showcase,
 .story-page.sri-siddars-page .birth-seva__showcase {
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -783,6 +806,7 @@
 .story-page.sri-kala-bhairava-temple-page .birth-article__more > p,
 .story-page.sri-naga-kshethra-page .birth-article__more > p,
 .story-page.sri-shanishwara-temple-page .birth-article__more > p,
+.story-page.social-impact-page .birth-article__more > p,
 .story-page.sri-siddars-page .birth-article__more > p {
     transform: none;
   }
@@ -929,4 +953,116 @@
   color: var(--birth-text);
   font-family: 'open-sans-regular', 'Lato', sans-serif;
   line-height: 1.65;
+}
+
+/* Contact Us — map + form two-column layout */
+.birth-article__grid--contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
+}
+
+.birth-article__grid--contact > [class*="col-"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.birth-article__grid--contact iframe {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(67, 6, 6, 0.1);
+}
+
+.birth-article__grid--contact p {
+  font-family: 'open-sans-regular', 'Lato', sans-serif;
+  color: var(--birth-text);
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.story-page.ashramas-and-centres-page .birth-article__grid--map {
+  grid-template-columns: 1fr;
+}
+
+.story-page.ashramas-and-centres-page .birth-article__media--full {
+  width: 100%;
+}
+
+.story-page.ashramas-and-centres-page .birth-article__media--full #map {
+  width: 100%;
+  min-height: 650px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(67, 6, 6, 0.1);
+}
+
+@media (max-width: 767px) {
+  .birth-article__grid--contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Pooja Sevas — temple card grid */
+.story-page.pooja-sevas-page .pooja-sevas-grid {
+  margin-top: 0.5rem;
+}
+
+.story-page.pooja-sevas-page .pooja-sevas-grid .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin: 0;
+}
+
+.story-page.pooja-sevas-page .pooja-sevas-grid .row > [class*="col-"] {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.story-page.pooja-sevas-page .pooja-info {
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(201, 162, 77, 0.55);
+  border-radius: 12px;
+  background: rgba(255, 252, 247, 0.65);
+  box-shadow: 0 8px 22px rgba(67, 6, 6, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.story-page.pooja-sevas-page .pooja-info:hover {
+  transform: translateY(-4px);
+  border-color: var(--birth-gold);
+  box-shadow: 0 14px 32px rgba(67, 6, 6, 0.14);
+}
+
+.story-page.pooja-sevas-page .pooja-info p {
+  font-family: Cinzel, "arrusbt-roman", Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--birth-maroon);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.story-page.pooja-sevas-page .pooja-info img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.85rem;
+}
+
+/* Devotee Experience — accordion list spacing */
+.story-page.devotees-page .devotees-experience__list {
+  margin-top: 0.5rem;
+}
+
+/* Story page carousels — auto-scroll, no side arrows */
+.story-page .carousel-control-prev,
+.story-page .carousel-control-next {
+  display: none !important;
 }

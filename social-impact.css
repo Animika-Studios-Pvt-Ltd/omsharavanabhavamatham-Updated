@@ -1,0 +1,251 @@
+/* Social Impact — reference layout (red / white / gold) */
+.story-page.social-impact-page {
+  --si-maroon: #7d0e03;
+  --si-maroon-deep: #5a090c;
+  --si-gold: #c9a24d;
+  --si-cream: #f0e6d8;
+  --si-text: #7d0e03;
+  background: var(--si-cream);
+}
+
+.story-page.social-impact-page .outer-container.inner-page-body.birth-article.social-impact-section,
+.story-page.social-impact-page .social-impact-section {
+  background: var(--si-cream) !important;
+}
+
+.story-page.social-impact-page .social-impact-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.story-page.social-impact-page .social-impact-section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.story-page.social-impact-page .social-impact-section__watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+.story-page.social-impact-page .social-impact-section__watermark--temple {
+  left: -2%;
+  bottom: 4%;
+  width: min(280px, 34vw);
+  height: auto;
+}
+
+.story-page.social-impact-page .social-impact-section__watermark--mandala {
+  right: -1%;
+  top: 8%;
+  width: min(320px, 38vw);
+  height: auto;
+  opacity: 0.06;
+}
+
+.story-page.social-impact-page .social-impact-section__intro {
+  max-width: min(1080px, 94%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.story-page.social-impact-page .social-impact-section__intro p {
+  text-align: center;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  transform: none;
+}
+
+.story-page.social-impact-page .social-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.75vw, 1.15rem);
+  max-width: min(1080px, 92%);
+  margin-inline: auto;
+}
+
+.story-page.social-impact-page .social-impact-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 2px solid var(--si-gold);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(125, 14, 3, 0.08);
+  padding-bottom: 0.85rem;
+  cursor: default;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background-color 0.28s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4b366;
+  background: #fffdf9;
+  box-shadow:
+    0 20px 40px rgba(125, 14, 3, 0.16),
+    0 0 0 1px rgba(201, 162, 77, 0.4);
+}
+
+.story-page.social-impact-page .social-impact-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.story-page.social-impact-page .social-impact-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__media img {
+  transform: scale(1.06);
+}
+
+.story-page.social-impact-page .social-impact-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  margin-top: -1.35rem;
+  margin-bottom: 0.55rem;
+  border: 2px solid var(--si-gold);
+  border-radius: 50%;
+  background: var(--si-maroon);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(125, 14, 3, 0.18);
+  z-index: 2;
+  transition:
+    transform 0.28s ease,
+    background-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__icon {
+  transform: scale(1.08);
+  background: var(--si-maroon-deep);
+  box-shadow: 0 6px 16px rgba(125, 14, 3, 0.28);
+}
+
+.story-page.social-impact-page .social-impact-card__title {
+  margin: 18px 0 0.35rem;
+  padding: 0 0.65rem;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(0.72rem, 1vw, 0.86rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--si-maroon);
+  line-height: 1.35;
+  transition: color 0.28s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__title {
+  color: var(--si-maroon-deep);
+}
+
+.story-page.social-impact-page .social-impact-card__flourish {
+  display: block;
+  width: 62px;
+  height: auto;
+  margin: 0 auto 0.7rem;
+  opacity: 0.9;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__flourish {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.story-page.social-impact-page .social-impact-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0 0.7rem;
+  margin-top: auto;
+}
+
+.story-page.social-impact-page .social-impact-card__donate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.48rem 0.85rem;
+  border-radius: 999px;
+  background: var(--si-maroon);
+  color: #fff !important;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__donate {
+  background: var(--si-maroon-deep);
+}
+
+.story-page.social-impact-page .social-impact-card__donate:hover {
+  background: var(--si-maroon-deep);
+  transform: scale(1.04);
+}
+
+.story-page.social-impact-page .social-impact-card__learn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--si-maroon) !important;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card__learn {
+  color: var(--si-gold) !important;
+}
+
+.story-page.social-impact-page .social-impact-card__learn:hover {
+  color: var(--si-maroon-deep) !important;
+  transform: translateX(2px);
+}
+
+@media (max-width: 991px) {
+  .story-page.social-impact-page .social-impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .story-page.social-impact-page .social-impact-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+}

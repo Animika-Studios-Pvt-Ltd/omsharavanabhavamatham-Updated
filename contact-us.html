@@ -22,7 +22,7 @@
 
 
 
-        <body>
+        <body class="story-page contact-us-page">
 
                 <header>
 
@@ -64,6 +64,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lato:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="inner-seva.css">
+<link rel="stylesheet" href="birth.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
@@ -405,7 +406,9 @@
 
 </div>
 
-<div class="container-fluid"><div class="innermotif">
+<div class="container-fluid">
+
+    <div class="innermotif">
 
         <img src="static/omsharavanabhavamatham-org/banner-motif.webp" class="img-fluid" alt="motif">
 
@@ -413,24 +416,18 @@
 
 </div>
 
-<div class="outer-container inner-page-body">
-
-    <div class="container">
-
-        <div class="sidebarleft innerhead sevainner">
-
-            <h1>Contact Us</h1>
-
-            <div class="Inner_Page_Motif">
-
-                <img src="static/omsharavanabhavamatham-org/heading-motif.webp" class="img-fluid" alt="Heading_Motif">
-
+<div class="outer-container inner-page-body birth-article">
+    <div class="container birth-article__wrap">
+        <header class="birth-article__header">
+            <h1 class="birth-article__title">Contact Us</h1>
+            <div class="birth-article__title-rule" aria-hidden="true">
+                <span class="birth-article__title-line"></span>
+                <span class="birth-article__title-gem"></span>
+                <span class="birth-article__title-line"></span>
             </div>
+        </header>
 
-        </div>
-
-        <div class="row">
-
+        <div class="birth-article__grid birth-article__grid--contact">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
                 <div class=" sevainner">
@@ -487,48 +484,6 @@
 
             </div>
 
-        </div>
-
-    </div>
-
-</div>
-
-                
-
-<div class="outer-container inner-seva" aria-label="Serve, support, and experience">
-    <div class="container">
-        <div class="inner-seva__showcase" role="list">
-            <a href="pooja-sevas.html" class="inner-seva__card" role="listitem" aria-label="Book a Pooja">
-                <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="inner-seva__media"
-                    alt="Priest performing aarti at the temple shrine">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Book a Pooja
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
-
-            <a href="social-impact.html" class="inner-seva__card inner-seva__card--featured" role="listitem"
-                aria-label="Donate for a Cause">
-                <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="inner-seva__media"
-                    alt="Serving food to devotees as part of annadanam">
-                <span class="inner-seva__shade inner-seva__shade--warm" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Donate for a Cause
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
-
-            <a href="devotees-experience.html" class="inner-seva__card" role="listitem"
-                aria-label="Devotee Experience">
-                <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="inner-seva__media"
-                    alt="Devotee in prayer before the illuminated temple gopuram at night">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Devotee Experience
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
-            </a>
         </div>
     </div>
 </div>
@@ -923,6 +878,8 @@
                 <script src="lib/jquery/dist/jquery.min.js"></script>
 
                 <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+                <script src="birth-carousel.js"></script>
 
                 <script>
 
