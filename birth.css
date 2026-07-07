@@ -518,8 +518,14 @@
 .story-page.copper-sri-shiva-linga-page .outer-container.inner-seva.birth-seva,
 .story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-kala-bhairava-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-naga-kshethra-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-shanishwara-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-kala-bhairava-temple-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-naga-kshethra-page .outer-container.inner-seva.birth-seva,
+.story-page.sri-shanishwara-temple-page .outer-container.inner-seva.birth-seva,
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
-.story-page.sri-siddars-page .outer-container.inner-seva,
+.story-page.sri-siddars-page .outer-container.inner-seva.birth-seva,
 .story-page.vision-page .outer-container.inner-page-body.birth-article,
 .story-page.vision-page .outer-container.inner-seva.birth-seva {
   background: #f0e6d8 !important;
@@ -541,6 +547,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .outer-container.inner-page-body.birth-article,
 .story-page.copper-sri-shiva-linga-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-dakshinamoorthy-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-kala-bhairava-temple-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-naga-kshethra-page .outer-container.inner-page-body.birth-article,
+.story-page.sri-shanishwara-temple-page .outer-container.inner-page-body.birth-article,
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
 .story-page.vision-page .outer-container.inner-page-body.birth-article {
   padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
@@ -562,6 +571,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-article__header,
 .story-page.copper-sri-shiva-linga-page .birth-article__header,
 .story-page.sri-dakshinamoorthy-temple-page .birth-article__header,
+.story-page.sri-kala-bhairava-temple-page .birth-article__header,
+.story-page.sri-naga-kshethra-page .birth-article__header,
+.story-page.sri-shanishwara-temple-page .birth-article__header,
 .story-page.sri-siddars-page .birth-article__header,
 .story-page.vision-page .birth-article__header {
   margin-top: clamp(1rem, 2.5vw, 1.75rem);
@@ -583,6 +595,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
 .story-page.copper-sri-shiva-linga-page .birth-article__media,
 .story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+.story-page.sri-kala-bhairava-temple-page .birth-article__media,
+.story-page.sri-naga-kshethra-page .birth-article__media,
+.story-page.sri-shanishwara-temple-page .birth-article__media,
 .story-page.sri-siddars-page .birth-article__media,
 .story-page.vision-page .birth-article__media {
   margin-left: 118px;
@@ -604,6 +619,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media img,
 .story-page.copper-sri-shiva-linga-page .birth-article__media img,
 .story-page.sri-dakshinamoorthy-temple-page .birth-article__media img,
+.story-page.sri-kala-bhairava-temple-page .birth-article__media img,
+.story-page.sri-naga-kshethra-page .birth-article__media img,
+.story-page.sri-shanishwara-temple-page .birth-article__media img,
 .story-page.sri-siddars-page .birth-article__media img,
 .story-page.vision-page .birth-article__media img {
   width: 100%;
@@ -626,6 +644,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-article__more > p,
 .story-page.copper-sri-shiva-linga-page .birth-article__more > p,
 .story-page.sri-dakshinamoorthy-temple-page .birth-article__more > p,
+.story-page.sri-kala-bhairava-temple-page .birth-article__more > p,
+.story-page.sri-naga-kshethra-page .birth-article__more > p,
+.story-page.sri-shanishwara-temple-page .birth-article__more > p,
 .story-page.sri-siddars-page .birth-article__more > p {
   max-width: 70rem;
   margin-left: auto;
@@ -653,7 +674,11 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-seva,
 .story-page.copper-sri-shiva-linga-page .birth-seva,
 .story-page.sri-dakshinamoorthy-temple-page .birth-seva,
-.story-page.vision-page .birth-seva {
+.story-page.sri-kala-bhairava-temple-page .birth-seva,
+.story-page.sri-naga-kshethra-page .birth-seva,
+.story-page.sri-shanishwara-temple-page .birth-seva,
+.story-page.vision-page .birth-seva,
+.story-page.sri-siddars-page .birth-seva {
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
   padding-bottom: clamp(2rem, 4vw, 3rem) !important;
@@ -677,7 +702,11 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase,
 .story-page.copper-sri-shiva-linga-page .birth-seva__showcase,
 .story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase,
-.story-page.vision-page .birth-seva__showcase {
+.story-page.sri-kala-bhairava-temple-page .birth-seva__showcase,
+.story-page.sri-naga-kshethra-page .birth-seva__showcase,
+.story-page.sri-shanishwara-temple-page .birth-seva__showcase,
+.story-page.vision-page .birth-seva__showcase,
+.story-page.sri-siddars-page .birth-seva__showcase {
   gap: clamp(1.25rem, 2.5vw, 1.75rem);
   padding-top: clamp(0.5rem, 1.5vw, 1rem);
   padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
@@ -703,6 +732,9 @@
   .story-page.sri-shirdi-sai-baba-temple-page .birth-article__grid,
   .story-page.copper-sri-shiva-linga-page .birth-article__grid,
   .story-page.sri-dakshinamoorthy-temple-page .birth-article__grid,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__grid,
+  .story-page.sri-naga-kshethra-page .birth-article__grid,
+  .story-page.sri-shanishwara-temple-page .birth-article__grid,
   .story-page.sri-siddars-page .birth-article__grid,
   .story-page.vision-page .birth-article__grid {
     gap: 2rem;
@@ -724,6 +756,9 @@
   .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
   .story-page.copper-sri-shiva-linga-page .birth-article__media,
   .story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media,
+  .story-page.sri-naga-kshethra-page .birth-article__media,
+  .story-page.sri-shanishwara-temple-page .birth-article__media,
 .story-page.sri-siddars-page .birth-article__media,
   .story-page.vision-page .birth-article__media {
     margin-left: 0;
@@ -745,6 +780,9 @@
 .story-page.sri-shirdi-sai-baba-temple-page .birth-article__more > p,
 .story-page.copper-sri-shiva-linga-page .birth-article__more > p,
 .story-page.sri-dakshinamoorthy-temple-page .birth-article__more > p,
+.story-page.sri-kala-bhairava-temple-page .birth-article__more > p,
+.story-page.sri-naga-kshethra-page .birth-article__more > p,
+.story-page.sri-shanishwara-temple-page .birth-article__more > p,
 .story-page.sri-siddars-page .birth-article__more > p {
     transform: none;
   }

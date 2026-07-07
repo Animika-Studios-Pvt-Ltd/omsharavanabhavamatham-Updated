@@ -2414,39 +2414,51 @@
 
 </div>
 
-<div class="outer-container inner-seva" aria-label="Serve, support, and experience">
+<div class="sri-siddars-modal" id="sriSiddarsModal" hidden aria-hidden="true">
+    <div class="sri-siddars-modal__backdrop" data-close-modal></div>
+    <div class="sri-siddars-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sriSiddarsModalTitle">
+        <div class="sri-siddars-modal__header">
+            <h4 class="sri-siddars-modal__title" id="sriSiddarsModalTitle"></h4>
+            <button type="button" class="sri-siddars-modal__close" data-close-modal aria-label="Close">&times;</button>
+        </div>
+        <div class="sri-siddars-modal__body" id="sriSiddarsModalBody"></div>
+    </div>
+</div>
+
+<div class="outer-container inner-seva birth-seva" aria-label="Serve, support, and experience">
     <div class="container">
-        <div class="inner-seva__showcase" role="list">
-            <a href="pooja-sevas.html" class="inner-seva__card" role="listitem" aria-label="Book a Pooja">
-                <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="inner-seva__media"
-                    alt="Priest performing aarti at the temple shrine">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Book a Pooja
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
+        <div class="inner-seva__showcase birth-seva__showcase" role="list">
+            <a href="pooja-sevas.html" class="inner-seva__card birth-seva__card" role="listitem" aria-label="Book a Pooja">
+                <div class="birth-seva__media-wrap">
+                    <img src="static/omsharavanabhavamatham-org/seva-card-pooja.png" class="inner-seva__media"
+                        alt="Priest performing aarti at the temple shrine">
+                </div>
+                <span class="birth-seva__icon" aria-hidden="true"><i class="fa fa-fire"></i></span>
+                <span class="inner-seva__label">Book a Pooja</span>
+                <span class="birth-seva__desc">Offer prayers and book sacred poojas at the temple.</span>
+                <span class="inner-seva__arrow birth-seva__btn">Book now <span aria-hidden="true">&rsaquo;</span></span>
             </a>
 
-            <a href="social-impact.html" class="inner-seva__card inner-seva__card--featured" role="listitem"
-                aria-label="Donate for a Cause">
-                <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="inner-seva__media"
-                    alt="Serving food to devotees as part of annadanam">
-                <span class="inner-seva__shade inner-seva__shade--warm" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Donate for a Cause
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
+            <a href="social-impact.html" class="inner-seva__card birth-seva__card" role="listitem" aria-label="Donate for a Cause">
+                <div class="birth-seva__media-wrap">
+                    <img src="static/omsharavanabhavamatham-org/seva-card-donate.png" class="inner-seva__media"
+                        alt="Serving food to devotees as part of annadanam">
+                </div>
+                <span class="birth-seva__icon" aria-hidden="true"><i class="fa fa-heart"></i></span>
+                <span class="inner-seva__label">Donate for a Cause</span>
+                <span class="birth-seva__desc">Support seva and social initiatives with your offering.</span>
+                <span class="inner-seva__arrow birth-seva__btn">Donate <span aria-hidden="true">&rsaquo;</span></span>
             </a>
 
-            <a href="devotees-experience.html" class="inner-seva__card" role="listitem"
-                aria-label="Devotee Experience">
-                <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="inner-seva__media"
-                    alt="Devotee in prayer before the illuminated temple gopuram at night">
-                <span class="inner-seva__shade" aria-hidden="true"></span>
-                <span class="inner-seva__label">
-                    Devotee Experience
-                    <span class="inner-seva__arrow" aria-hidden="true">&rsaquo;</span>
-                </span>
+            <a href="devotees-experience.html" class="inner-seva__card birth-seva__card" role="listitem" aria-label="Devotee Experience">
+                <div class="birth-seva__media-wrap">
+                    <img src="static/omsharavanabhavamatham-org/seva-card-devotion.png" class="inner-seva__media"
+                        alt="Devotee in prayer before the illuminated temple gopuram at night">
+                </div>
+                <span class="birth-seva__icon" aria-hidden="true"><i class="fa fa-users"></i></span>
+                <span class="inner-seva__label">Devotee Experience</span>
+                <span class="birth-seva__desc">Read heartfelt experiences shared by devotees.</span>
+                <span class="inner-seva__arrow birth-seva__btn">Explore <span aria-hidden="true">&rsaquo;</span></span>
             </a>
         </div>
     </div>
@@ -2744,7 +2756,7 @@
       </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="header.js"></script>
-<script type="text/javascript" src="static/omsharavanabhavamatham-org/expanding.js"></script>
+<script src="sri-siddars-modal.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -2854,39 +2866,6 @@
 
                 </script>
 
-<script>
-(function ($) {
-  if (!$) return;
-
-  var $grid = $('.sri-siddars-page .expanding-grid');
-
-  function syncSiddarsPanel() {
-    var $panel = $grid.find('.expanding-container.expanded:visible').last();
-    var $spacer = $grid.find('.spacer').filter(function () {
-      return $(this).height() > 0;
-    }).last();
-
-    if (!$panel.length) return;
-
-    $panel.css({ height: 'auto', overflow: 'visible' });
-    var fullHeight = $panel.outerHeight(true);
-
-    if ($spacer.length) {
-      $spacer.height(fullHeight);
-      var top = $spacer.position().top;
-      $panel.css({ top: top + 'px', width: '100%' });
-      $grid.find('.close-button.active').css({ top: top + 'px' });
-    }
-  }
-
-  $grid.on('click', '.links a', function () {
-    window.setTimeout(syncSiddarsPanel, 280);
-    window.setTimeout(syncSiddarsPanel, 600);
-  });
-
-  $(window).on('resize', syncSiddarsPanel);
-})(window.jQuery);
-</script>
 
         </body>
 

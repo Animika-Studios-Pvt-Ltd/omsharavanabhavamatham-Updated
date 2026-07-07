@@ -1,6 +1,5 @@
-/* Sri Siddars — birth-article intro + expanding saint grid */
-.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article,
-.story-page.sri-siddars-page .outer-container.inner-seva {
+/* Sri Siddars — birth-article intro + saint grid with popup details */
+.story-page.sri-siddars-page .outer-container.inner-page-body.birth-article {
   background: #f0e6d8 !important;
   overflow: visible !important;
 }
@@ -114,72 +113,125 @@
 }
 
 .sri-siddars-page .expanding-grid .expanding-container {
-  overflow: visible !important;
-  width: 100% !important;
-  left: 0 !important;
-  box-sizing: border-box;
-}
-
-.sri-siddars-page .expanding-grid .expanding-container.expanded,
-.sri-siddars-page .expanding-grid .expanding-container:target {
-  display: block;
-  overflow: visible !important;
-  height: auto !important;
-  z-index: 4;
-}
-
-.sri-siddars-page .expanding-grid .hentry {
-  overflow: visible !important;
-  height: auto !important;
-  min-height: 0;
-  background: #7d0e03 !important;
-  color: #c9a24d !important;
-  border: 1px solid #c9a24d;
-}
-
-.sri-siddars-page .expanding-grid .hentry .entry-image {
-  float: none;
-  width: 100%;
-}
-
-.sri-siddars-page .expanding-grid .hentry .entry-image h3,
-.sri-siddars-page .expanding-grid .hentry .entry-image p,
-.sri-siddars-page .expanding-grid .hentry h3,
-.sri-siddars-page .expanding-grid .hentry p,
-.sri-siddars-page .expanding-grid .hentry th,
-.sri-siddars-page .expanding-grid .hentry td,
-.sri-siddars-page .expanding-grid .hentry li,
-.sri-siddars-page .expanding-grid .hentry span {
-  color: #c9a24d !important;
-}
-
-.sri-siddars-page .expanding-grid .hentry .table tr th,
-.sri-siddars-page .expanding-grid .hentry .table tr td {
-  border-color: #c9a24d !important;
-  background: transparent !important;
-}
-
-.sri-siddars-page .expanding-grid .hentry .table-responsive {
-  overflow-x: auto;
-  margin-bottom: 1rem;
-}
-
-.sri-siddars-page .expanding-grid .spacer {
-  display: block;
-  clear: both;
-  width: 100%;
-}
-
-.sri-siddars-page .expanding-grid .close-button {
-  z-index: 6;
+  display: none !important;
 }
 
 .sri-siddars-page .birth-article__actions {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+/* Saint details popup */
+body.sri-siddars-modal-open {
+  overflow: hidden;
+}
+
+.sri-siddars-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.sri-siddars-modal[hidden] {
+  display: none !important;
+}
+
+.sri-siddars-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 12, 8, 0.72);
+}
+
+.sri-siddars-modal__dialog {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: min(88vh, 900px);
+  display: flex;
+  flex-direction: column;
+  background: #7d0e03;
+  color: #fff;
+  border: 2px solid #c9a24d;
+  border-radius: 10px;
+  box-shadow: 0 24px 64px rgba(26, 12, 8, 0.45);
+  overflow: hidden;
+}
+
+.sri-siddars-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(201, 162, 77, 0.45);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.sri-siddars-modal__title {
+  margin: 0;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.sri-siddars-modal__close {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid #c9a24d;
+  border-radius: 50%;
+  background: transparent;
+  color: #c9a24d;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.sri-siddars-modal__close:hover,
+.sri-siddars-modal__close:focus {
+  background: rgba(201, 162, 77, 0.15);
+  outline: none;
+}
+
+.sri-siddars-modal__body {
+  overflow: auto;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.sri-siddars-modal__body p,
+.sri-siddars-modal__body th,
+.sri-siddars-modal__body td,
+.sri-siddars-modal__body li,
+.sri-siddars-modal__body span {
+  color: #fff !important;
+}
+
+.sri-siddars-modal__body .table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.sri-siddars-modal__body .table tr th,
+.sri-siddars-modal__body .table tr td {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  background: transparent !important;
+}
+
+.sri-siddars-modal__body p {
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
 @media (max-width: 767px) {
-  .sri-siddars-page .expanding-grid .hentry .table-responsive {
+  .sri-siddars-modal__body {
+    padding: 1rem;
+  }
+
+  .sri-siddars-modal__body .table-responsive {
     margin-bottom: 0.75rem;
   }
 }
