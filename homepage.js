@@ -1,14 +1,20 @@
-window.onload = function () {
-  var popupOverlay = document.getElementById("popupOverlay");
-  if (popupOverlay) {
-    popupOverlay.style.display = "flex";
+/* -------------------------------------------- UTILITY FUNCTIONS -------------------------------------------- */
+function refreshHubLucideIcons() {
+  if (typeof lucide === "undefined") {
+    return;
   }
-};
 
-function closePopup() {
-  document.getElementById("popupOverlay").style.display = "none";
+  lucide.createIcons({
+    attrs: {
+      "stroke-width": 1.5,
+      width: 18,
+      height: 18,
+    },
+    nameAttr: "data-lucide",
+  });
 }
 
+/* -------------------------------------------- BABAJI HERO SECTION -------------------------------------------- */
 (function initBabajiHeroParallax() {
   if (!document.body.classList.contains("home-page")) {
     return;
@@ -35,7 +41,9 @@ function closePopup() {
     parallaxEls.forEach(function (el) {
       var factor = parseFloat(el.getAttribute("data-babaji-parallax")) || 0.03;
       var y = offset * factor * 10;
-      var flip = el.classList.contains("babaji-hero__floral--bl") ? "scaleX(-1) " : "";
+      var flip = el.classList.contains("babaji-hero-floral-bl")
+        ? "scaleX(-1) "
+        : "";
       el.style.transform = flip + "translate3d(0, " + y + "px, 0)";
     });
 
@@ -54,18 +62,19 @@ function closePopup() {
   updateParallax();
 })();
 
+/* -------------------------------------------- SEVA SECTION -------------------------------------------- */
 (function initSevaLotusAnimations() {
   if (!document.body.classList.contains("home-page")) {
     return;
   }
 
-  var section = document.querySelector(".seva-section__inner");
-  var cards = document.querySelectorAll(".seva-section .seva-showcase__card");
+  var section = document.querySelector(".seva-section-inner");
+  var cards = document.querySelectorAll(".seva-section .seva-showcase-card");
   if (!section || !cards.length) {
     return;
   }
 
-  var header = document.querySelector(".seva-section__header");
+  var header = document.querySelector(".seva-section-header");
 
   function revealCards() {
     if (header) {
@@ -76,7 +85,9 @@ function closePopup() {
     });
   }
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   if (prefersReducedMotion) {
     revealCards();
     return;
@@ -91,27 +102,13 @@ function closePopup() {
         }
       });
     },
-    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" },
   );
 
   observer.observe(section);
 })();
 
-function refreshHubLucideIcons() {
-  if (typeof lucide === "undefined") {
-    return;
-  }
-
-  lucide.createIcons({
-    attrs: {
-      "stroke-width": 1.5,
-      width: 18,
-      height: 18
-    },
-    nameAttr: "data-lucide"
-  });
-}
-
+/* -------------------------------------------- NEWS & EVENTS (EVENTS HUB) SECTION -------------------------------------------- */
 (function initHomeCalendar() {
   if (!document.body.classList.contains("home-page")) {
     return;
@@ -130,14 +127,34 @@ function refreshHubLucideIcons() {
   }
 
   var monthNames = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
   var monthNamesFull = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
-  var isHubCalendar = calendar.classList.contains("home-calendar--hub");
+  var isHubCalendar = calendar.classList.contains("home-calendar-hub");
   var eventsData = [];
 
   try {
@@ -201,14 +218,20 @@ function refreshHubLucideIcons() {
       return;
     }
 
-    eventIconWrap.innerHTML = '<i data-lucide="' + (iconName || "calendar") + '"></i>';
+    eventIconWrap.innerHTML =
+      '<i data-lucide="' + (iconName || "calendar") + '"></i>';
     refreshHubLucideIcons();
   }
 
   function syncLinkedCards(key) {
-    document.querySelectorAll(".events-hub__card[data-event-date]").forEach(function (card) {
-      card.classList.toggle("is-linked", card.getAttribute("data-event-date") === key);
-    });
+    document
+      .querySelectorAll(".events-hub-card[data-event-date]")
+      .forEach(function (card) {
+        card.classList.toggle(
+          "is-linked",
+          card.getAttribute("data-event-date") === key,
+        );
+      });
   }
 
   function updateEventPanel(key) {
@@ -223,7 +246,8 @@ function refreshHubLucideIcons() {
 
     if (!eventItem) {
       eventTitleLabel.textContent = "A Day for Devotion";
-      eventDescLabel.textContent = "No formal program scheduled — open for satsang, prayer, and quiet reflection.";
+      eventDescLabel.textContent =
+        "No formal program scheduled — open for satsang, prayer, and quiet reflection.";
       setEventPanelIcon("calendar");
       if (eventPanel) {
         eventPanel.classList.add("is-empty");
@@ -289,7 +313,7 @@ function refreshHubLucideIcons() {
       var key = dateKey(cellYear, cellMonth, dayNumber);
       var button = document.createElement("button");
       button.type = "button";
-      button.className = "home-calendar__day";
+      button.className = "home-calendar-day";
       button.textContent = String(dayNumber);
 
       if (isMuted) {
@@ -311,17 +335,20 @@ function refreshHubLucideIcons() {
       if (eventDateSet[key]) {
         button.classList.add("has-event");
         var dot = document.createElement("span");
-        dot.className = "home-calendar__dot";
+        dot.className = "home-calendar-dot";
         dot.setAttribute("aria-hidden", "true");
         button.appendChild(dot);
       }
 
       if (!isMuted) {
-        button.addEventListener("click", function (eventKey) {
-          return function () {
-            selectDate(eventKey);
-          };
-        }(key));
+        button.addEventListener(
+          "click",
+          (function (eventKey) {
+            return function () {
+              selectDate(eventKey);
+            };
+          })(key),
+        );
       } else {
         button.disabled = true;
       }
@@ -368,7 +395,9 @@ function refreshHubLucideIcons() {
     });
   });
 
-  var defaultDate = eventDates.length ? eventDates[0] : dateKey(today.getFullYear(), today.getMonth(), today.getDate());
+  var defaultDate = eventDates.length
+    ? eventDates[0]
+    : dateKey(today.getFullYear(), today.getMonth(), today.getDate());
   if (defaultDate) {
     var dateParts = defaultDate.split("-");
     viewYear = parseInt(dateParts[0], 10);
@@ -388,7 +417,9 @@ function refreshHubLucideIcons() {
   var carousel = document.getElementById("festivalsCarousel");
   var prevBtn = document.getElementById("festivalsCarouselPrev");
   var nextBtn = document.getElementById("festivalsCarouselNext");
-  var festivals = track ? track.querySelectorAll(".events-hub__festival[data-festival-start]") : [];
+  var festivals = track
+    ? track.querySelectorAll(".events-hub-festival[data-festival-start]")
+    : [];
 
   if (!track || !festivals.length) {
     return;
@@ -402,11 +433,16 @@ function refreshHubLucideIcons() {
   var currentIndex = 0;
   var autoplayTimer = null;
   var resizeTimer = null;
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   festivals.forEach(function (item) {
     var start = new Date(item.getAttribute("data-festival-start"));
-    var end = new Date(item.getAttribute("data-festival-end") || item.getAttribute("data-festival-start"));
+    var end = new Date(
+      item.getAttribute("data-festival-end") ||
+        item.getAttribute("data-festival-start"),
+    );
     start.setHours(0, 0, 0, 0);
     end.setHours(23, 59, 59, 999);
 
@@ -464,13 +500,16 @@ function refreshHubLucideIcons() {
     for (var i = 0; i <= maxIndex; i += 1) {
       var dot = document.createElement("button");
       dot.type = "button";
-      dot.className = "events-hub__festivals-dot";
+      dot.className = "events-hub-festivals-dot";
       dot.setAttribute("aria-label", "Show festival slide " + (i + 1));
-      dot.addEventListener("click", function (index) {
-        return function () {
-          goTo(index, true);
-        };
-      }(i));
+      dot.addEventListener(
+        "click",
+        (function (index) {
+          return function () {
+            goTo(index, true);
+          };
+        })(i),
+      );
       dotsWrap.appendChild(dot);
     }
   }
@@ -480,7 +519,7 @@ function refreshHubLucideIcons() {
       return;
     }
 
-    var dots = dotsWrap.querySelectorAll(".events-hub__festivals-dot");
+    var dots = dotsWrap.querySelectorAll(".events-hub-festivals-dot");
     dots.forEach(function (dot, index) {
       dot.classList.toggle("is-active", index === currentIndex);
     });
@@ -497,7 +536,8 @@ function refreshHubLucideIcons() {
       currentIndex = maxIndex;
     }
 
-    track.style.transform = "translateX(-" + (getStepSize() * currentIndex) + "px)";
+    track.style.transform =
+      "translateX(-" + getStepSize() * currentIndex + "px)";
     updateDots();
 
     if (pauseAutoplay) {
@@ -539,7 +579,8 @@ function refreshHubLucideIcons() {
       currentIndex = maxIndex;
     }
     buildDots();
-    track.style.transform = "translateX(-" + (getStepSize() * currentIndex) + "px)";
+    track.style.transform =
+      "translateX(-" + getStepSize() * currentIndex + "px)";
     updateDots();
   }
 
@@ -595,7 +636,10 @@ function refreshHubLucideIcons() {
 
   function setExpanded(expanded) {
     toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
-    toggle.setAttribute("aria-label", expanded ? "Hide upcoming festivals" : "Show upcoming festivals");
+    toggle.setAttribute(
+      "aria-label",
+      expanded ? "Hide upcoming festivals" : "Show upcoming festivals",
+    );
     panel.classList.toggle("is-collapsed", !expanded);
 
     if (expanded) {
@@ -629,14 +673,14 @@ function refreshHubLucideIcons() {
     return;
   }
 
-  hub.classList.add("events-hub--animate");
+  hub.classList.add("events-hub-animate");
 
-  var cards = hub.querySelectorAll(".events-hub__card");
-  var calendarWrap = hub.querySelector(".events-hub__calendar-wrap");
+  var cards = hub.querySelectorAll(".events-hub-card");
+  var calendarWrap = hub.querySelector(".events-hub-calendar-wrap");
 
   function revealAll() {
     cards.forEach(function (card, index) {
-      card.style.transitionDelay = (index * 0.08) + "s";
+      card.style.transitionDelay = index * 0.08 + "s";
       card.classList.add("is-in-view");
     });
     if (calendarWrap) {
@@ -660,7 +704,7 @@ function refreshHubLucideIcons() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" },
     );
 
     observer.observe(hub);
@@ -669,12 +713,13 @@ function refreshHubLucideIcons() {
   }
 })();
 
+/* -------------------------------------------- BABAJI'S VIDEOS & DIVINE VOICE SECTION -------------------------------------------- */
 (function initVoicePlayers() {
   if (!document.body.classList.contains("home-page")) {
     return;
   }
 
-  var playButtons = document.querySelectorAll(".voice-card__play-btn");
+  var playButtons = document.querySelectorAll(".voice-card-play-btn");
   if (!playButtons.length) {
     return;
   }
@@ -697,7 +742,9 @@ function refreshHubLucideIcons() {
 
     button.setAttribute(
       "aria-label",
-      isPlaying ? button.getAttribute("data-aria-pause") : button.getAttribute("data-aria-play")
+      isPlaying
+        ? button.getAttribute("data-aria-pause")
+        : button.getAttribute("data-aria-play"),
     );
   }
 
@@ -733,24 +780,28 @@ function refreshHubLucideIcons() {
         audio.src = src;
       }
 
-      audio.play().then(function () {
-        setButtonState(button, true);
-        activeButton = button;
-      }).catch(function () {
-        resetButtons();
-      });
+      audio
+        .play()
+        .then(function () {
+          setButtonState(button, true);
+          activeButton = button;
+        })
+        .catch(function () {
+          resetButtons();
+        });
     });
   });
 
   audio.addEventListener("ended", resetButtons);
 })();
 
+/* -------------------------------------------- SOCIAL IMPACT SECTION -------------------------------------------- */
 (function initSocialImpactReveal() {
   if (!document.body.classList.contains("home-page")) {
     return;
   }
 
-  var content = document.querySelector(".social-impact-hero__content");
+  var content = document.querySelector(".social-impact-hero-content");
   if (!content) {
     return;
   }
@@ -769,12 +820,13 @@ function refreshHubLucideIcons() {
         }
       });
     },
-    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" },
   );
 
   observer.observe(content);
 })();
 
+/* -------------------------------------------- HOW TO GET HERE (REACH LUXE) SECTION -------------------------------------------- */
 (function initReachLuxeSection() {
   if (!document.body.classList.contains("home-page")) {
     return;
@@ -787,7 +839,9 @@ function refreshHubLucideIcons() {
 
   var cards = section.querySelectorAll("[data-reach-card]");
   var mapHero = section.querySelector("[data-reach-map]");
-  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   function reveal(el) {
     if (el) {
@@ -810,7 +864,7 @@ function refreshHubLucideIcons() {
         }
       });
     },
-    { threshold: 0.2, rootMargin: "0px 0px -6% 0px" }
+    { threshold: 0.2, rootMargin: "0px 0px -6% 0px" },
   );
 
   cards.forEach(function (card) {
@@ -822,23 +876,26 @@ function refreshHubLucideIcons() {
   }
 })();
 
+/* -------------------------------------------- FOOTER / RETURN TO TOP BUTTON -------------------------------------------- */
 (function initFooterPalaceTop() {
   if (!document.body.classList.contains("home-page")) {
     return;
   }
 
   var topBtn = document.getElementById("return-to-top");
-  if (!topBtn || !topBtn.classList.contains("footer-palace__top")) {
+  if (!topBtn || !topBtn.classList.contains("footer-palace-top")) {
     return;
   }
 
   if (window.jQuery) {
     jQuery(window).off("scroll");
     jQuery(topBtn).stop(true, true).css({ display: "inline-flex", opacity: 1 });
-    jQuery(topBtn).off("click").on("click", function (e) {
-      e.preventDefault();
-      jQuery("body,html").animate({ scrollTop: 0 }, 500);
-    });
+    jQuery(topBtn)
+      .off("click")
+      .on("click", function (e) {
+        e.preventDefault();
+        jQuery("body,html").animate({ scrollTop: 0 }, 500);
+      });
     if (typeof refreshHubLucideIcons === "function") {
       refreshHubLucideIcons();
     }
