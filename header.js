@@ -16,7 +16,7 @@ $(document).ready(function () {
 
   function closePushNav() {
     $topNav.removeClass("isOpen");
-    $openLevel.siblings().removeClass("isOpen");
+    $navLevel.removeClass("isOpen");
     $("body").removeClass("pushNavIsOpen");
     $("#nav-icon1").removeClass("open");
   }
@@ -30,8 +30,20 @@ $(document).ready(function () {
     }
   });
 
-  $openLevel.on("click touchstart", function () {
-    $(this).next($navLevel).addClass("isOpen");
+  var mobileNavMq = window.matchMedia("(max-width: 991px)");
+
+  $openLevel.on("click", function (e) {
+    if (!mobileNavMq.matches) {
+      return;
+    }
+    e.preventDefault();
+    var $submenu = $(this).next($navLevel);
+    if ($submenu.hasClass("isOpen")) {
+      $submenu.removeClass("isOpen");
+    } else {
+      $navLevel.removeClass("isOpen");
+      $submenu.addClass("isOpen");
+    }
   });
 
   $closeLevel.on("click touchstart", function () {

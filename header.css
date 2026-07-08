@@ -651,6 +651,41 @@ header {
   .site-navbar-links .push-nav-level::before {
     display: none !important;
   }
+
+  /* Parent items with sub-pages — show down arrow (not hidden chevron) */
+  .site-navbar-links > li:has(> .push-nav-level) > .openLevel {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    white-space: normal;
+  }
+
+  .site-navbar-links > li:has(> .push-nav-level) > .openLevel::after {
+    display: none !important;
+  }
+
+  .site-navbar-links > li:has(> .push-nav-level) > .openLevel i.fa-chevron-right {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1.1rem;
+    margin-left: auto;
+    font-size: 14px;
+    line-height: 1;
+    opacity: 0.9;
+    transition: transform 0.25s ease;
+  }
+
+  .site-navbar-links > li:has(> .push-nav-level) > .openLevel i.fa-chevron-right::before {
+    content: "\f078";
+  }
+
+  .site-navbar-links > li:has(> .push-nav-level.isOpen) > .openLevel i.fa-chevron-right {
+    transform: rotate(180deg);
+  }
 }
 
 @media (max-width: 767px) {
