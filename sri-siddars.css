@@ -16,13 +16,6 @@
   height: auto;
 }
 
-.sri-siddars-page .container-fluid:has(.innermotif) {
-  position: relative;
-  min-height: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 .story-page.sri-siddars-page .outer-container.inner-page-body.birth-article {
   padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
   margin-top: 0;

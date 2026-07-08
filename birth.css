@@ -37,11 +37,11 @@
 }
 
 /* Inner read-more pages — space below banner motif */
-.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.mission-page) .outer-container.inner-page-body.birth-article {
+.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.babaji-mission-page):not(.life-of-babaji-page):not(.devotees-page) .outer-container.inner-page-body.birth-article {
   padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
 }
 
-.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.mission-page) .birth-article__header {
+.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.babaji-mission-page):not(.life-of-babaji-page):not(.devotees-page) .birth-article__header {
   margin-top: clamp(1rem, 2.5vw, 1.75rem);
 }
 
@@ -113,11 +113,11 @@
 /* Nudge story photos slightly right */
 .story-page.birth-page .birth-article__media img,
 .story-page.education-page .birth-article__media img,
-.story-page.mission-page .birth-article__media img {
+.story-page.growing-years-page .birth-article__media img {
   margin-left: 12%;
 }
 
-.story-page:not(.birth-page):not(.education-page):not(.mission-page) .birth-article__media img {
+.story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.babaji-mission-page):not(.life-of-babaji-page):not(.devotees-page) .birth-article__media img {
   margin-left: 0;
   margin-right: auto;
 }
@@ -378,12 +378,12 @@
 }
 
 @media (max-width: 991px) {
-  .birth-article__grid {
+  .story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.babaji-mission-page):not(.life-of-babaji-page):not(.devotees-page) .birth-article__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .story-page .birth-article__media img {
+  .story-page:not(.birth-page):not(.education-page):not(.growing-years-page):not(.babaji-mission-page):not(.life-of-babaji-page):not(.devotees-page) .birth-article__media img {
     margin: 0 auto;
   }
 
@@ -406,8 +406,8 @@
 .story-page.education-page .birth-article,
 .story-page.growing-years-page .outer-container.inner-page-body.birth-article,
 .story-page.growing-years-page .birth-article,
-.story-page.mission-page .outer-container.inner-page-body.birth-article,
-.story-page.mission-page .birth-article {
+.story-page.babaji-mission-page .outer-container.inner-page-body.birth-article,
+.story-page.babaji-mission-page .birth-article {
   padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
   padding-bottom: clamp(2.5rem, 5vw, 3.75rem) !important;
 }
@@ -415,7 +415,7 @@
 .story-page.birth-page .birth-article__wrap,
 .story-page.education-page .birth-article__wrap,
 .story-page.growing-years-page .birth-article__wrap,
-.story-page.mission-page .birth-article__wrap {
+.story-page.babaji-mission-page .birth-article__wrap {
   padding-left: clamp(1rem, 3vw, 2rem);
   padding-right: clamp(1rem, 3vw, 2rem);
 }
@@ -423,7 +423,7 @@
 .story-page.birth-page .birth-article__header,
 .story-page.education-page .birth-article__header,
 .story-page.growing-years-page .birth-article__header,
-.story-page.mission-page .birth-article__header {
+.story-page.babaji-mission-page .birth-article__header {
   margin-top: clamp(1rem, 2.5vw, 1.75rem);
   margin-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
 }
@@ -846,31 +846,29 @@
   letter-spacing: 0.02em;
 }
 
-/* Inner banner motif — nudge slightly below banner overlap */
-.story-page .container-fluid .innermotif {
-  margin-top: -52px;
-}
-
-@media (max-width: 992px) {
-  .story-page .container-fluid .innermotif {
-    margin-top: -52px;
-  }
-}
-
-@media (max-width: 375px) {
-  .story-page .container-fluid .innermotif {
-    margin-top: -52px;
-  }
-}
-
 /* Devotee Experience — story list rows */
+.story-page.devotees-page .outer-container.inner-page-body.birth-article {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+.story-page.devotees-page .birth-article__header {
+  margin-top: clamp(1rem, 2.5vw, 1.75rem);
+}
+
+.story-page.devotees-page .devotees-experience__list {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
 .story-page.devotees-page .devotees-experience__list > .row {
-  --bs-gutter-x: 1rem;
+  --bs-gutter-x: 1.25rem;
   margin-left: 0;
   margin-right: 0;
-  padding: 1rem 0.75rem;
+  padding: 1.5rem 1.35rem;
   background-color: #ffffff;
   border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(58, 42, 34, 0.1);
+  width: 100%;
 }
 
 .story-page.devotees-page .devotees-experience__list .row > [class*="col-"] {
@@ -892,7 +890,7 @@
   background-color: #430606;
   border: 1px solid rgba(201, 162, 77, 0.35);
   border-radius: 8px;
-  padding: 0;
+  padding: 0.15rem;
 }
 
 .story-page.devotees-page .panel.panel-default.module.is-active > .panel-heading {
@@ -913,17 +911,18 @@
   display: flex;
   align-items: center;
   min-height: 2.85rem;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1.35rem !important;
   color: #c9a24d !important;
   font-family: Cinzel, "arrusbt-roman", Georgia, serif;
   font-size: clamp(0.72rem, 0.95vw, 0.88rem);
-  line-height: 1.2;
+  line-height: 1.35;
   letter-spacing: 0.03em;
   text-align: left;
   text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: normal;
+  overflow: visible;
+  word-break: break-word;
 }
 
 .story-page.devotees-page .panel.panel-default.module .panel-title > a:hover,
@@ -1067,13 +1066,1145 @@
   }
 }
 
-/* Devotee Experience — accordion list spacing */
-.story-page.devotees-page .devotees-experience__list {
+/* Devotee Experience — tablet & mobile only (desktop 992px+ unchanged) */
+@media (max-width: 991px) {
+  .story-page.devotees-page {
+    overflow-x: hidden;
+  }
+
+  .story-page.devotees-page .birth-article__wrap {
+    width: min(100%, 94vw);
+    max-width: 100%;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .story-page.devotees-page .birth-article__header {
+    margin-top: clamp(0.75rem, 2.5vw, 1.25rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .story-page.devotees-page .birth-article__title {
+    font-size: clamp(1.25rem, 3.5vw, 1.65rem) !important;
+  }
+
+  .story-page.devotees-page .devotees-experience__list > .row {
+    padding: 1rem 0.85rem;
+  }
+
+  .story-page.devotees-page .devotees-experience__list .row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .story-page.devotees-page .panel.panel-default.module .panel-title > a,
+  .story-page.devotees-experience-page .panel.panel-default.module .panel-title > a {
+    font-size: clamp(0.68rem, 2.8vw, 0.82rem);
+    padding: 0.75rem 1.1rem !important;
+  }
+
+  .story-page.devotees-page .inner-banner {
+    overflow: hidden;
+    max-height: clamp(140px, 32vw, 220px);
+    line-height: 0;
+  }
+
+  .story-page.devotees-page .inner-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: clamp(140px, 32vw, 220px);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .story-page.devotees-page .birth-seva {
+    padding-inline: clamp(0.65rem, 3vw, 1rem);
+  }
+
+  .story-page.devotees-page .birth-seva__showcase {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    gap: clamp(0.45rem, 1.2vw, 0.75rem);
+    padding-inline: clamp(0.35rem, 2vw, 0.85rem);
+  }
+
+  .story-page.devotees-page .birth-seva__showcase .birth-seva__card:last-child {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+
+  .story-page.devotees-page .birth-seva__card .inner-seva__media {
+    height: clamp(90px, 14vw, 125px);
+  }
+}
+
+@media (max-width: 499px) {
+  .story-page.devotees-page .birth-seva__showcase {
+    grid-template-columns: 1fr;
+    max-width: min(100%, 360px);
+    gap: 0.85rem;
+  }
+
+  .story-page.devotees-page .birth-seva__showcase .birth-seva__card:last-child {
+    width: 100%;
+  }
+
+  .story-page.devotees-page .birth-seva__card .inner-seva__media {
+    height: 120px;
+  }
+}
+
+/* Inner Matham & temple pages — shared responsive layout */
+  .story-page.matham-page .birth-article__grid,
+  .story-page.history-page .birth-article__grid,
+  .story-page.founder-page .birth-article__grid,
+  .story-page.vision-page .birth-article__grid,
+  .story-page.saraswathi-mantapam-page .birth-article__grid,
+  .story-page.satchitanandam-hall-page .birth-article__grid,
+  .story-page.guest-houses-page .birth-article__grid,
+  .story-page.kitchen-dining-hall-page .birth-article__grid,
+  .story-page.admin-block-page .birth-article__grid,
+  .story-page.cloak-room-page .birth-article__grid,
+  .story-page.parking-page .birth-article__grid,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__grid,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__grid,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__grid,
+  .story-page.sri-siddars-page .birth-article__grid,
+  .story-page.copper-sri-shiva-linga-page .birth-article__grid,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__grid,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__grid,
+  .story-page.sri-naga-kshethra-page .birth-article__grid,
+  .story-page.sri-shanishwara-temple-page .birth-article__grid {
+  width: 100%;
   margin-top: 0.5rem;
+}
+
+  .story-page.matham-page .birth-article__media,
+  .story-page.history-page .birth-article__media,
+  .story-page.founder-page .birth-article__media,
+  .story-page.vision-page .birth-article__media,
+  .story-page.saraswathi-mantapam-page .birth-article__media,
+  .story-page.satchitanandam-hall-page .birth-article__media,
+  .story-page.guest-houses-page .birth-article__media,
+  .story-page.kitchen-dining-hall-page .birth-article__media,
+  .story-page.admin-block-page .birth-article__media,
+  .story-page.cloak-room-page .birth-article__media,
+  .story-page.parking-page .birth-article__media,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
+  .story-page.sri-siddars-page .birth-article__media,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media,
+  .story-page.sri-naga-kshethra-page .birth-article__media,
+  .story-page.sri-shanishwara-temple-page .birth-article__media {
+  margin-left: 0;
+}
+
+  .story-page.matham-page .birth-article__media img,
+  .story-page.history-page .birth-article__media img,
+  .story-page.vision-page .birth-article__media img,
+  .story-page.saraswathi-mantapam-page .birth-article__media img,
+  .story-page.satchitanandam-hall-page .birth-article__media img,
+  .story-page.guest-houses-page .birth-article__media img,
+  .story-page.kitchen-dining-hall-page .birth-article__media img,
+  .story-page.admin-block-page .birth-article__media img,
+  .story-page.cloak-room-page .birth-article__media img,
+  .story-page.parking-page .birth-article__media img,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media img,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media img,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media img,
+  .story-page.sri-siddars-page .birth-article__media img,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media img,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media img,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media img,
+  .story-page.sri-naga-kshethra-page .birth-article__media img,
+  .story-page.sri-shanishwara-temple-page .birth-article__media img {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Founder image — cap at 600px, keep responsive */
+.story-page.founder-page .birth-article__media {
+  display: flex;
+  justify-content: center;
+}
+
+.story-page.founder-page .birth-article__media img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+  .story-page.matham-page .birth-article__copy p,
+  .story-page.history-page .birth-article__copy p,
+  .story-page.founder-page .birth-article__copy p,
+  .story-page.saraswathi-mantapam-page .birth-article__copy p,
+  .story-page.satchitanandam-hall-page .birth-article__copy p,
+  .story-page.guest-houses-page .birth-article__copy p,
+  .story-page.kitchen-dining-hall-page .birth-article__copy p,
+  .story-page.admin-block-page .birth-article__copy p,
+  .story-page.cloak-room-page .birth-article__copy p,
+  .story-page.parking-page .birth-article__copy p,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__copy p,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__copy p,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__copy p,
+  .story-page.sri-siddars-page .birth-article__copy p,
+  .story-page.copper-sri-shiva-linga-page .birth-article__copy p,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__copy p,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__copy p,
+  .story-page.sri-naga-kshethra-page .birth-article__copy p,
+  .story-page.sri-shanishwara-temple-page .birth-article__copy p {
+  padding-left: 1rem;
+}
+
+/* Tablet & mobile only (desktop 992px+ unchanged) */
+@media (max-width: 991px) {
+  .story-page.matham-page,
+  .story-page.history-page,
+  .story-page.founder-page,
+  .story-page.vision-page,
+  .story-page.saraswathi-mantapam-page,
+  .story-page.satchitanandam-hall-page,
+  .story-page.guest-houses-page,
+  .story-page.kitchen-dining-hall-page,
+  .story-page.admin-block-page,
+  .story-page.cloak-room-page,
+  .story-page.parking-page,
+  .story-page.sri-maha-ganapathi-temple-page,
+  .story-page.sri-kalyana-subramanya-temple-page,
+  .story-page.sri-shirdi-sai-baba-temple-page,
+  .story-page.sri-siddars-page,
+  .story-page.copper-sri-shiva-linga-page,
+  .story-page.sri-dakshinamoorthy-temple-page,
+  .story-page.sri-kala-bhairava-temple-page,
+  .story-page.sri-naga-kshethra-page,
+  .story-page.sri-shanishwara-temple-page {
+    overflow-x: hidden;
+  }
+
+  .story-page.matham-page .birth-article__wrap,
+  .story-page.history-page .birth-article__wrap,
+  .story-page.founder-page .birth-article__wrap,
+  .story-page.vision-page .birth-article__wrap,
+  .story-page.saraswathi-mantapam-page .birth-article__wrap,
+  .story-page.satchitanandam-hall-page .birth-article__wrap,
+  .story-page.guest-houses-page .birth-article__wrap,
+  .story-page.kitchen-dining-hall-page .birth-article__wrap,
+  .story-page.admin-block-page .birth-article__wrap,
+  .story-page.cloak-room-page .birth-article__wrap,
+  .story-page.parking-page .birth-article__wrap,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__wrap,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__wrap,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__wrap,
+  .story-page.sri-siddars-page .birth-article__wrap,
+  .story-page.copper-sri-shiva-linga-page .birth-article__wrap,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__wrap,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__wrap,
+  .story-page.sri-naga-kshethra-page .birth-article__wrap,
+  .story-page.sri-shanishwara-temple-page .birth-article__wrap {
+    width: min(100%, 94vw);
+    max-width: 100%;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .story-page.matham-page .birth-article__header,
+  .story-page.history-page .birth-article__header,
+  .story-page.founder-page .birth-article__header,
+  .story-page.vision-page .birth-article__header,
+  .story-page.saraswathi-mantapam-page .birth-article__header,
+  .story-page.satchitanandam-hall-page .birth-article__header,
+  .story-page.guest-houses-page .birth-article__header,
+  .story-page.kitchen-dining-hall-page .birth-article__header,
+  .story-page.admin-block-page .birth-article__header,
+  .story-page.cloak-room-page .birth-article__header,
+  .story-page.parking-page .birth-article__header,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__header,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__header,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__header,
+  .story-page.sri-siddars-page .birth-article__header,
+  .story-page.copper-sri-shiva-linga-page .birth-article__header,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__header,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__header,
+  .story-page.sri-naga-kshethra-page .birth-article__header,
+  .story-page.sri-shanishwara-temple-page .birth-article__header {
+    margin-top: clamp(0.75rem, 2.5vw, 1.25rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .story-page.matham-page .birth-article__title,
+  .story-page.history-page .birth-article__title,
+  .story-page.founder-page .birth-article__title,
+  .story-page.vision-page .birth-article__title,
+  .story-page.saraswathi-mantapam-page .birth-article__title,
+  .story-page.satchitanandam-hall-page .birth-article__title,
+  .story-page.guest-houses-page .birth-article__title,
+  .story-page.kitchen-dining-hall-page .birth-article__title,
+  .story-page.admin-block-page .birth-article__title,
+  .story-page.cloak-room-page .birth-article__title,
+  .story-page.parking-page .birth-article__title,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__title,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__title,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__title,
+  .story-page.sri-siddars-page .birth-article__title,
+  .story-page.copper-sri-shiva-linga-page .birth-article__title,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__title,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__title,
+  .story-page.sri-naga-kshethra-page .birth-article__title,
+  .story-page.sri-shanishwara-temple-page .birth-article__title {
+    font-size: clamp(1.25rem, 3.5vw, 1.65rem) !important;
+  }
+
+  .story-page.matham-page .inner-banner,
+  .story-page.history-page .inner-banner,
+  .story-page.founder-page .inner-banner,
+  .story-page.vision-page .inner-banner,
+  .story-page.saraswathi-mantapam-page .inner-banner,
+  .story-page.satchitanandam-hall-page .inner-banner,
+  .story-page.guest-houses-page .inner-banner,
+  .story-page.kitchen-dining-hall-page .inner-banner,
+  .story-page.admin-block-page .inner-banner,
+  .story-page.cloak-room-page .inner-banner,
+  .story-page.parking-page .inner-banner,
+  .story-page.sri-maha-ganapathi-temple-page .inner-banner,
+  .story-page.sri-kalyana-subramanya-temple-page .inner-banner,
+  .story-page.sri-shirdi-sai-baba-temple-page .inner-banner,
+  .story-page.sri-siddars-page .inner-banner,
+  .story-page.copper-sri-shiva-linga-page .inner-banner,
+  .story-page.sri-dakshinamoorthy-temple-page .inner-banner,
+  .story-page.sri-kala-bhairava-temple-page .inner-banner,
+  .story-page.sri-naga-kshethra-page .inner-banner,
+  .story-page.sri-shanishwara-temple-page .inner-banner {
+    overflow: hidden;
+    max-height: clamp(140px, 32vw, 220px);
+    line-height: 0;
+  }
+
+  .story-page.matham-page .inner-banner img,
+  .story-page.history-page .inner-banner img,
+  .story-page.founder-page .inner-banner img,
+  .story-page.vision-page .inner-banner img,
+  .story-page.saraswathi-mantapam-page .inner-banner img,
+  .story-page.satchitanandam-hall-page .inner-banner img,
+  .story-page.guest-houses-page .inner-banner img,
+  .story-page.kitchen-dining-hall-page .inner-banner img,
+  .story-page.admin-block-page .inner-banner img,
+  .story-page.cloak-room-page .inner-banner img,
+  .story-page.parking-page .inner-banner img,
+  .story-page.sri-maha-ganapathi-temple-page .inner-banner img,
+  .story-page.sri-kalyana-subramanya-temple-page .inner-banner img,
+  .story-page.sri-shirdi-sai-baba-temple-page .inner-banner img,
+  .story-page.sri-siddars-page .inner-banner img,
+  .story-page.copper-sri-shiva-linga-page .inner-banner img,
+  .story-page.sri-dakshinamoorthy-temple-page .inner-banner img,
+  .story-page.sri-kala-bhairava-temple-page .inner-banner img,
+  .story-page.sri-naga-kshethra-page .inner-banner img,
+  .story-page.sri-shanishwara-temple-page .inner-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: clamp(140px, 32vw, 220px);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .story-page.matham-page .birth-seva,
+  .story-page.history-page .birth-seva,
+  .story-page.founder-page .birth-seva,
+  .story-page.vision-page .birth-seva,
+  .story-page.saraswathi-mantapam-page .birth-seva,
+  .story-page.satchitanandam-hall-page .birth-seva,
+  .story-page.guest-houses-page .birth-seva,
+  .story-page.kitchen-dining-hall-page .birth-seva,
+  .story-page.admin-block-page .birth-seva,
+  .story-page.cloak-room-page .birth-seva,
+  .story-page.parking-page .birth-seva,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva,
+  .story-page.sri-siddars-page .birth-seva,
+  .story-page.copper-sri-shiva-linga-page .birth-seva,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva,
+  .story-page.sri-naga-kshethra-page .birth-seva,
+  .story-page.sri-shanishwara-temple-page .birth-seva {
+    padding-inline: clamp(0.65rem, 3vw, 1rem);
+  }
+
+  .story-page.matham-page .birth-seva__showcase,
+  .story-page.history-page .birth-seva__showcase,
+  .story-page.founder-page .birth-seva__showcase,
+  .story-page.vision-page .birth-seva__showcase,
+  .story-page.saraswathi-mantapam-page .birth-seva__showcase,
+  .story-page.satchitanandam-hall-page .birth-seva__showcase,
+  .story-page.guest-houses-page .birth-seva__showcase,
+  .story-page.kitchen-dining-hall-page .birth-seva__showcase,
+  .story-page.admin-block-page .birth-seva__showcase,
+  .story-page.cloak-room-page .birth-seva__showcase,
+  .story-page.parking-page .birth-seva__showcase,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__showcase,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__showcase,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase,
+  .story-page.sri-siddars-page .birth-seva__showcase,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__showcase,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__showcase,
+  .story-page.sri-naga-kshethra-page .birth-seva__showcase,
+  .story-page.sri-shanishwara-temple-page .birth-seva__showcase {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    gap: clamp(0.45rem, 1.2vw, 0.75rem);
+    padding-inline: clamp(0.35rem, 2vw, 0.85rem);
+  }
+
+  .story-page.matham-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.history-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.founder-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.vision-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.saraswathi-mantapam-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.satchitanandam-hall-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.guest-houses-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.kitchen-dining-hall-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.admin-block-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.cloak-room-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.parking-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-siddars-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-naga-kshethra-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-shanishwara-temple-page .birth-seva__showcase .birth-seva__card:last-child {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+
+  .story-page.matham-page .birth-seva__card .inner-seva__media,
+  .story-page.history-page .birth-seva__card .inner-seva__media,
+  .story-page.founder-page .birth-seva__card .inner-seva__media,
+  .story-page.vision-page .birth-seva__card .inner-seva__media,
+  .story-page.saraswathi-mantapam-page .birth-seva__card .inner-seva__media,
+  .story-page.satchitanandam-hall-page .birth-seva__card .inner-seva__media,
+  .story-page.guest-houses-page .birth-seva__card .inner-seva__media,
+  .story-page.kitchen-dining-hall-page .birth-seva__card .inner-seva__media,
+  .story-page.admin-block-page .birth-seva__card .inner-seva__media,
+  .story-page.cloak-room-page .birth-seva__card .inner-seva__media,
+  .story-page.parking-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-siddars-page .birth-seva__card .inner-seva__media,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-naga-kshethra-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-shanishwara-temple-page .birth-seva__card .inner-seva__media {
+    height: clamp(90px, 14vw, 125px);
+  }
+}
+
+@media (max-width: 899px) {
+  .story-page.matham-page .birth-article__grid,
+  .story-page.history-page .birth-article__grid,
+  .story-page.founder-page .birth-article__grid,
+  .story-page.vision-page .birth-article__grid,
+  .story-page.saraswathi-mantapam-page .birth-article__grid,
+  .story-page.satchitanandam-hall-page .birth-article__grid,
+  .story-page.guest-houses-page .birth-article__grid,
+  .story-page.kitchen-dining-hall-page .birth-article__grid,
+  .story-page.admin-block-page .birth-article__grid,
+  .story-page.cloak-room-page .birth-article__grid,
+  .story-page.parking-page .birth-article__grid,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__grid,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__grid,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__grid,
+  .story-page.sri-siddars-page .birth-article__grid,
+  .story-page.copper-sri-shiva-linga-page .birth-article__grid,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__grid,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__grid,
+  .story-page.sri-naga-kshethra-page .birth-article__grid,
+  .story-page.sri-shanishwara-temple-page .birth-article__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .story-page.matham-page .birth-article__media,
+  .story-page.history-page .birth-article__media,
+  .story-page.founder-page .birth-article__media,
+  .story-page.vision-page .birth-article__media,
+  .story-page.saraswathi-mantapam-page .birth-article__media,
+  .story-page.satchitanandam-hall-page .birth-article__media,
+  .story-page.guest-houses-page .birth-article__media,
+  .story-page.kitchen-dining-hall-page .birth-article__media,
+  .story-page.admin-block-page .birth-article__media,
+  .story-page.cloak-room-page .birth-article__media,
+  .story-page.parking-page .birth-article__media,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media,
+  .story-page.sri-siddars-page .birth-article__media,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media,
+  .story-page.sri-naga-kshethra-page .birth-article__media,
+  .story-page.sri-shanishwara-temple-page .birth-article__media {
+    display: flex;
+    justify-content: center;
+  }
+
+  .story-page.matham-page .birth-article__media img,
+  .story-page.history-page .birth-article__media img,
+  .story-page.founder-page .birth-article__media img,
+  .story-page.vision-page .birth-article__media img,
+  .story-page.saraswathi-mantapam-page .birth-article__media img,
+  .story-page.satchitanandam-hall-page .birth-article__media img,
+  .story-page.guest-houses-page .birth-article__media img,
+  .story-page.kitchen-dining-hall-page .birth-article__media img,
+  .story-page.admin-block-page .birth-article__media img,
+  .story-page.cloak-room-page .birth-article__media img,
+  .story-page.parking-page .birth-article__media img,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media img,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media img,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media img,
+  .story-page.sri-siddars-page .birth-article__media img,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media img,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media img,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media img,
+  .story-page.sri-naga-kshethra-page .birth-article__media img,
+  .story-page.sri-shanishwara-temple-page .birth-article__media img {
+    width: min(100%, clamp(240px, 58vw, 420px));
+    max-width: min(88vw, 420px);
+  }
+}
+
+@media (max-width: 575px) {
+  .story-page.matham-page .birth-article__grid,
+  .story-page.history-page .birth-article__grid,
+  .story-page.founder-page .birth-article__grid,
+  .story-page.vision-page .birth-article__grid,
+  .story-page.saraswathi-mantapam-page .birth-article__grid,
+  .story-page.satchitanandam-hall-page .birth-article__grid,
+  .story-page.guest-houses-page .birth-article__grid,
+  .story-page.kitchen-dining-hall-page .birth-article__grid,
+  .story-page.admin-block-page .birth-article__grid,
+  .story-page.cloak-room-page .birth-article__grid,
+  .story-page.parking-page .birth-article__grid,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__grid,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__grid,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__grid,
+  .story-page.sri-siddars-page .birth-article__grid,
+  .story-page.copper-sri-shiva-linga-page .birth-article__grid,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__grid,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__grid,
+  .story-page.sri-naga-kshethra-page .birth-article__grid,
+  .story-page.sri-shanishwara-temple-page .birth-article__grid {
+    gap: clamp(0.85rem, 2.5vw, 1.1rem);
+  }
+
+  .story-page.matham-page .birth-article__media img,
+  .story-page.history-page .birth-article__media img,
+  .story-page.founder-page .birth-article__media img,
+  .story-page.vision-page .birth-article__media img,
+  .story-page.saraswathi-mantapam-page .birth-article__media img,
+  .story-page.satchitanandam-hall-page .birth-article__media img,
+  .story-page.guest-houses-page .birth-article__media img,
+  .story-page.kitchen-dining-hall-page .birth-article__media img,
+  .story-page.admin-block-page .birth-article__media img,
+  .story-page.cloak-room-page .birth-article__media img,
+  .story-page.parking-page .birth-article__media img,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__media img,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__media img,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__media img,
+  .story-page.sri-siddars-page .birth-article__media img,
+  .story-page.copper-sri-shiva-linga-page .birth-article__media img,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__media img,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__media img,
+  .story-page.sri-naga-kshethra-page .birth-article__media img,
+  .story-page.sri-shanishwara-temple-page .birth-article__media img {
+    width: min(100%, clamp(200px, 76vw, 300px));
+    max-width: min(84vw, 300px);
+    border-radius: 12px;
+  }
+
+  .story-page.matham-page .birth-article__copy p,
+  .story-page.history-page .birth-article__copy p,
+  .story-page.founder-page .birth-article__copy p,
+  .story-page.saraswathi-mantapam-page .birth-article__copy p,
+  .story-page.satchitanandam-hall-page .birth-article__copy p,
+  .story-page.guest-houses-page .birth-article__copy p,
+  .story-page.kitchen-dining-hall-page .birth-article__copy p,
+  .story-page.admin-block-page .birth-article__copy p,
+  .story-page.cloak-room-page .birth-article__copy p,
+  .story-page.parking-page .birth-article__copy p,
+  .story-page.sri-maha-ganapathi-temple-page .birth-article__copy p,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-article__copy p,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-article__copy p,
+  .story-page.sri-siddars-page .birth-article__copy p,
+  .story-page.copper-sri-shiva-linga-page .birth-article__copy p,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-article__copy p,
+  .story-page.sri-kala-bhairava-temple-page .birth-article__copy p,
+  .story-page.sri-naga-kshethra-page .birth-article__copy p,
+  .story-page.sri-shanishwara-temple-page .birth-article__copy p {
+    padding-left: 0.7rem;
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .story-page.vision-page .birth-article__point {
+    padding: 0.45rem 0.6rem;
+  }
+
+  .story-page.vision-page .birth-article__point p {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 499px) {
+  .story-page.matham-page .birth-seva__showcase,
+  .story-page.history-page .birth-seva__showcase,
+  .story-page.founder-page .birth-seva__showcase,
+  .story-page.vision-page .birth-seva__showcase,
+  .story-page.saraswathi-mantapam-page .birth-seva__showcase,
+  .story-page.satchitanandam-hall-page .birth-seva__showcase,
+  .story-page.guest-houses-page .birth-seva__showcase,
+  .story-page.kitchen-dining-hall-page .birth-seva__showcase,
+  .story-page.admin-block-page .birth-seva__showcase,
+  .story-page.cloak-room-page .birth-seva__showcase,
+  .story-page.parking-page .birth-seva__showcase,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__showcase,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__showcase,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase,
+  .story-page.sri-siddars-page .birth-seva__showcase,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__showcase,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__showcase,
+  .story-page.sri-naga-kshethra-page .birth-seva__showcase,
+  .story-page.sri-shanishwara-temple-page .birth-seva__showcase {
+    grid-template-columns: 1fr;
+    max-width: min(100%, 360px);
+    gap: 0.85rem;
+  }
+
+  .story-page.matham-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.history-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.founder-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.vision-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.saraswathi-mantapam-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.satchitanandam-hall-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.guest-houses-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.kitchen-dining-hall-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.admin-block-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.cloak-room-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.parking-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-siddars-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-naga-kshethra-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.sri-shanishwara-temple-page .birth-seva__showcase .birth-seva__card:last-child {
+    width: 100%;
+  }
+
+  .story-page.matham-page .birth-seva__card .inner-seva__media,
+  .story-page.history-page .birth-seva__card .inner-seva__media,
+  .story-page.founder-page .birth-seva__card .inner-seva__media,
+  .story-page.vision-page .birth-seva__card .inner-seva__media,
+  .story-page.saraswathi-mantapam-page .birth-seva__card .inner-seva__media,
+  .story-page.satchitanandam-hall-page .birth-seva__card .inner-seva__media,
+  .story-page.guest-houses-page .birth-seva__card .inner-seva__media,
+  .story-page.kitchen-dining-hall-page .birth-seva__card .inner-seva__media,
+  .story-page.admin-block-page .birth-seva__card .inner-seva__media,
+  .story-page.cloak-room-page .birth-seva__card .inner-seva__media,
+  .story-page.parking-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-maha-ganapathi-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-kalyana-subramanya-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-shirdi-sai-baba-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-siddars-page .birth-seva__card .inner-seva__media,
+  .story-page.copper-sri-shiva-linga-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-dakshinamoorthy-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-kala-bhairava-temple-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-naga-kshethra-page .birth-seva__card .inner-seva__media,
+  .story-page.sri-shanishwara-temple-page .birth-seva__card .inner-seva__media {
+    height: 120px;
+  }
 }
 
 /* Story page carousels — auto-scroll, no side arrows */
 .story-page .carousel-control-prev,
 .story-page .carousel-control-next {
   display: none !important;
+}
+
+/* ── Babaji story pages — tablet & mobile (desktop locked at 992px+) ── */
+@media (min-width: 900px) {
+  .story-page.birth-page .birth-article__grid,
+  .story-page.education-page .birth-article__grid,
+  .story-page.growing-years-page .birth-article__grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+  }
+
+  .story-page.birth-page .birth-article__media,
+  .story-page.education-page .birth-article__media,
+  .story-page.growing-years-page .birth-article__media {
+    display: block;
+  }
+
+  .story-page.birth-page .birth-article__media img,
+  .story-page.education-page .birth-article__media img,
+  .story-page.growing-years-page .birth-article__media img {
+    width: 77%;
+    margin-left: 12%;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .story-page.birth-page .birth-seva__showcase,
+  .story-page.education-page .birth-seva__showcase,
+  .story-page.growing-years-page .birth-seva__showcase {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(1100px, 100%);
+    max-width: none;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .story-page.birth-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.education-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.growing-years-page .birth-seva__showcase .birth-seva__card:last-child {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+
+  .story-page.birth-page .birth-seva__card .inner-seva__media,
+  .story-page.education-page .birth-seva__card .inner-seva__media,
+  .story-page.growing-years-page .birth-seva__card .inner-seva__media {
+    height: 148px;
+  }
+
+  .story-page.birth-page .inner-banner,
+  .story-page.education-page .inner-banner,
+  .story-page.growing-years-page .inner-banner {
+    max-height: none;
+    overflow: visible;
+    line-height: normal;
+  }
+
+  .story-page.birth-page .inner-banner img,
+  .story-page.education-page .inner-banner img,
+  .story-page.growing-years-page .inner-banner img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: unset;
+    object-position: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .story-page.birth-page,
+  .story-page.education-page,
+  .story-page.growing-years-page,
+  .story-page.babaji-mission-page,
+  .story-page.life-of-babaji-page {
+    overflow-x: hidden;
+  }
+
+  .story-page.birth-page .birth-article__wrap,
+  .story-page.education-page .birth-article__wrap,
+  .story-page.growing-years-page .birth-article__wrap,
+  .story-page.babaji-mission-page .birth-article__wrap,
+  .story-page.life-of-babaji-page .birth-article__wrap {
+    width: min(100%, 94vw);
+    max-width: 100%;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-right: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .story-page.birth-page .birth-article__header,
+  .story-page.education-page .birth-article__header,
+  .story-page.growing-years-page .birth-article__header,
+  .story-page.babaji-mission-page .birth-article__header,
+  .story-page.life-of-babaji-page .birth-article__header {
+    margin-top: clamp(0.75rem, 2.5vw, 1.25rem);
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .story-page.birth-page .birth-article__title,
+  .story-page.education-page .birth-article__title,
+  .story-page.growing-years-page .birth-article__title,
+  .story-page.babaji-mission-page .birth-article__title,
+  .story-page.life-of-babaji-page .birth-article__title {
+    font-size: clamp(1.25rem, 3.5vw, 1.65rem) !important;
+    letter-spacing: 0.1em;
+  }
+
+  .story-page.birth-page .birth-article__title-rule,
+  .story-page.education-page .birth-article__title-rule,
+  .story-page.growing-years-page .birth-article__title-rule,
+  .story-page.babaji-mission-page .birth-article__title-rule,
+  .story-page.life-of-babaji-page .birth-article__title-rule {
+    width: min(12rem, 78%);
+    margin-top: 0.65rem;
+  }
+
+  .story-page.birth-page .birth-article__copy p,
+  .story-page.education-page .birth-article__copy p,
+  .story-page.growing-years-page .birth-article__copy p,
+  .story-page.babaji-mission-page .birth-article__copy p,
+  .story-page.life-of-babaji-page .birth-article__copy p {
+    max-width: 100%;
+    padding-left: 0.85rem;
+  }
+
+  .story-page.birth-page .birth-article__divider,
+  .story-page.education-page .birth-article__divider,
+  .story-page.growing-years-page .birth-article__divider,
+  .story-page.babaji-mission-page .birth-article__divider,
+  .story-page.life-of-babaji-page .birth-article__divider {
+    margin: 1rem 0 1rem 0.65rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .story-page.birth-page .birth-article__grid,
+  .story-page.education-page .birth-article__grid,
+  .story-page.growing-years-page .birth-article__grid,
+  .story-page.babaji-mission-page .birth-article__grid,
+  .story-page.life-of-babaji-page .birth-article__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .story-page.birth-page .birth-article__media,
+  .story-page.education-page .birth-article__media,
+  .story-page.growing-years-page .birth-article__media,
+  .story-page.babaji-mission-page .birth-article__media,
+  .story-page.life-of-babaji-page .birth-article__media {
+    display: flex;
+    justify-content: center;
+  }
+
+  .story-page.birth-page .birth-article__media img,
+  .story-page.education-page .birth-article__media img,
+  .story-page.growing-years-page .birth-article__media img,
+  .story-page.babaji-mission-page .birth-article__media img,
+  .story-page.life-of-babaji-page .birth-article__media img {
+    width: min(100%, clamp(240px, 58vw, 420px));
+    max-width: min(88vw, 420px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 991px) {
+  .story-page.birth-page .birth-seva__showcase,
+  .story-page.education-page .birth-seva__showcase,
+  .story-page.growing-years-page .birth-seva__showcase,
+  .story-page.babaji-mission-page .birth-seva__showcase,
+  .story-page.life-of-babaji-page .birth-seva__showcase {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+    gap: clamp(0.45rem, 1.2vw, 0.75rem);
+    padding-inline: clamp(0.35rem, 2vw, 0.85rem);
+  }
+
+  .story-page.birth-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.education-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.growing-years-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.babaji-mission-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.life-of-babaji-page .birth-seva__showcase .birth-seva__card:last-child {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+
+  .story-page.birth-page .birth-seva__card .inner-seva__media,
+  .story-page.education-page .birth-seva__card .inner-seva__media,
+  .story-page.growing-years-page .birth-seva__card .inner-seva__media,
+  .story-page.babaji-mission-page .birth-seva__card .inner-seva__media,
+  .story-page.life-of-babaji-page .birth-seva__card .inner-seva__media {
+    height: clamp(90px, 14vw, 125px);
+  }
+
+  .story-page.birth-page .birth-seva__desc,
+  .story-page.education-page .birth-seva__desc,
+  .story-page.growing-years-page .birth-seva__desc,
+  .story-page.babaji-mission-page .birth-seva__desc,
+  .story-page.life-of-babaji-page .birth-seva__desc {
+    font-size: clamp(0.62rem, 1.8vw, 0.72rem);
+    padding-inline: 0.35rem;
+  }
+
+  .story-page.birth-page .birth-seva__card .inner-seva__label,
+  .story-page.education-page .birth-seva__card .inner-seva__label,
+  .story-page.growing-years-page .birth-seva__card .inner-seva__label,
+  .story-page.babaji-mission-page .birth-seva__card .inner-seva__label,
+  .story-page.life-of-babaji-page .birth-seva__card .inner-seva__label {
+    font-size: clamp(0.55rem, 1.6vw, 0.64rem);
+    padding: 0.35rem 0.4rem 0.3rem;
+  }
+}
+
+@media (max-width: 499px) {
+  .story-page.birth-page .birth-seva__showcase,
+  .story-page.education-page .birth-seva__showcase,
+  .story-page.growing-years-page .birth-seva__showcase,
+  .story-page.babaji-mission-page .birth-seva__showcase,
+  .story-page.life-of-babaji-page .birth-seva__showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: min(100%, 360px);
+    margin-inline: auto;
+    gap: 0.85rem;
+    padding-inline: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .story-page.birth-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.education-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.growing-years-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.babaji-mission-page .birth-seva__showcase .birth-seva__card:last-child,
+  .story-page.life-of-babaji-page .birth-seva__showcase .birth-seva__card:last-child {
+    grid-column: auto;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .story-page.birth-page .birth-seva__card .inner-seva__media,
+  .story-page.education-page .birth-seva__card .inner-seva__media,
+  .story-page.growing-years-page .birth-seva__card .inner-seva__media,
+  .story-page.babaji-mission-page .birth-seva__card .inner-seva__media,
+  .story-page.life-of-babaji-page .birth-seva__card .inner-seva__media {
+    height: 120px;
+  }
+
+  .story-page.birth-page .birth-seva__desc,
+  .story-page.education-page .birth-seva__desc,
+  .story-page.growing-years-page .birth-seva__desc,
+  .story-page.babaji-mission-page .birth-seva__desc,
+  .story-page.life-of-babaji-page .birth-seva__desc {
+    font-size: 0.74rem;
+    max-width: 100%;
+    padding-inline: 0.65rem;
+  }
+
+  .story-page.birth-page .birth-seva__card .inner-seva__label,
+  .story-page.education-page .birth-seva__card .inner-seva__label,
+  .story-page.growing-years-page .birth-seva__card .inner-seva__label,
+  .story-page.babaji-mission-page .birth-seva__card .inner-seva__label,
+  .story-page.life-of-babaji-page .birth-seva__card .inner-seva__label {
+    font-size: 0.68rem;
+    padding: 0.4rem 0.65rem 0.35rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .story-page.birth-page .inner-banner,
+  .story-page.education-page .inner-banner,
+  .story-page.growing-years-page .inner-banner,
+  .story-page.babaji-mission-page .inner-banner,
+  .story-page.life-of-babaji-page .inner-banner {
+    overflow: hidden;
+    max-height: clamp(140px, 32vw, 220px);
+    line-height: 0;
+  }
+
+  .story-page.birth-page .inner-banner img,
+  .story-page.education-page .inner-banner img,
+  .story-page.growing-years-page .inner-banner img,
+  .story-page.babaji-mission-page .inner-banner img,
+  .story-page.life-of-babaji-page .inner-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: clamp(140px, 32vw, 220px);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .story-page.birth-page .birth-seva,
+  .story-page.education-page .birth-seva,
+  .story-page.growing-years-page .birth-seva,
+  .story-page.babaji-mission-page .birth-seva,
+  .story-page.life-of-babaji-page .birth-seva {
+    padding-inline: clamp(0.65rem, 3vw, 1rem);
+  }
+
+  .story-page.birth-page .birth-article__media img,
+  .story-page.education-page .birth-article__media img,
+  .story-page.growing-years-page .birth-article__media img,
+  .story-page.babaji-mission-page .birth-article__media img,
+  .story-page.life-of-babaji-page .birth-article__media img {
+    width: min(100%, clamp(220px, 68vw, 360px));
+    max-width: min(86vw, 360px);
+  }
+}
+
+@media (max-width: 575px) {
+  .story-page.birth-page .outer-container.inner-page-body.birth-article,
+  .story-page.birth-page .birth-article,
+  .story-page.education-page .outer-container.inner-page-body.birth-article,
+  .story-page.education-page .birth-article,
+  .story-page.growing-years-page .outer-container.inner-page-body.birth-article,
+  .story-page.growing-years-page .birth-article,
+  .story-page.babaji-mission-page .outer-container.inner-page-body.birth-article,
+  .story-page.babaji-mission-page .birth-article,
+  .story-page.life-of-babaji-page .outer-container.inner-page-body.birth-article,
+  .story-page.life-of-babaji-page .birth-article {
+    padding-top: clamp(1rem, 4vw, 1.35rem) !important;
+    padding-bottom: clamp(1.75rem, 5vw, 2.35rem) !important;
+  }
+
+  .story-page.birth-page .birth-article__wrap,
+  .story-page.education-page .birth-article__wrap,
+  .story-page.growing-years-page .birth-article__wrap,
+  .story-page.babaji-mission-page .birth-article__wrap,
+  .story-page.life-of-babaji-page .birth-article__wrap {
+    padding-left: clamp(0.85rem, 4vw, 1.15rem);
+    padding-right: clamp(0.85rem, 4vw, 1.15rem);
+  }
+
+  .story-page.birth-page .birth-article__header,
+  .story-page.education-page .birth-article__header,
+  .story-page.growing-years-page .birth-article__header,
+  .story-page.babaji-mission-page .birth-article__header,
+  .story-page.life-of-babaji-page .birth-article__header {
+    margin-bottom: 1.25rem;
+  }
+
+  .story-page.birth-page .birth-article__title,
+  .story-page.education-page .birth-article__title,
+  .story-page.growing-years-page .birth-article__title,
+  .story-page.babaji-mission-page .birth-article__title,
+  .story-page.life-of-babaji-page .birth-article__title {
+    font-size: clamp(1.05rem, 5.2vw, 1.35rem) !important;
+    letter-spacing: 0.07em;
+    line-height: 1.25;
+  }
+
+  .story-page.birth-page .birth-article__title-rule,
+  .story-page.education-page .birth-article__title-rule,
+  .story-page.growing-years-page .birth-article__title-rule,
+  .story-page.babaji-mission-page .birth-article__title-rule,
+  .story-page.life-of-babaji-page .birth-article__title-rule {
+    width: min(10rem, 85%);
+  }
+
+  .story-page.birth-page .birth-article__grid,
+  .story-page.education-page .birth-article__grid,
+  .story-page.growing-years-page .birth-article__grid,
+  .story-page.babaji-mission-page .birth-article__grid,
+  .story-page.life-of-babaji-page .birth-article__grid {
+    gap: clamp(0.85rem, 2.5vw, 1.1rem);
+  }
+
+  .story-page.birth-page .birth-article__media img,
+  .story-page.education-page .birth-article__media img,
+  .story-page.growing-years-page .birth-article__media img,
+  .story-page.babaji-mission-page .birth-article__media img,
+  .story-page.life-of-babaji-page .birth-article__media img {
+    width: min(100%, clamp(200px, 76vw, 300px));
+    max-width: min(84vw, 300px);
+    border-radius: 12px;
+  }
+
+  .story-page.birth-page .birth-article__copy p,
+  .story-page.education-page .birth-article__copy p,
+  .story-page.growing-years-page .birth-article__copy p,
+  .story-page.babaji-mission-page .birth-article__copy p,
+  .story-page.life-of-babaji-page .birth-article__copy p {
+    padding-left: 0.7rem;
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .story-page.birth-page .birth-article__divider,
+  .story-page.education-page .birth-article__divider,
+  .story-page.growing-years-page .birth-article__divider,
+  .story-page.babaji-mission-page .birth-article__divider,
+  .story-page.life-of-babaji-page .birth-article__divider {
+    margin: 0.85rem 0 0.85rem 0.45rem;
+    gap: 0.5rem;
+  }
+
+  .story-page.birth-page .birth-article__divider-lotus,
+  .story-page.education-page .birth-article__divider-lotus,
+  .story-page.growing-years-page .birth-article__divider-lotus,
+  .story-page.babaji-mission-page .birth-article__divider-lotus,
+  .story-page.life-of-babaji-page .birth-article__divider-lotus {
+    width: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .story-page.birth-page .inner-banner,
+  .story-page.education-page .inner-banner,
+  .story-page.growing-years-page .inner-banner,
+  .story-page.babaji-mission-page .inner-banner,
+  .story-page.life-of-babaji-page .inner-banner {
+    max-height: 130px;
+  }
+
+  .story-page.birth-page .inner-banner img,
+  .story-page.education-page .inner-banner img,
+  .story-page.growing-years-page .inner-banner img,
+  .story-page.babaji-mission-page .inner-banner img,
+  .story-page.life-of-babaji-page .inner-banner img {
+    min-height: 130px;
+  }
+
+  .story-page.birth-page .birth-article__title,
+  .story-page.education-page .birth-article__title,
+  .story-page.growing-years-page .birth-article__title,
+  .story-page.babaji-mission-page .birth-article__title,
+  .story-page.life-of-babaji-page .birth-article__title {
+    font-size: 1rem !important;
+  }
+
+  .story-page.birth-page .birth-article__media img,
+  .story-page.education-page .birth-article__media img,
+  .story-page.growing-years-page .birth-article__media img,
+  .story-page.babaji-mission-page .birth-article__media img,
+  .story-page.life-of-babaji-page .birth-article__media img {
+    width: min(100%, clamp(180px, 82vw, 260px));
+    max-width: min(82vw, 260px);
+  }
+
+  .story-page.birth-page .birth-article__copy p,
+  .story-page.education-page .birth-article__copy p,
+  .story-page.growing-years-page .birth-article__copy p,
+  .story-page.babaji-mission-page .birth-article__copy p,
+  .story-page.life-of-babaji-page .birth-article__copy p {
+    padding-left: 0.55rem;
+    font-size: 0.86rem !important;
+  }
 }
