@@ -3107,7 +3107,7 @@
   font-weight: 700;
   line-height: 1.32;
   letter-spacing: 0.01em;
-  color: #4b0000;
+  color: #ffffff;
   margin: 0;
   max-width: 100%;
   white-space: normal;
@@ -3136,7 +3136,7 @@
 
 .home-calendar-event-panel.is-empty .home-calendar-event-panel-title {
   font-weight: 600;
-  color: #6b2f2f;
+  color: #ffffff;
 }
 
 .home-calendar-event-panel.is-empty .home-calendar-event-panel-desc {

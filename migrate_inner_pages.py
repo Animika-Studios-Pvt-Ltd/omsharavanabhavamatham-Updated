@@ -63,7 +63,7 @@ TITLE_RULE = """
             </div>"""
 
 OLD_INNER_SEVA_RE = re.compile(
-    r'<div class="outer-container inner-seva"[^>]*>.*?</div>\s*</div>\s*</div>',
+    r'<div class="outer-container inner-seva(?: birth-seva)?"[^>]*>.*?</div>\s*</div>\s*</div>',
     re.DOTALL,
 )
 

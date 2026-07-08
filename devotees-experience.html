@@ -68,7 +68,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
 
-  <body class="story-page devotees-experience-page">
+  <body class="story-page devotees-experience-page devotees-page">
     <!-- HEADER -->
     <header>
       <div class="container-fluid top site-header">
@@ -2218,7 +2218,33 @@
         </div>
       </div>
     </div>
-    <!-- INNER SEVA SECTION -->
+
+    <div
+      class="modal fade devotee-story-modal"
+      id="devoteeStoryModal"
+      tabindex="-1"
+      aria-labelledby="devoteeStoryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2
+              class="modal-title devotee-story-modal__title"
+              id="devoteeStoryModalLabel"
+            ></h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body devotee-story-modal__body"></div>
+        </div>
+      </div>
+    </div>
+
     <div
       class="outer-container inner-seva birth-seva"
       aria-label="Serve, support, and experience"
@@ -2596,7 +2622,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.2/fullcalendar.min.js"></script>
     <script src="birth-carousel.js"></script>
-    <script src="devotees-experience.js"></script>
 
     <!-- Bootstrap 5 Bundle (Required for BS5 Carousel) -->
     <script
@@ -2604,6 +2629,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="devotees-experience.js"></script>
     <script>
       const carouselEl = document.getElementById("carouselExample");
       if (carouselEl && window.bootstrap) {
