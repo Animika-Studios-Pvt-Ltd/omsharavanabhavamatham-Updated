@@ -75,13 +75,8 @@
     });
   }
 
-  function markInnerPageReady() {
-    document.body.classList.add("inner-page-ready");
-  }
-
   function initAos() {
     if (typeof AOS === "undefined") {
-      markInnerPageReady();
       return;
     }
 
@@ -89,7 +84,6 @@
 
     if (reducedMotionMq.matches) {
       stripAosAttributes();
-      markInnerPageReady();
       return;
     }
 
@@ -104,8 +98,6 @@
       mirror: true,
       anchorPlacement: "top-bottom",
     });
-
-    markInnerPageReady();
   }
 
   function ensureAosAssets(done) {
@@ -129,11 +121,6 @@
 
   function start() {
     ensureAosAssets(initAos);
-    window.setTimeout(function () {
-      if (!document.body.classList.contains("inner-page-ready")) {
-        markInnerPageReady();
-      }
-    }, 2000);
   }
 
   if (document.readyState === "loading") {

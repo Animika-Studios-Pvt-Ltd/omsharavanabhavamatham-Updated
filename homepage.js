@@ -64,40 +64,32 @@ function refreshHubLucideIcons() {
     return;
   }
 
-  function setupBabajiHeroReveal() {
-    var hero = document.querySelector(".babaji-hero-brand");
-    if (!hero) {
-      return;
-    }
-
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
-      !("IntersectionObserver" in window)
-    ) {
+  var hero = document.querySelector(".babaji-hero-brand");
+  if (!hero || !("IntersectionObserver" in window)) {
+    if (hero) {
       hero.classList.add("is-revealed");
-      return;
     }
-
-    var revealObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          hero.classList.toggle("is-revealed", entry.isIntersecting);
-        });
-      },
-      {
-        threshold: 0.28,
-        rootMargin: "0px 0px -12% 0px",
-      },
-    );
-
-    revealObserver.observe(hero);
+    return;
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupBabajiHeroReveal);
-  } else {
-    setupBabajiHeroReveal();
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hero.classList.add("is-revealed");
+    return;
   }
+
+  var revealObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        hero.classList.toggle("is-revealed", entry.isIntersecting);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  revealObserver.observe(hero);
 })();
 
 /* -------------------------------------------- BABAJI HERO SECTION -------------------------------------------- */

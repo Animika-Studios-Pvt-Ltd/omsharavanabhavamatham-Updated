@@ -78,26 +78,28 @@
   isolation: isolate;
 }
 
-/* Keep the whole Sri Sharvana Baba block hidden until it scrolls into view */
-.home-page .babaji-hero-brand:not(.is-revealed) {
-  opacity: 0 !important;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.home-page .babaji-hero-brand.is-revealed {
-  opacity: 1 !important;
-  visibility: visible;
-  pointer-events: auto;
+/* Keep decorative layers hidden until the section scrolls into view */
+.home-page .babaji-hero-brand .babaji-hero-scene,
+.home-page .babaji-hero-brand .babaji-hero-frame,
+.home-page .babaji-hero-brand .babaji-hero-ornaments,
+.home-page .babaji-hero-brand .babaji-hero-decor {
+  opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.home-page .babaji-hero-brand.is-revealed .babaji-hero-scene,
+.home-page .babaji-hero-brand.is-revealed .babaji-hero-frame,
+.home-page .babaji-hero-brand.is-revealed .babaji-hero-ornaments,
+.home-page .babaji-hero-brand.is-revealed .babaji-hero-decor {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .home-page .babaji-hero-brand:not(.is-revealed),
-  .home-page .babaji-hero-brand.is-revealed {
-    opacity: 1 !important;
-    visibility: visible;
-    pointer-events: auto;
+  .home-page .babaji-hero-brand .babaji-hero-scene,
+  .home-page .babaji-hero-brand .babaji-hero-frame,
+  .home-page .babaji-hero-brand .babaji-hero-ornaments,
+  .home-page .babaji-hero-brand .babaji-hero-decor {
+    opacity: 1;
     transition: none;
   }
 }
@@ -5791,20 +5793,21 @@
 
 .reach-luxe-location-list {
   list-style: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  align-self: stretch;
+  text-align: left;
 }
 
 .reach-luxe-location-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 0.5rem;
   margin: 0;
   padding: 0.18rem 0;
@@ -5814,17 +5817,18 @@
   line-height: 1.55;
   color: rgba(243, 232, 216, 0.88);
   white-space: normal;
-  text-align: center;
+  text-align: left;
+  width: 100%;
   max-width: 100%;
 }
 
 .reach-luxe-location-item-label {
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-weight: 400;
   padding-bottom: 0.15rem;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .reach-luxe-location-item-plain {
@@ -5844,7 +5848,7 @@
   display: block;
   width: 0.78rem;
   height: 1.02rem;
-  margin-top: 0;
+  margin-top: 0.12rem;
   flex-shrink: 0;
   background: linear-gradient(180deg, #f2c56a 0%, #e08a2e 52%, #c4671a 100%);
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath fill='%23000' d='M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20C24 5.37 18.63 0 12 0zm0 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E");
@@ -6363,15 +6367,16 @@
   .reach-luxe-location-list {
     width: 100%;
     max-width: 100%;
-    margin-inline: auto;
-    align-items: center;
-    text-align: center;
+    margin-inline: 0;
+    align-items: flex-start;
+    align-self: stretch;
+    text-align: left;
   }
 
   .reach-luxe-location-item,
   .reach-luxe-location-item-label {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     white-space: normal;
   }
 
@@ -6468,13 +6473,14 @@
   .reach-luxe-location-item {
     white-space: normal;
     font-size: clamp(0.78rem, 3.2vw, 0.88rem);
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .reach-luxe-location-list {
-    margin-inline: auto;
-    text-align: center;
+    margin-inline: 0;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .reach-luxe-prabhavali {
@@ -6604,15 +6610,16 @@
     font-size: 0.76rem;
     line-height: 1.45;
     padding: 0.22rem 0;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .reach-luxe-location-list,
   .reach-luxe-location-item-label {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .reach-luxe-prabhavali {
@@ -6721,15 +6728,16 @@
   .reach-luxe-location-list {
     width: 100%;
     max-width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    align-self: stretch;
+    text-align: left;
     box-sizing: border-box;
   }
 
   .reach-luxe-location-item,
   .reach-luxe-location-item-label {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     font-size: clamp(0.66rem, 2.8vw, 0.74rem);
     line-height: 1.35;
     white-space: normal;
@@ -6875,16 +6883,17 @@
   .reach-luxe-location-list {
     width: 100%;
     max-width: 100%;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    align-self: stretch;
+    text-align: left;
     box-sizing: border-box;
     padding-inline: 2px;
   }
 
   .reach-luxe-location-item,
   .reach-luxe-location-item-label {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     font-size: 0.62rem;
     line-height: 1.32;
     white-space: normal;

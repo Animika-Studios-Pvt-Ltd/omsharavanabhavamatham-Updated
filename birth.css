@@ -13,7 +13,16 @@
   background: var(--birth-bg) !important;
 }
 
-/* Inner banner visibility is controlled from header.css + inner-page-ready */
+/* Hide inner banner until AOS/JS is ready — prevents flash on page load */
+.story-page .inner-banner {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-page .inner-banner {
+    opacity: 1;
+  }
+}
 
 /* ── Article header ── */
 

@@ -2,21 +2,6 @@ header {
   display: block;
 }
 
-/* Prevent inner banner flash before story pages finish loading */
-.story-page .inner-banner {
-  display: none !important;
-}
-
-.story-page.inner-page-ready .inner-banner {
-  display: block !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .story-page .inner-banner {
-    display: block !important;
-  }
-}
-
 .site-header,
 .top.site-header {
   --hp-cream: #f7f0e6;
