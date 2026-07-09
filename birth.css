@@ -13,6 +13,8 @@
   background: var(--birth-bg) !important;
 }
 
+/* Inner banner visibility is controlled from header.css + inner-page-ready */
+
 /* ── Article header ── */
 
 .story-page .outer-container.inner-page-body.birth-article,
@@ -2300,4 +2302,9 @@
     padding-left: 0.55rem;
     font-size: 0.86rem !important;
   }
+}
+
+/* AOS — slow, smooth scroll reveals on inner story pages */
+.story-page [data-aos] {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }

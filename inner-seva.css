@@ -203,16 +203,25 @@
 }
 
 /* Pooja page — hide Book a Pooja card (only Donate + Devotee) */
+.story-page.pooja-sevas-page .inner-seva__showcase > .inner-seva__card[aria-label="Book a Pooja"],
+.inner-seva__showcase--no-pooja > .inner-seva__card[aria-label="Book a Pooja"] {
+  display: none !important;
+}
+
+.story-page.pooja-sevas-page .inner-seva__showcase,
+.story-page.pooja-sevas-page .birth-seva__showcase,
 .inner-seva__showcase--no-pooja {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(540px, 100%);
-}
-
-.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(1) .inner-seva__arrow::before {
-  content: "Donate";
+  max-width: min(540px, 100%);
+  margin-inline: auto;
 }
 
 .inner-seva__showcase--no-pooja .inner-seva__card:nth-child(2) .inner-seva__arrow::before {
+  content: "Donate";
+}
+
+.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(3) .inner-seva__arrow::before {
   content: "Explore";
 }
 

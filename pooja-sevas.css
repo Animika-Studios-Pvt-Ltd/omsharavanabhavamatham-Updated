@@ -1,5 +1,12 @@
 /* Pooja Sevas — card UI aligned with Social Impact */
 
+.story-page.pooja-sevas-page.social-impact-page .birth-seva__showcase {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(540px, 100%);
+  max-width: min(540px, 100%);
+  margin-inline: auto;
+}
+
 .story-page.pooja-sevas-page .social-impact-grid {
   margin-top: 0.5rem;
 }

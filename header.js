@@ -114,3 +114,26 @@ $(document).ready(function () {
     });
   })();
 });
+
+/* Inner story pages — same slow AOS scroll reveals as homepage */
+(function loadInnerAos() {
+  if (!document.body.classList.contains("story-page")) {
+    return;
+  }
+
+  if (document.querySelector('script[src*="inner-aos.js"]')) {
+    return;
+  }
+
+  function appendInnerAosScript() {
+    var script = document.createElement("script");
+    script.src = "inner-aos.js";
+    document.body.appendChild(script);
+  }
+
+  if (document.readyState === "complete") {
+    appendInnerAosScript();
+  } else {
+    window.addEventListener("load", appendInnerAosScript, { once: true });
+  }
+})();

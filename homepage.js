@@ -14,6 +14,92 @@ function refreshHubLucideIcons() {
   });
 }
 
+(function initHomeAos() {
+  if (!document.body.classList.contains("home-page")) {
+    return;
+  }
+
+  if (typeof AOS === "undefined") {
+    return;
+  }
+
+  var reducedMotionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (reducedMotionMq.matches) {
+    document.querySelectorAll("[data-aos]").forEach(function (el) {
+      el.removeAttribute("data-aos");
+      el.removeAttribute("data-aos-delay");
+      el.removeAttribute("data-aos-duration");
+      el.removeAttribute("data-aos-easing");
+    });
+    if (typeof refreshHubLucideIcons === "function") {
+      refreshHubLucideIcons();
+    }
+    return;
+  }
+
+  AOS.init({
+    duration: 1200,
+    easing: "ease-in-out",
+    once: false,
+    offset: 100,
+    delay: 0,
+    mirror: true,
+    anchorPlacement: "top-bottom",
+  });
+
+  if (typeof refreshHubLucideIcons === "function") {
+    refreshHubLucideIcons();
+  }
+
+  document.addEventListener("aos:in", function () {
+    if (typeof refreshHubLucideIcons === "function") {
+      refreshHubLucideIcons();
+    }
+  });
+})();
+
+(function initBabajiHeroSceneReveal() {
+  if (!document.body.classList.contains("home-page")) {
+    return;
+  }
+
+  function setupBabajiHeroReveal() {
+    var hero = document.querySelector(".babaji-hero-brand");
+    if (!hero) {
+      return;
+    }
+
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      hero.classList.add("is-revealed");
+      return;
+    }
+
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          hero.classList.toggle("is-revealed", entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.28,
+        rootMargin: "0px 0px -12% 0px",
+      },
+    );
+
+    revealObserver.observe(hero);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupBabajiHeroReveal);
+  } else {
+    setupBabajiHeroReveal();
+  }
+})();
+
 /* -------------------------------------------- BABAJI HERO SECTION -------------------------------------------- */
 (function initBabajiHeroParallax() {
   if (!document.body.classList.contains("home-page")) {
@@ -63,52 +149,6 @@ function refreshHubLucideIcons() {
 })();
 
 /* -------------------------------------------- SEVA SECTION -------------------------------------------- */
-(function initSevaLotusAnimations() {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  var section = document.querySelector(".seva-section-inner");
-  var cards = document.querySelectorAll(".seva-section .seva-showcase-card");
-  if (!section || !cards.length) {
-    return;
-  }
-
-  var header = document.querySelector(".seva-section-header");
-
-  function revealCards() {
-    if (header) {
-      header.classList.add("is-in-view");
-    }
-    cards.forEach(function (card) {
-      card.classList.add("is-in-view");
-    });
-  }
-
-  var prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-  if (prefersReducedMotion) {
-    revealCards();
-    return;
-  }
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          revealCards();
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" },
-  );
-
-  observer.observe(section);
-})();
-
-/* -------------------------------------------- NEWS & EVENTS (EVENTS HUB) SECTION -------------------------------------------- */
 (function initHomeCalendar() {
   if (!document.body.classList.contains("home-page")) {
     return;
@@ -663,56 +703,6 @@ function refreshHubLucideIcons() {
   });
 })();
 
-(function initEventsHubReveal() {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  var hub = document.querySelector(".events-hub");
-  if (!hub) {
-    return;
-  }
-
-  hub.classList.add("events-hub-animate");
-
-  var cards = hub.querySelectorAll(".events-hub-card");
-  var calendarWrap = hub.querySelector(".events-hub-calendar-wrap");
-
-  function revealAll() {
-    cards.forEach(function (card, index) {
-      card.style.transitionDelay = index * 0.08 + "s";
-      card.classList.add("is-in-view");
-    });
-    if (calendarWrap) {
-      calendarWrap.classList.add("is-in-view");
-    }
-    refreshHubLucideIcons(hub);
-  }
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    revealAll();
-    return;
-  }
-
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            revealAll();
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" },
-    );
-
-    observer.observe(hub);
-  } else {
-    revealAll();
-  }
-})();
-
 /* -------------------------------------------- BABAJI'S VIDEOS & DIVINE VOICE SECTION -------------------------------------------- */
 (function initVoicePlayers() {
   if (!document.body.classList.contains("home-page")) {
@@ -793,87 +783,6 @@ function refreshHubLucideIcons() {
   });
 
   audio.addEventListener("ended", resetButtons);
-})();
-
-/* -------------------------------------------- SOCIAL IMPACT SECTION -------------------------------------------- */
-(function initSocialImpactReveal() {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  var content = document.querySelector(".social-impact-hero-content");
-  if (!content) {
-    return;
-  }
-
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    content.classList.add("is-in-view");
-    return;
-  }
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.25, rootMargin: "0px 0px -8% 0px" },
-  );
-
-  observer.observe(content);
-})();
-
-/* -------------------------------------------- HOW TO GET HERE (REACH LUXE) SECTION -------------------------------------------- */
-(function initReachLuxeSection() {
-  if (!document.body.classList.contains("home-page")) {
-    return;
-  }
-
-  var section = document.getElementById("reachLuxe");
-  if (!section) {
-    return;
-  }
-
-  var cards = section.querySelectorAll("[data-reach-card]");
-  var mapHero = section.querySelector("[data-reach-map]");
-  var reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-
-  function reveal(el) {
-    if (el) {
-      el.classList.add("is-in-view");
-    }
-  }
-
-  if (reducedMotion || !("IntersectionObserver" in window)) {
-    cards.forEach(reveal);
-    reveal(mapHero);
-    return;
-  }
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          reveal(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2, rootMargin: "0px 0px -6% 0px" },
-  );
-
-  cards.forEach(function (card) {
-    observer.observe(card);
-  });
-
-  if (mapHero) {
-    observer.observe(mapHero);
-  }
 })();
 
 /* -------------------------------------------- FOOTER / RETURN TO TOP BUTTON -------------------------------------------- */

@@ -1,8 +1,13 @@
-AOS.init({
-  disable: "phone",
-  delay: 0,
-  once: true,
-});
+if (
+  typeof AOS !== "undefined" &&
+  !document.body.classList.contains("story-page")
+) {
+  AOS.init({
+    disable: "phone",
+    delay: 0,
+    once: true,
+  });
+}
 
 function toggleIcon(e) {
   $(e.target)
@@ -37,9 +42,14 @@ jQuery(document).ready(function () {
     e.preventDefault();
   });
 });
-AOS.init({
-  duration: 1000,
-});
+if (
+  typeof AOS !== "undefined" &&
+  !document.body.classList.contains("story-page")
+) {
+  AOS.init({
+    duration: 1000,
+  });
+}
 
 $(".feedback_hood").click(function () {
   var check = $(this).data("enquiry");
