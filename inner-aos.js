@@ -24,28 +24,28 @@
   }
 
   function applyAosAttributes() {
-    document.querySelectorAll(".birth-article__header").forEach(function (header) {
+    document.querySelectorAll(".birth-article-header").forEach(function (header) {
       setAos(header, "fade");
     });
 
-    document.querySelectorAll(".birth-article__media").forEach(function (media) {
+    document.querySelectorAll(".birth-article-media").forEach(function (media) {
       setAos(media, "fade-right", 200);
     });
 
-    document.querySelectorAll(".birth-article__copy").forEach(function (copy) {
+    document.querySelectorAll(".birth-article-copy").forEach(function (copy) {
       setAos(copy, "fade-left", 350);
     });
 
-    document.querySelectorAll(".birth-article__divider").forEach(function (divider) {
+    document.querySelectorAll(".birth-article-divider").forEach(function (divider) {
       setAos(divider, "fade", 450);
     });
 
-    document.querySelectorAll(".birth-article__more").forEach(function (more) {
+    document.querySelectorAll(".birth-article-more").forEach(function (more) {
       setAos(more, "fade-up", 200);
     });
 
-    document.querySelectorAll(".birth-article__grid").forEach(function (grid) {
-      if (grid.querySelector(".birth-article__media, .birth-article__copy")) {
+    document.querySelectorAll(".birth-article-grid").forEach(function (grid) {
+      if (grid.querySelector(".birth-article-media, .birth-article-copy")) {
         return;
       }
 
@@ -60,7 +60,7 @@
     });
 
     document
-      .querySelectorAll(".inner-seva__card, .birth-seva__card")
+      .querySelectorAll(".inner-seva-card, .birth-seva-card")
       .forEach(function (card, index) {
         setAos(card, "fade-up", 150 + index * 120);
       });

@@ -59,6 +59,79 @@ function refreshHubLucideIcons() {
   });
 })();
 
+(function initReachLuxeJourneyPath() {
+  if (!document.body.classList.contains("home-page")) {
+    return;
+  }
+
+  var journey = document.getElementById("reachJourneyTrack");
+  if (!journey) {
+    return;
+  }
+
+  var cards = journey.querySelectorAll("[data-reach-card]");
+  var pathTimer = null;
+  var pathDelayMs = 1650;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    journey.classList.add("is-path-drawn");
+    return;
+  }
+
+  if (cards.length) {
+    var maxDelay = 0;
+    cards.forEach(function (card) {
+      var delay = parseInt(card.getAttribute("data-aos-delay") || "0", 10);
+      if (delay > maxDelay) {
+        maxDelay = delay;
+      }
+    });
+    /* Wait until the last card's AOS fade-up finishes, then draw the path */
+    pathDelayMs = maxDelay + 1200;
+  }
+
+  function drawPath() {
+    journey.classList.add("is-path-drawn");
+  }
+
+  function hidePath() {
+    journey.classList.remove("is-path-drawn");
+  }
+
+  function scheduleDraw() {
+    window.clearTimeout(pathTimer);
+    pathTimer = window.setTimeout(drawPath, pathDelayMs);
+  }
+
+  function cancelDraw() {
+    window.clearTimeout(pathTimer);
+    hidePath();
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    scheduleDraw();
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          scheduleDraw();
+        } else {
+          cancelDraw();
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -8% 0px",
+    },
+  );
+
+  observer.observe(journey);
+})();
+
 (function initBabajiHeroSceneReveal() {
   if (!document.body.classList.contains("home-page")) {
     return;

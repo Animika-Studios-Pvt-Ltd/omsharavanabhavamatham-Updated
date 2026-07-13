@@ -78,7 +78,7 @@
 }
 
 /* Hide heading if any page still has it */
-.inner-seva__header {
+.inner-seva-header {
   display: none !important;
 }
 
@@ -87,7 +87,7 @@
   z-index: 1;
 }
 
-.inner-seva__showcase {
+.inner-seva-showcase {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(0.85rem, 2vw, 1.15rem);
@@ -96,7 +96,7 @@
   padding: 0 clamp(0.75rem, 2vw, 1.25rem);
 }
 
-.inner-seva__card {
+.inner-seva-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -111,24 +111,24 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.inner-seva__card:hover,
-.inner-seva__card:focus-visible {
+.inner-seva-card:hover,
+.inner-seva-card:focus-visible {
   transform: translateY(-3px);
   border-color: rgba(201, 162, 77, 0.45);
   box-shadow: 0 12px 28px rgba(67, 6, 6, 0.12);
   color: var(--is-maroon);
 }
 
-.inner-seva__card--featured {
+.inner-seva-card--featured {
   transform: none;
 }
 
-.inner-seva__card--featured:hover,
-.inner-seva__card--featured:focus-visible {
+.inner-seva-card--featured:hover,
+.inner-seva-card--featured:focus-visible {
   transform: translateY(-3px);
 }
 
-.inner-seva__media {
+.inner-seva-media {
   display: block;
   width: 100%;
   height: 132px;
@@ -138,17 +138,17 @@
   transition: transform 0.4s ease;
 }
 
-.inner-seva__card:hover .inner-seva__media,
-.inner-seva__card:focus-visible .inner-seva__media {
+.inner-seva-card:hover .inner-seva-media,
+.inner-seva-card:focus-visible .inner-seva-media {
   transform: scale(1.04);
 }
 
-.inner-seva__shade,
-.inner-seva__shade--warm {
+.inner-seva-shade,
+.inner-seva-shade--warm {
   display: none;
 }
 
-.inner-seva__label {
+.inner-seva-label {
   position: static;
   z-index: 2;
   display: flex;
@@ -169,7 +169,7 @@
   background: #fff;
 }
 
-.inner-seva__arrow {
+.inner-seva-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -184,7 +184,7 @@
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.inner-seva__arrow::before {
+.inner-seva-arrow::before {
   content: "Book now";
   font-family: Cinzel, Marcellus, Georgia, serif;
   font-size: 0.62rem;
@@ -194,57 +194,104 @@
   color: #fff;
 }
 
-.inner-seva__card:nth-child(2) .inner-seva__arrow::before {
+.inner-seva-card:nth-child(2) .inner-seva-arrow::before {
   content: "Donate";
 }
 
-.inner-seva__card:nth-child(3) .inner-seva__arrow::before {
+.inner-seva-card:nth-child(3) .inner-seva-arrow::before {
   content: "Explore";
 }
 
 /* Pooja page — hide Book a Pooja card (only Donate + Devotee) */
-.story-page.pooja-sevas-page .inner-seva__showcase > .inner-seva__card[aria-label="Book a Pooja"],
-.inner-seva__showcase--no-pooja > .inner-seva__card[aria-label="Book a Pooja"] {
+.story-page.pooja-sevas-page .inner-seva-showcase > .inner-seva-card[aria-label="Book a Pooja"],
+.inner-seva-showcase--no-pooja > .inner-seva-card[aria-label="Book a Pooja"] {
   display: none !important;
 }
 
-.story-page.pooja-sevas-page .inner-seva__showcase,
-.story-page.pooja-sevas-page .birth-seva__showcase,
-.inner-seva__showcase--no-pooja {
+.story-page.pooja-sevas-page .inner-seva-showcase,
+.story-page.pooja-sevas-page .birth-seva-showcase,
+.inner-seva-showcase--no-pooja {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(540px, 100%);
   max-width: min(540px, 100%);
   margin-inline: auto;
 }
 
-.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(2) .inner-seva__arrow::before {
+.inner-seva-showcase--no-pooja .inner-seva-card:nth-child(2) .inner-seva-arrow::before {
   content: "Donate";
 }
 
-.inner-seva__showcase--no-pooja .inner-seva__card:nth-child(3) .inner-seva__arrow::before {
+.inner-seva-showcase--no-pooja .inner-seva-card:nth-child(3) .inner-seva-arrow::before {
   content: "Explore";
 }
 
-.inner-seva__card:hover .inner-seva__arrow,
-.inner-seva__card:focus-visible .inner-seva__arrow {
+.inner-seva-card:hover .inner-seva-arrow,
+.inner-seva-card:focus-visible .inner-seva-arrow {
   transform: none;
   background: #5a090c;
 }
 
 @media (max-width: 767px) {
-  .inner-seva__showcase {
-    grid-template-columns: 1fr;
-    max-width: 300px;
+  .inner-seva-showcase {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 720px);
+    max-width: none;
+    gap: clamp(0.55rem, 1.5vw, 0.85rem);
+    padding-inline: clamp(0.75rem, 2.5vw, 1.25rem);
   }
 
-  .inner-seva__media {
-    height: 120px;
+  .inner-seva-media {
+    height: clamp(100px, 16vw, 130px);
   }
 
-  .inner-seva__card,
-  .inner-seva__card--featured,
-  .inner-seva__card--featured:hover,
-  .inner-seva__card--featured:focus-visible {
+  .inner-seva-label {
+    padding: 0.7rem 0.45rem 0.85rem;
+    font-size: clamp(0.62rem, 1.5vw, 0.74rem);
+    gap: 0.4rem;
+  }
+
+  .inner-seva-arrow {
+    min-width: 5rem;
+    padding: 0.32rem 0.65rem;
+  }
+
+  .inner-seva-arrow::before {
+    font-size: 0.55rem;
+  }
+
+  .story-page.pooja-sevas-page .inner-seva-showcase,
+  .story-page.pooja-sevas-page .birth-seva-showcase,
+  .inner-seva-showcase--no-pooja {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 520px);
+    max-width: min(100%, 520px);
+  }
+
+  .inner-seva-card,
+  .inner-seva-card--featured,
+  .inner-seva-card--featured:hover,
+  .inner-seva-card--featured:focus-visible {
     transform: none;
+  }
+}
+
+@media (max-width: 499px) {
+  .inner-seva-showcase {
+    grid-template-columns: 1fr;
+    width: min(100%, 360px);
+    max-width: min(100%, 360px);
+    gap: 0.85rem;
+  }
+
+  .story-page.pooja-sevas-page .inner-seva-showcase,
+  .story-page.pooja-sevas-page .birth-seva-showcase,
+  .inner-seva-showcase--no-pooja {
+    grid-template-columns: 1fr;
+    width: min(100%, 360px);
+    max-width: min(100%, 360px);
+  }
+
+  .inner-seva-media {
+    height: 120px;
   }
 }

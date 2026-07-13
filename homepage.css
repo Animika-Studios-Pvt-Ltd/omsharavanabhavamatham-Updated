@@ -4030,6 +4030,10 @@
   background: #f6f0e8 !important;
 }
 
+#divine-voice {
+  scroll-margin-top: clamp(5.5rem, 12vw, 7rem);
+}
+
 .babaji-section.videobck {
   padding-top: 0;
   padding-bottom: 0;
@@ -5672,6 +5676,17 @@
   );
   z-index: 0;
   pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+}
+
+.reach-luxe-journey.is-path-drawn .reach-luxe-journey-path {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .reach-luxe-journey-node {
@@ -5685,6 +5700,25 @@
   background: #430606;
   box-shadow: 0 0 10px rgba(200, 155, 60, 0.35);
   z-index: 1;
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity 0.4s ease 0.35s,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+.reach-luxe-journey.is-path-drawn .reach-luxe-journey-node {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reach-luxe-journey-path,
+  .reach-luxe-journey-node {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .reach-luxe-card {
@@ -7393,13 +7427,51 @@
     margin-bottom: 1.25rem;
   }
   .hero-banner-actions {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.65rem;
   }
   .hero-banner-btn {
-    width: 100%;
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    padding: 0.75rem 0.85rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
   }
   .hero-banner-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 478px) {
+  .hero-banner-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    width: 100%;
+  }
+  .hero-banner-btn {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    padding: 0.7rem 0.55rem;
+    font-size: clamp(0.58rem, 2.8vw, 0.66rem);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-banner-actions {
+    gap: 0.35rem;
+  }
+  .hero-banner-btn {
+    padding: 0.65rem 0.4rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -7552,24 +7624,63 @@
   }
 
   .babaji-section .voice-card {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-bottom: 0.75rem;
+    padding: 0.55rem 0.7rem;
+    min-height: 0;
   }
 
   .babaji-section .voice-card-avatar {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
   }
 
   .babaji-section .voice-info {
-    flex: 1 1 calc(100% - 88px);
+    flex: 1 1 auto;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .babaji-section .voice-info-meta {
+    justify-content: center;
+    margin-bottom: 0.25rem;
+    gap: 0.35rem;
+  }
+
+  .babaji-section .voice-card-date {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .babaji-section .voice-card-location {
+    font-size: 12px;
+  }
+
+  .babaji-section .wave,
+  .babaji-section .voice-card-waveform {
+    height: 14px;
+    gap: 2px;
+    justify-content: center;
+  }
+
+  .babaji-section .wave span {
+    width: 2px;
   }
 
   .babaji-section .play-btn {
-    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    font-size: 12px;
+    padding-left: 2px;
   }
 
   .babaji-section .listen-box {

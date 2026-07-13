@@ -251,9 +251,9 @@ header {
   right: auto !important;
   width: min(290px, 92vw);
   height: auto;
-  max-height: 70vh;
+  max-height: none;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
   display: block;
   padding: 12px 0 10px;
   background: linear-gradient(
@@ -576,12 +576,30 @@ header {
     display: none;
   }
 
+  body.pushNavIsOpen {
+    overflow: hidden;
+  }
+
   body.pushNavIsOpen .screen {
     display: block !important;
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
     z-index: 490;
+  }
+
+  /* Keep close (hamburger/X) fixed — does not scroll with menu content */
+  body.pushNavIsOpen .site-header .site-navbar-burger-wrap {
+    position: fixed !important;
+    top: 22px;
+    right: 22px;
+    z-index: 520;
+  }
+
+  body.pushNavIsOpen .site-header .burger,
+  body.pushNavIsOpen #nav-icon1 {
+    position: relative;
+    z-index: 520;
   }
 
   .site-navbar-brand {
@@ -620,7 +638,9 @@ header {
     transition:
       right 0.4s cubic-bezier(0.16, 1, 0.3, 1),
       visibility 0.4s !important;
+    overflow-x: hidden !important;
     overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
   }
 
   .site-navbar-links.isOpen {

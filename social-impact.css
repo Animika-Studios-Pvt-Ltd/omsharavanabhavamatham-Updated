@@ -16,29 +16,35 @@
 .story-page.social-impact-page .social-impact-section {
   position: relative;
   overflow: hidden;
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.75rem, 3.5vw, 2.75rem) !important;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem) !important;
 }
 
-.story-page.social-impact-page .social-impact-section__inner {
+.story-page.social-impact-page .birth-article-header {
+  margin-top: clamp(0.75rem, 2vw, 1.35rem);
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.story-page.social-impact-page .social-impact-section-inner {
   position: relative;
   z-index: 1;
 }
 
-.story-page.social-impact-page .social-impact-section__watermark {
+.story-page.social-impact-page .social-impact-section-watermark {
   position: absolute;
   pointer-events: none;
   opacity: 0.07;
   z-index: 0;
 }
 
-.story-page.social-impact-page .social-impact-section__watermark--temple {
+.story-page.social-impact-page .social-impact-section-watermark--temple {
   left: -2%;
   bottom: 4%;
   width: min(280px, 34vw);
   height: auto;
 }
 
-.story-page.social-impact-page .social-impact-section__watermark--mandala {
+.story-page.social-impact-page .social-impact-section-watermark--mandala {
   right: -1%;
   top: 8%;
   width: min(320px, 38vw);
@@ -46,14 +52,14 @@
   opacity: 0.06;
 }
 
-.story-page.social-impact-page .social-impact-section__intro {
+.story-page.social-impact-page .social-impact-section-intro {
   max-width: min(1080px, 94%);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.story-page.social-impact-page .social-impact-section__intro p {
+.story-page.social-impact-page .social-impact-section-intro p {
   text-align: center;
   max-width: none;
   margin-left: auto;
@@ -97,13 +103,13 @@
     0 0 0 1px rgba(201, 162, 77, 0.4);
 }
 
-.story-page.social-impact-page .social-impact-card__media {
+.story-page.social-impact-page .social-impact-card-media {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
 }
 
-.story-page.social-impact-page .social-impact-card__media img {
+.story-page.social-impact-page .social-impact-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -112,11 +118,11 @@
   transition: transform 0.45s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__media img {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-media img {
   transform: scale(1.06);
 }
 
-.story-page.social-impact-page .social-impact-card__icon {
+.story-page.social-impact-page .social-impact-card-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -137,13 +143,13 @@
     box-shadow 0.28s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__icon {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-icon {
   transform: scale(1.08);
   background: var(--si-maroon-deep);
   box-shadow: 0 6px 16px rgba(125, 14, 3, 0.28);
 }
 
-.story-page.social-impact-page .social-impact-card__title {
+.story-page.social-impact-page .social-impact-card-title {
   margin: 18px 0 0.35rem;
   padding: 0 0.65rem;
   font-family: Cinzel, Georgia, serif;
@@ -156,11 +162,11 @@
   transition: color 0.28s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__title {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-title {
   color: var(--si-maroon-deep);
 }
 
-.story-page.social-impact-page .social-impact-card__flourish {
+.story-page.social-impact-page .social-impact-card-flourish {
   display: block;
   width: 62px;
   height: auto;
@@ -169,12 +175,12 @@
   transition: opacity 0.28s ease, transform 0.28s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__flourish {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-flourish {
   opacity: 1;
   transform: scale(1.05);
 }
 
-.story-page.social-impact-page .social-impact-card__actions {
+.story-page.social-impact-page .social-impact-card-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -184,7 +190,7 @@
   margin-top: auto;
 }
 
-.story-page.social-impact-page .social-impact-card__donate {
+.story-page.social-impact-page .social-impact-card-donate {
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
@@ -203,16 +209,16 @@
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__donate {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-donate {
   background: var(--si-maroon-deep);
 }
 
-.story-page.social-impact-page .social-impact-card__donate:hover {
+.story-page.social-impact-page .social-impact-card-donate:hover {
   background: var(--si-maroon-deep);
   transform: scale(1.04);
 }
 
-.story-page.social-impact-page .social-impact-card__learn {
+.story-page.social-impact-page .social-impact-card-learn {
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
@@ -227,11 +233,11 @@
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.story-page.social-impact-page .social-impact-card:hover .social-impact-card__learn {
+.story-page.social-impact-page .social-impact-card:hover .social-impact-card-learn {
   color: var(--si-gold) !important;
 }
 
-.story-page.social-impact-page .social-impact-card__learn:hover {
+.story-page.social-impact-page .social-impact-card-learn:hover {
   color: var(--si-maroon-deep) !important;
   transform: translateX(2px);
 }
@@ -241,18 +247,18 @@
     padding-bottom: clamp(2rem, 4vw, 3rem);
   }
 
-  .story-page.social-impact-page .social-impact-section__watermark--mandala {
+  .story-page.social-impact-page .social-impact-section-watermark--mandala {
     width: min(200px, 45vw);
     right: -8%;
     opacity: 0.05;
   }
 
-  .story-page.social-impact-page .social-impact-section__watermark--temple {
+  .story-page.social-impact-page .social-impact-section-watermark--temple {
     width: min(160px, 40vw);
     left: -6%;
   }
 
-  .story-page.social-impact-page .social-impact-section__intro {
+  .story-page.social-impact-page .social-impact-section-intro {
     max-width: 100%;
     margin-bottom: clamp(1.5rem, 3.5vw, 2.25rem);
     padding-inline: 0;
@@ -265,16 +271,16 @@
     padding-inline: clamp(0.25rem, 2vw, 0.5rem);
   }
 
-  .story-page.social-impact-page .social-impact-card__title {
+  .story-page.social-impact-page .social-impact-card-title {
     font-size: clamp(0.7rem, 2.2vw, 0.82rem);
   }
 
-  .story-page.social-impact-page .social-impact-card__donate,
-  .story-page.social-impact-page .social-impact-card__learn {
+  .story-page.social-impact-page .social-impact-card-donate,
+  .story-page.social-impact-page .social-impact-card-learn {
     font-size: clamp(0.52rem, 1.8vw, 0.58rem);
   }
 
-  .story-page.social-impact-page .social-impact-card__donate {
+  .story-page.social-impact-page .social-impact-card-donate {
     padding: 0.42rem 0.7rem;
   }
 }
@@ -286,13 +292,13 @@
     margin-inline: auto;
   }
 
-  .story-page.social-impact-page .social-impact-card__actions {
+  .story-page.social-impact-page .social-impact-card-actions {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
 
-  .story-page.social-impact-page .social-impact-section__watermark--mandala {
+  .story-page.social-impact-page .social-impact-section-watermark--mandala {
     display: none;
   }
 }

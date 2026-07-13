@@ -4,8 +4,8 @@
   overflow: visible !important;
 }
 
-.story-page.sri-siddars-page .birth-article__wrap,
-.story-page.sri-siddars-page .birth-article__more.sri-siddars__more,
+.story-page.sri-siddars-page .birth-article-wrap,
+.story-page.sri-siddars-page .birth-article-more.sri-siddars-more,
 .story-page.sri-siddars-page .expanding-grid {
   overflow: visible !important;
 }
@@ -21,11 +21,11 @@
   margin-top: 0;
 }
 
-.story-page.sri-siddars-page .birth-article__header {
+.story-page.sri-siddars-page .birth-article-header {
   margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
-.sri-siddars-page .birth-article__media .chanting-hero__deity-photo {
+.sri-siddars-page .birth-article-media .chanting-hero-deity-photo {
   width: min(100%, 300px);
   max-height: clamp(320px, 38vw, 450px);
   object-fit: contain;
@@ -35,12 +35,12 @@
   filter: drop-shadow(0 16px 24px rgba(79, 10, 5, 0.14));
 }
 
-.sri-siddars-page .birth-article__more.sri-siddars__more {
+.sri-siddars-page .birth-article-more.sri-siddars-more {
   display: block;
   margin-top: clamp(1.5rem, 3vw, 2.25rem);
 }
 
-.sri-siddars-page .birth-article__more .expanding-grid {
+.sri-siddars-page .birth-article-more .expanding-grid {
   position: relative;
   margin-top: 1.75rem;
   text-align: left;
@@ -109,7 +109,7 @@
   display: none !important;
 }
 
-.sri-siddars-page .birth-article__actions {
+.sri-siddars-page .birth-article-actions {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
@@ -132,13 +132,13 @@ body.sri-siddars-modal-open {
   display: none !important;
 }
 
-.sri-siddars-modal__backdrop {
+.sri-siddars-modal-backdrop {
   position: absolute;
   inset: 0;
   background: rgba(26, 12, 8, 0.72);
 }
 
-.sri-siddars-modal__dialog {
+.sri-siddars-modal-dialog {
   position: relative;
   width: min(920px, 100%);
   max-height: min(88vh, 900px);
@@ -152,7 +152,7 @@ body.sri-siddars-modal-open {
   overflow: hidden;
 }
 
-.sri-siddars-modal__header {
+.sri-siddars-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -162,7 +162,7 @@ body.sri-siddars-modal-open {
   background: rgba(0, 0, 0, 0.12);
 }
 
-.sri-siddars-modal__title {
+.sri-siddars-modal-title {
   margin: 0;
   font-family: 'Cinzel', Georgia, serif;
   font-size: clamp(1rem, 2vw, 1.35rem);
@@ -170,7 +170,7 @@ body.sri-siddars-modal-open {
   color: #fff;
 }
 
-.sri-siddars-modal__close {
+.sri-siddars-modal-close {
   flex-shrink: 0;
   width: 2.25rem;
   height: 2.25rem;
@@ -184,47 +184,47 @@ body.sri-siddars-modal-open {
   padding: 0;
 }
 
-.sri-siddars-modal__close:hover,
-.sri-siddars-modal__close:focus {
+.sri-siddars-modal-close:hover,
+.sri-siddars-modal-close:focus {
   background: rgba(201, 162, 77, 0.15);
   outline: none;
 }
 
-.sri-siddars-modal__body {
+.sri-siddars-modal-body {
   overflow: auto;
   padding: 1.25rem 1.5rem 1.5rem;
 }
 
-.sri-siddars-modal__body p,
-.sri-siddars-modal__body th,
-.sri-siddars-modal__body td,
-.sri-siddars-modal__body li,
-.sri-siddars-modal__body span {
+.sri-siddars-modal-body p,
+.sri-siddars-modal-body th,
+.sri-siddars-modal-body td,
+.sri-siddars-modal-body li,
+.sri-siddars-modal-body span {
   color: #fff !important;
 }
 
-.sri-siddars-modal__body .table-responsive {
+.sri-siddars-modal-body .table-responsive {
   overflow-x: auto;
   margin-bottom: 1rem;
 }
 
-.sri-siddars-modal__body .table tr th,
-.sri-siddars-modal__body .table tr td {
+.sri-siddars-modal-body .table tr th,
+.sri-siddars-modal-body .table tr td {
   border-color: rgba(255, 255, 255, 0.35) !important;
   background: transparent !important;
 }
 
-.sri-siddars-modal__body p {
+.sri-siddars-modal-body p {
   margin-bottom: 0;
   line-height: 1.65;
 }
 
 @media (max-width: 767px) {
-  .sri-siddars-modal__body {
+  .sri-siddars-modal-body {
     padding: 1rem;
   }
 
-  .sri-siddars-modal__body .table-responsive {
+  .sri-siddars-modal-body .table-responsive {
     margin-bottom: 0.75rem;
   }
 }

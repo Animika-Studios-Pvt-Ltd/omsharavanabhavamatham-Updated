@@ -41,7 +41,7 @@
       modal.hidden = false;
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('sri-siddars-modal-open');
-      modal.querySelector('.sri-siddars-modal__close').focus();
+      modal.querySelector('.sri-siddars-modal-close').focus();
     }
 
     function closeModal() {

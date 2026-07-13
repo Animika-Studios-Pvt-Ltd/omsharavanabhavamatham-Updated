@@ -17,8 +17,8 @@
     }
 
     var modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-    var modalTitle = modalEl.querySelector(".devotee-story-modal__title");
-    var modalBody = modalEl.querySelector(".devotee-story-modal__body");
+    var modalTitle = modalEl.querySelector(".devotee-story-modal-title");
+    var modalBody = modalEl.querySelector(".devotee-story-modal-body");
     var panels = document.querySelectorAll(
       ".story-page.devotees-page .panel.panel-default.module, .story-page.devotees-experience-page .panel.panel-default.module"
     );

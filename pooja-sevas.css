@@ -1,6 +1,6 @@
 /* Pooja Sevas — card UI aligned with Social Impact */
 
-.story-page.pooja-sevas-page.social-impact-page .birth-seva__showcase {
+.story-page.pooja-sevas-page.social-impact-page .birth-seva-showcase {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: min(540px, 100%);
   max-width: min(540px, 100%);
@@ -11,22 +11,100 @@
   margin-top: 0.5rem;
 }
 
-.story-page.pooja-sevas-page .social-impact-card__actions {
+.story-page.pooja-sevas-page .social-impact-card-actions {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
 }
 
 .story-page.pooja-sevas-page .pooja-book-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   border: none;
   cursor: pointer;
+  box-shadow:
+    0 4px 14px rgba(125, 14, 3, 0.22),
+    0 0 0 0 rgba(201, 162, 77, 0.35);
+  animation: pooja-book-pulse 2.8s ease-in-out infinite;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.story-page.pooja-sevas-page .pooja-card__menu {
+.story-page.pooja-sevas-page .pooja-book-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 48%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  animation: pooja-book-shine 3.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story-page.pooja-sevas-page .pooja-book-btn > * {
+  position: relative;
+  z-index: 2;
+}
+
+.story-page.pooja-sevas-page .social-impact-card:hover .pooja-book-btn,
+.story-page.pooja-sevas-page .pooja-book-btn:hover,
+.story-page.pooja-sevas-page .pooja-book-btn:focus-visible {
+  animation: none;
+  transform: scale(1.05);
+  box-shadow:
+    0 8px 22px rgba(125, 14, 3, 0.32),
+    0 0 18px rgba(201, 162, 77, 0.28);
+}
+
+@keyframes pooja-book-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 4px 14px rgba(125, 14, 3, 0.22),
+      0 0 0 0 rgba(201, 162, 77, 0.28);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow:
+      0 6px 18px rgba(125, 14, 3, 0.28),
+      0 0 14px 2px rgba(201, 162, 77, 0.22);
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes pooja-book-shine {
+  0%,
+  55% {
+    left: -130%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-page.pooja-sevas-page .pooja-book-btn,
+  .story-page.pooja-sevas-page .pooja-book-btn::after {
+    animation: none;
+  }
+}
+
+.story-page.pooja-sevas-page .pooja-card-menu {
   display: none !important;
 }
 
-.story-page.pooja-sevas-page .social-impact-card__actions:not(:has(.social-impact-card__learn)) {
+.story-page.pooja-sevas-page .social-impact-card-actions:not(:has(.social-impact-card-learn)) {
   justify-content: center;
 }
 
@@ -36,7 +114,7 @@
 }
 
 .pooja-book-modal .modal-content {
-  border: 2px solid #c9a24d;
+  border: 1px solid #c9a24d;
   border-radius: 12px;
   overflow: hidden;
   background: #f0e6d8;
@@ -72,21 +150,21 @@
   background: #fffdf9;
 }
 
-.pooja-book-modal__list {
+.pooja-book-modal-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.pooja-book-modal__list li {
+.pooja-book-modal-list li {
   border-bottom: 1px solid rgba(201, 162, 77, 0.22);
 }
 
-.pooja-book-modal__list li:last-child {
+.pooja-book-modal-list li:last-child {
   border-bottom: none;
 }
 
-.pooja-book-modal__link {
+.pooja-book-modal-link {
   display: block;
   padding: 0.75rem 1.15rem;
   font-family: Inter, system-ui, sans-serif;
@@ -97,20 +175,20 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.pooja-book-modal__link:hover,
-.pooja-book-modal__link:focus {
+.pooja-book-modal-link:hover,
+.pooja-book-modal-link:focus {
   background: rgba(201, 162, 77, 0.14);
   color: #7d0e03;
 }
 
 @media (max-width: 575px) {
-  .story-page.pooja-sevas-page .social-impact-card__actions {
+  .story-page.pooja-sevas-page .social-impact-card-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
   .story-page.pooja-sevas-page .pooja-book-btn,
-  .story-page.pooja-sevas-page .social-impact-card__learn {
+  .story-page.pooja-sevas-page .social-impact-card-learn {
     width: 100%;
     justify-content: center;
     text-align: center;
